@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CFC06AA8331118E9379F392 /* Pods_Honest_Badger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */; };
+		9564AE3C1D36D2CA00460B3A /* Rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9564AE3B1D36D2CA00460B3A /* Rockwell.ttf */; };
 		95D716281D2ED53100EAE5B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D716271D2ED53100EAE5B3 /* AppDelegate.swift */; };
 		95D7162A1D2ED53100EAE5B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D716291D2ED53100EAE5B3 /* ViewController.swift */; };
 		95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D7162B1D2ED53100EAE5B3 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		83349A628BB6A93D96289F1D /* Pods-Honest Badger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honest Badger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger.debug.xcconfig"; sourceTree = "<group>"; };
 		943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honest_Badger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9564AE3B1D36D2CA00460B3A /* Rockwell.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockwell.ttf; sourceTree = "<group>"; };
 		95D716241D2ED53100EAE5B3 /* Honest Badger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honest Badger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D716271D2ED53100EAE5B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95D716291D2ED53100EAE5B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				95D716301D2ED53100EAE5B3 /* LaunchScreen.storyboard */,
 				95D716331D2ED53100EAE5B3 /* Info.plist */,
 				95D716391D2ED65700EAE5B3 /* GoogleService-Info.plist */,
+				9564AE3B1D36D2CA00460B3A /* Rockwell.ttf */,
 			);
 			path = "Honest Badger";
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95D716321D2ED53100EAE5B3 /* LaunchScreen.storyboard in Resources */,
+				9564AE3C1D36D2CA00460B3A /* Rockwell.ttf in Resources */,
 				95D7163A1D2ED65700EAE5B3 /* GoogleService-Info.plist in Resources */,
 				95D7162F1D2ED53100EAE5B3 /* Assets.xcassets in Resources */,
 				95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */,
