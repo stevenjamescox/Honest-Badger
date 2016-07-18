@@ -70,6 +70,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="didPressEnter:" destination="w4H-hA-KHs" eventType="touchUpInside" id="GDh-6t-Iyr"/>
                                             <segue destination="q8u-zd-BRG" kind="show" identifier="enterSegue" id="eiS-s2-o4l"/>
                                         </connections>
                                     </button>
@@ -135,8 +136,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ5-hV-Jgz">
-                                            <rect key="frame" x="8" y="17" width="584" height="25"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ5-hV-Jgz">
+                                            <rect key="frame" x="8" y="9" width="584" height="25"/>
                                             <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="21"/>
                                             <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -149,6 +150,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="0.79970366379310343" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="questionPresent" destination="RJ5-hV-Jgz" id="tp3-nx-NFa"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="actionCell" rowHeight="60" id="KUW-Yv-I4h" customClass="ActionTableViewCell" customModule="Honest_Badger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="600" height="60"/>
@@ -170,6 +174,7 @@
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <connections>
+                                                                <action selector="didPressSubmitButton:" destination="KUW-Yv-I4h" eventType="touchUpInside" id="7cQ-Bj-gpa"/>
                                                                 <segue destination="EPu-Oe-i9Q" kind="show" identifier="toSubmitResponseSegue" id="MXd-mL-V0k"/>
                                                             </connections>
                                                         </button>
@@ -192,6 +197,7 @@
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <connections>
+                                                                <action selector="didPressViewButton:" destination="KUW-Yv-I4h" eventType="touchUpInside" id="J6W-XJ-gwq"/>
                                                                 <segue destination="cRj-RB-COW" kind="show" identifier="viewResponsesSegue" id="8H0-Qw-yRb"/>
                                                             </connections>
                                                         </button>
@@ -230,6 +236,12 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="aaD-5k-u3b" secondAttribute="trailing" id="cx1-1T-fGL"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ViewResponseOutlet" destination="J6f-FH-Kqy" id="VIe-cO-JvM"/>
+                                    <outlet property="leftSideView" destination="OKz-zx-skG" id="c0s-fH-RsP"/>
+                                    <outlet property="rightSideView" destination="xVU-VM-TMF" id="rma-Sm-zEi"/>
+                                    <outlet property="submitResponseOutlet" destination="jfp-eo-5of" id="sre-bL-hn4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -241,6 +253,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="0Ql-hX-MUT">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
+                                <action selector="didPressCreateQuestion:" destination="q8u-zd-BRG" id="NGZ-ZM-vyQ"/>
                                 <segue destination="b2M-of-bxX" kind="show" identifier="toSubmitQuestionSegue" id="Crj-UF-GoP"/>
                             </connections>
                         </barButtonItem>
@@ -434,6 +447,9 @@
                                                             <state key="normal" title="Submit Response">
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didPressSubmitResponse:" destination="EPu-Oe-i9Q" eventType="touchUpInside" id="6YL-mq-d5h"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.41568627450980394" green="0.61568627450980395" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
@@ -485,6 +501,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Submit Response" id="XQh-Jt-IIK"/>
+                    <connections>
+                        <outlet property="questionPresent" destination="KvZ-c4-QbA" id="cJw-gg-VDQ"/>
+                        <outlet property="responseEntryField" destination="gHI-Oz-oBH" id="opy-ma-Dbs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMF-bp-GvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -606,6 +626,9 @@
                                                             <state key="normal" title="Submit Question">
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didPressSubmitQuestion:" destination="b2M-of-bxX" eventType="touchUpInside" id="F8d-70-bnM"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.4823529411764706" green="0.6705882352941176" blue="0.44705882352941179" alpha="1" colorSpace="calibratedRGB"/>
@@ -658,6 +681,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Submit Question" id="Jko-jP-jfZ"/>
+                    <connections>
+                        <outlet property="questionEntryField" destination="aK8-9D-Ois" id="RGb-le-itu"/>
+                        <outlet property="timeLimitPicker" destination="xP8-te-NvQ" id="hWC-qV-nDX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijg-Xy-Iw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -679,7 +706,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2K-uK-IEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2021" y="428"/>
+            <point key="canvasLocation" x="2054" y="436"/>
         </scene>
     </scenes>
     <resources>

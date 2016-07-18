@@ -25,7 +25,17 @@ class SubmitQuestionTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var questionEntryField: UITextField!
+    
+    
+    @IBOutlet weak var timeLimitPicker: UIDatePicker!
+    
+    
     // MARK: - Table view data source
+
+    
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -91,5 +101,11 @@ class SubmitQuestionTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func didPressSubmitQuestion(sender: AnyObject) {
+    }
+    
+    
+    
 
 }

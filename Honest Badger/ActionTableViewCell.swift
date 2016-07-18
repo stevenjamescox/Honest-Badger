@@ -20,5 +20,31 @@ class ActionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var leftSideView: UIView!
+    
+    @IBOutlet weak var rightSideView: UIView!
+    
+    @IBOutlet weak var submitResponseOutlet: UIButton!
+    
+    @IBOutlet weak var ViewResponseOutlet: UIButton!
+    
+    // MARK: - Actions
+    
+   
+    @IBAction func didPressSubmitButton(sender: AnyObject) {
+    }
+    
+    @IBAction func didPressViewButton(sender: AnyObject) {
+    }
+    
+    
+    
+    
+    
 
 }

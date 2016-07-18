@@ -8,8 +8,10 @@
 
 import UIKit
 
-class QuestionTableViewCell: UITableViewCell {
+class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
 
+    @IBOutlet weak var questionPresent: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

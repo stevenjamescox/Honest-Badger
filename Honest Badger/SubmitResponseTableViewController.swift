@@ -24,6 +24,14 @@ class SubmitResponseTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var questionPresent: UILabel!
+    
+    @IBOutlet weak var responseEntryField: UITextField!
+    
 
     // MARK: - Table view data source
 
@@ -92,4 +100,7 @@ class SubmitResponseTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func didPressSubmitResponse(sender: AnyObject) {
+    }
+    
 }

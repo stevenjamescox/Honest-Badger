@@ -21,6 +21,8 @@ class FrontPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didPressEnter(sender: AnyObject) {
+    }
 
     /*
     // MARK: - Navigation
