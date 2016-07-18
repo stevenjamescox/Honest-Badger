@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XSB-Ch-yWE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XSB-Ch-yWE">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -22,10 +22,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Front Page View Controller-->
         <scene sceneID="urW-Ra-KJH">
             <objects>
-                <viewController id="w4H-hA-KHs" sceneMemberID="viewController">
+                <viewController id="w4H-hA-KHs" customClass="FrontPageViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9WA-mq-HQa"/>
                         <viewControllerLayoutGuide type="bottom" id="yeg-SL-8i0"/>
@@ -128,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionCell" id="Igj-sF-Eh2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionCell" id="Igj-sF-Eh2" customClass="QuestionTableViewCell" customModule="Honest_Badger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Igj-sF-Eh2" id="AFm-Ln-Wpo">
@@ -150,7 +150,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="0.79970366379310343" colorSpace="calibratedRGB"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="60" id="KUW-Yv-I4h">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="actionCell" rowHeight="60" id="KUW-Yv-I4h" customClass="ActionTableViewCell" customModule="Honest_Badger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KUW-Yv-I4h" id="36d-A5-IGy">
@@ -238,7 +238,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Questions" id="Qc4-PZ-63G">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0Ql-hX-MUT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="0Ql-hX-MUT">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="b2M-of-bxX" kind="show" identifier="toSubmitQuestionSegue" id="Crj-UF-GoP"/>
                             </connections>
@@ -323,7 +324,7 @@
         <!--Submit Response-->
         <scene sceneID="9Pd-xE-rhw">
             <objects>
-                <tableViewController id="EPu-Oe-i9Q" sceneMemberID="viewController">
+                <tableViewController id="EPu-Oe-i9Q" customClass="SubmitResponseTableViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="I56-Tf-Zmg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -492,7 +493,7 @@
         <!--Submit Question-->
         <scene sceneID="tlX-wh-IRW">
             <objects>
-                <tableViewController id="b2M-of-bxX" sceneMemberID="viewController">
+                <tableViewController id="b2M-of-bxX" customClass="SubmitQuestionTableViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rZx-sb-lr8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
