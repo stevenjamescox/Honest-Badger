@@ -15,6 +15,7 @@
 		955145AA1D3D72C00064D897 /* SubmitResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A91D3D72C00064D897 /* SubmitResponseTableViewController.swift */; };
 		955145AC1D3D73170064D897 /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145AB1D3D73170064D897 /* FrontPageViewController.swift */; };
 		955145AE1D3D797D0064D897 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145AD1D3D797D0064D897 /* Response.swift */; };
+		955145B01D3D7FF00064D897 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145AF1D3D7FF00064D897 /* FirebaseController.swift */; };
 		9564AE3C1D36D2CA00460B3A /* Rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9564AE3B1D36D2CA00460B3A /* Rockwell.ttf */; };
 		9564AE3E1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */; };
 		958D0A2C1D3D6A8D00BA5664 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */; };
@@ -39,6 +40,7 @@
 		955145A91D3D72C00064D897 /* SubmitResponseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitResponseTableViewController.swift; sourceTree = "<group>"; };
 		955145AB1D3D73170064D897 /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
 		955145AD1D3D797D0064D897 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		955145AF1D3D7FF00064D897 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		9564AE3B1D36D2CA00460B3A /* Rockwell.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockwell.ttf; sourceTree = "<group>"; };
 		9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AbadiMTCondensedExtraBold.ttf; sourceTree = "<group>"; };
 		958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 				943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		955145B11D3D7FFE0064D897 /* Non-Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				955145AF1D3D7FF00064D897 /* FirebaseController.swift */,
+			);
+			name = "Non-Model Controllers";
 			sourceTree = "<group>";
 		};
 		958D0A281D3D6A4300BA5664 /* Supporting Files */ = {
@@ -170,6 +180,7 @@
 				95D716271D2ED53100EAE5B3 /* AppDelegate.swift */,
 				958D0A2A1D3D6A5A00BA5664 /* Views */,
 				958D0A2D1D3D6AA100BA5664 /* View Controllers */,
+				955145B11D3D7FFE0064D897 /* Non-Model Controllers */,
 				958D0A321D3D6B1500BA5664 /* Model Controllers */,
 				958D0A351D3D6B3C00BA5664 /* Models */,
 				958D0A291D3D6A4F00BA5664 /* plists */,
@@ -314,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955145B01D3D7FF00064D897 /* FirebaseController.swift in Sources */,
 				958D0A341D3D6B3800BA5664 /* Question.swift in Sources */,
 				955145AC1D3D73170064D897 /* FrontPageViewController.swift in Sources */,
 				955145A61D3D71DD0064D897 /* ActionTableViewCell.swift in Sources */,
