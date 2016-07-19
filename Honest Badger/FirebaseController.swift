@@ -21,7 +21,7 @@ protocol FirebaseType {
     init?(dictionary: [String: AnyObject], identifier: String)
     
     mutating func save()
-    func delete()
+             func delete()
 }
 
 extension FirebaseType {

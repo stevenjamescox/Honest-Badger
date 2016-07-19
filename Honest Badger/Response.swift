@@ -8,34 +8,32 @@
 
 import Foundation
 
-struct Response: FirebaseType, Equatable{
+class Response: Equatable {
     
     private let responseKey = "response"
     
-    var question: Question
+    var question: Question?
     var response: String
     var identifier: String?
     
-    var endpoint: String {
-    return "questions/\(question.identifier ?? "")/responses"
-    }
+//    var endpoint: String {
+//        return "questions/\(question.identifier ?? "")/responses"
+//    }
     
     // MARK: TODO: add replaceResponseKey with autoID [from Firebase]
     var dictionaryCopy: [String: AnyObject]{
-        return [responseKey: response]
+        return [FirebaseController.ref.childByAutoId().key: response]
     }
     
     init(question: Question, response: String){
-    self.question = question
-    self.response = response
-    self.identifier = nil
-    }
-
-    init?(dictionary: [String: AnyObject], identifier: String){
-        guard let response = dictionary[responseKey] as? String else
-        { return nil }
+        self.question = question
         self.response = response
-        self.identifier = identifier
+        self.identifier = nil
+    }
+    
+     init?(dictionary: [String: AnyObject]) {
+        self.response = dictionary.values.first as? String ?? ""
+        self.identifier = dictionary.keys.first
     }
 }
 

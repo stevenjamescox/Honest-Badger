@@ -10,7 +10,6 @@
 		3CFC06AA8331118E9379F392 /* Pods_Honest_Badger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */; };
 		952E3B1F1D382E1B00754A9B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952E3B1E1D382E1B00754A9B /* StoreKit.framework */; };
 		955145A41D3D71A40064D897 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */; };
-		955145A61D3D71DD0064D897 /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A51D3D71DD0064D897 /* ActionTableViewCell.swift */; };
 		955145A81D3D72A00064D897 /* SubmitQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */; };
 		955145AA1D3D72C00064D897 /* SubmitResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A91D3D72C00064D897 /* SubmitResponseTableViewController.swift */; };
 		955145AC1D3D73170064D897 /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145AB1D3D73170064D897 /* FrontPageViewController.swift */; };
@@ -23,6 +22,7 @@
 		958D0A341D3D6B3800BA5664 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A331D3D6B3800BA5664 /* Question.swift */; };
 		958D0A371D3D6BB900BA5664 /* ResponsesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A361D3D6BB900BA5664 /* ResponsesTableViewController.swift */; };
 		958D9E1F1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png in Resources */ = {isa = PBXBuildFile; fileRef = 958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */; };
+		95D543A71D3E860800069611 /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D543A61D3E860800069611 /* ResponseController.swift */; };
 		95D716281D2ED53100EAE5B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D716271D2ED53100EAE5B3 /* AppDelegate.swift */; };
 		95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D7162B1D2ED53100EAE5B3 /* Main.storyboard */; };
 		95D7162F1D2ED53100EAE5B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D7162E1D2ED53100EAE5B3 /* Assets.xcassets */; };
@@ -35,7 +35,6 @@
 		943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honest_Badger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		952E3B1E1D382E1B00754A9B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
-		955145A51D3D71DD0064D897 /* ActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTableViewCell.swift; sourceTree = "<group>"; };
 		955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitQuestionTableViewController.swift; sourceTree = "<group>"; };
 		955145A91D3D72C00064D897 /* SubmitResponseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitResponseTableViewController.swift; sourceTree = "<group>"; };
 		955145AB1D3D73170064D897 /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		958D0A331D3D6B3800BA5664 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		958D0A361D3D6BB900BA5664 /* ResponsesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsesTableViewController.swift; sourceTree = "<group>"; };
 		958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1066634_LGPNG_2JR02878HK546464B.png; sourceTree = "<group>"; };
+		95D543A61D3E860800069611 /* ResponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseController.swift; sourceTree = "<group>"; };
 		95D716241D2ED53100EAE5B3 /* Honest Badger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honest Badger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D716271D2ED53100EAE5B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95D7162C1D2ED53100EAE5B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 				955145AB1D3D73170064D897 /* FrontPageViewController.swift */,
 				958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */,
 				955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */,
-				955145A51D3D71DD0064D897 /* ActionTableViewCell.swift */,
 				955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */,
 				955145A91D3D72C00064D897 /* SubmitResponseTableViewController.swift */,
 				958D0A361D3D6BB900BA5664 /* ResponsesTableViewController.swift */,
@@ -143,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				958D0A301D3D6B0B00BA5664 /* QuestionController.swift */,
+				95D543A61D3E860800069611 /* ResponseController.swift */,
 			);
 			name = "Model Controllers";
 			sourceTree = "<group>";
@@ -328,8 +328,8 @@
 				955145B01D3D7FF00064D897 /* FirebaseController.swift in Sources */,
 				958D0A341D3D6B3800BA5664 /* Question.swift in Sources */,
 				955145AC1D3D73170064D897 /* FrontPageViewController.swift in Sources */,
-				955145A61D3D71DD0064D897 /* ActionTableViewCell.swift in Sources */,
 				958D0A371D3D6BB900BA5664 /* ResponsesTableViewController.swift in Sources */,
+				95D543A71D3E860800069611 /* ResponseController.swift in Sources */,
 				955145AA1D3D72C00064D897 /* SubmitResponseTableViewController.swift in Sources */,
 				95D716281D2ED53100EAE5B3 /* AppDelegate.swift in Sources */,
 				955145A41D3D71A40064D897 /* QuestionTableViewCell.swift in Sources */,
