@@ -33,6 +33,7 @@
 /* Begin PBXFileReference section */
 		83349A628BB6A93D96289F1D /* Pods-Honest Badger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honest Badger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger.debug.xcconfig"; sourceTree = "<group>"; };
 		943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honest_Badger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9511F3D91D3FDF990049F29A /* Honest Badger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Honest Badger.entitlements"; sourceTree = "<group>"; };
 		952E3B1E1D382E1B00754A9B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitQuestionTableViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		95D716261D2ED53100EAE5B3 /* Honest Badger */ = {
 			isa = PBXGroup;
 			children = (
+				9511F3D91D3FDF990049F29A /* Honest Badger.entitlements */,
 				95D716271D2ED53100EAE5B3 /* AppDelegate.swift */,
 				958D0A2A1D3D6A5A00BA5664 /* Views */,
 				958D0A2D1D3D6AA100BA5664 /* View Controllers */,
@@ -231,6 +233,9 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
 								enabled = 1;
 							};
 						};
@@ -450,6 +455,7 @@
 			baseConfigurationReference = 83349A628BB6A93D96289F1D /* Pods-Honest Badger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Honest Badger/Honest Badger.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Honest Badger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -463,6 +469,7 @@
 			baseConfigurationReference = F3A2842BC9F4819C102CECF3 /* Pods-Honest Badger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Honest Badger/Honest Badger.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Honest Badger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
