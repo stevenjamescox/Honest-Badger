@@ -10,7 +10,6 @@ import UIKit
 
 class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
 
-    @IBOutlet weak var questionPresent: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
