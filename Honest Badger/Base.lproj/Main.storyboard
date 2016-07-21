@@ -302,6 +302,7 @@
                                                 <constraint firstItem="yDy-0q-c7l" firstAttribute="bottom" secondItem="znq-Bl-4mu" secondAttribute="bottomMargin" id="MMS-iw-fL1"/>
                                                 <constraint firstItem="yDy-0q-c7l" firstAttribute="top" secondItem="znq-Bl-4mu" secondAttribute="topMargin" id="Q1r-aN-ImD"/>
                                                 <constraint firstItem="yDy-0q-c7l" firstAttribute="leading" secondItem="mie-aR-hre" secondAttribute="trailing" id="l87-pR-0Tx"/>
+                                                <constraint firstItem="mie-aR-hre" firstAttribute="leading" secondItem="znq-Bl-4mu" secondAttribute="leadingMargin" id="pbv-RR-s92"/>
                                                 <constraint firstItem="mie-aR-hre" firstAttribute="leading" secondItem="znq-Bl-4mu" secondAttribute="leadingMargin" constant="8" id="tMK-Jt-56A"/>
                                             </constraints>
                                             <variation key="default">
@@ -371,7 +372,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question TBD?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvZ-c4-QbA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question TBD?" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvZ-c4-QbA">
                                                     <rect key="frame" x="8" y="8" width="141" height="43"/>
                                                     <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="21"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -476,7 +477,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGC-Pm-tLa">
                                                     <rect key="frame" x="8" y="8" width="584" height="73"/>
-                                                    <string key="text">Responses are anonymous. Submitted responses will be presented in random order when time limit is reached (and at least three responses have been submitted).</string>
+                                                    <string key="text">Responses are anonymous. Submitted responses will be presented in random order when time limit is reached (as long as at least three responses have been submitted).</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -656,7 +657,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-LF-evC">
                                                     <rect key="frame" x="8" y="8" width="584" height="73"/>
-                                                    <string key="text">Responses are anonymous. Submitted responses will be presented in random order when time limit is reached (and at least three responses have been submitted).</string>
+                                                    <string key="text">Responses are anonymous. Submitted responses will be presented in random order when time limit is reached (as long as at least three responses have been submitted).</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
