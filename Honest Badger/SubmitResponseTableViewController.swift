@@ -29,12 +29,19 @@ class SubmitResponseTableViewController: UITableViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var questionPresent: UILabel!
+    //presents RESPECTIVE questionText from dataPoint 2
     
     @IBOutlet weak var responseEntryField: UITextField!
     
+    //****IBAction actualSubmitResponse(){}
+    // calls submitQuestion in ResponseController
+    //---uses the entered text in responseEntryField (if not nil) to fill dataPoint 2
+    //(unless end timestamp has passed, then the said function will return a sad alert)
 
     // MARK: - Table view data source
 
+// THEY'RE STATIC CELLS, SO CAN REMOVE THE NEXT TWO FUNCTIONS? or how should they be filled in?
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0

@@ -43,7 +43,9 @@ class ResponsesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        // Configure the cell...
+        // ***************
+     RUNS RANDOMIZE FUNCTION FROM RESPONSE CONTROLLER, PRESENTS RESPONSES FOR RESPECTIVE QUESTION
+     // *********
 
         return cell
     }

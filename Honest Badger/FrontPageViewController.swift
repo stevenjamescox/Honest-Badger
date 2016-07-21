@@ -13,7 +13,8 @@ class FrontPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // TESTING
+        QuestionController.submitQuestion("IT WORKED")
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +23,7 @@ class FrontPageViewController: UIViewController {
     }
     
     @IBAction func didPressEnter(sender: AnyObject) {
+        // *** PROCESSES ANONYMOUS AUTHENTICATION THROUGH FIREBASE
     }
 
     /*

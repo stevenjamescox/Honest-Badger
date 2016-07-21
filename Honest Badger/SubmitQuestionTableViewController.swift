@@ -28,13 +28,24 @@ class SubmitQuestionTableViewController: UITableViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var questionEntryField: UITextField!
+    //calls submitQuestion in QuestionController and uses the entered text (if not nil) to fill dataPoint 2
     
     
     @IBOutlet weak var timeLimitPicker: UIDatePicker!
+    // CONFIGURES APPEARANCE OF TIME LIMIT PICKER
+    // SETS DEFAULT TIME LIMIT for first appearance
     
+    //***IBAction func setTimestamp
+    //***adds NOW time to TIME LEFT to create the END question timestamp
+    
+    //****IBAction actualSubmitQuestion(){}
+    // calls submitQuestion in QuestionController
+    //---uses the entered text in questionEntryField (if not nil) to fill dataPoint 2
+    //---uses entered time in timeLimitPicker (does the comparison in function) to fill dataPoint 5
     
     // MARK: - Table view data source
-
+    
+// THEY'RE STATIC CELLS, SO CAN REMOVE THE NEXT TWO FUNCTIONS? or how should they be filled in?
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

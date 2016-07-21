@@ -250,7 +250,7 @@
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didPressCreateQuestion:" destination="q8u-zd-BRG" id="NGZ-ZM-vyQ"/>
-                                <segue destination="b2M-of-bxX" kind="show" identifier="toSubmitQuestionSegue" id="Crj-UF-GoP"/>
+                                <segue destination="b2M-of-bxX" kind="show" identifier="toSubmitQuestionSegue" id="KVP-Q3-8Xm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -507,7 +507,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMF-bp-GvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4057" y="1209"/>
+            <point key="canvasLocation" x="3914" y="1209"/>
         </scene>
         <!--Submit Question-->
         <scene sceneID="tlX-wh-IRW">
@@ -687,7 +687,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijg-Xy-Iw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3233" y="1209"/>
+            <point key="canvasLocation" x="3165" y="1209"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="prx-Rk-CfD">
