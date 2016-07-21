@@ -475,7 +475,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGC-Pm-tLa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGC-Pm-tLa">
                                                     <rect key="frame" x="8" y="8" width="584" height="73"/>
                                                     <string key="text">Responses are anonymous. Submitted responses will be presented in random order when time limit is reached (as long as at least three responses have been submitted).</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -655,7 +655,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-LF-evC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-LF-evC">
                                                     <rect key="frame" x="8" y="8" width="584" height="73"/>
                                                     <string key="text">Responses are anonymous. Submitted responses will be presented in random order when time limit is reached (as long as at least three responses have been submitted).</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
