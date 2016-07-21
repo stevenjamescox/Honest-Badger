@@ -50,21 +50,12 @@
                                     <constraint firstAttribute="width" constant="278" id="8aI-vf-lHm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give &amp; Receive Anonymous Feedback" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0K-K1-DGn">
-                                <rect key="frame" x="199" y="413" width="203" height="78"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="203" id="0yw-ly-IDi"/>
-                                    <constraint firstAttribute="height" constant="78" id="Pl2-GT-dT3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kA4-Vd-vS3">
                                 <rect key="frame" x="156" y="491" width="288" height="43"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67x-hT-kVQ">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
+                                        <color key="backgroundColor" red="0.45490196078431372" green="0.6470588235294118" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="21"/>
                                         <state key="normal" title="Enter">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,12 +66,21 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.5490196078431373" green="0.71764705882352942" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="UZo-zd-Ghe"/>
                                     <constraint firstAttribute="width" constant="288" id="a6E-5d-OvY"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give &amp; Receive Anonymous Feedback" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0K-K1-DGn">
+                                <rect key="frame" x="199" y="413" width="203" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="203" id="0yw-ly-IDi"/>
+                                    <constraint firstAttribute="height" constant="78" id="Pl2-GT-dT3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -164,7 +164,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVG-ho-Og4">
-                                                                    <rect key="frame" x="8" y="8" width="272" height="28"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                                                                    <color key="backgroundColor" red="0.52156862745098043" green="0.69803921568627447" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="21"/>
                                                                     <state key="normal" title="Submit Response">
                                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -174,19 +175,19 @@
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.44108297410000002" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottomMargin" secondItem="NVG-ho-Og4" secondAttribute="bottom" id="7Ds-uP-rX3"/>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="NVG-ho-Og4" secondAttribute="trailing" id="S2d-FU-FCh"/>
-                                                                <constraint firstItem="NVG-ho-Og4" firstAttribute="top" secondItem="sQe-KJ-wya" secondAttribute="topMargin" id="gIN-MV-lSg"/>
-                                                                <constraint firstItem="NVG-ho-Og4" firstAttribute="leading" secondItem="sQe-KJ-wya" secondAttribute="leadingMargin" id="kNE-Gl-OCJ"/>
+                                                                <constraint firstAttribute="bottom" secondItem="NVG-ho-Og4" secondAttribute="bottom" id="dxY-nf-lbs"/>
+                                                                <constraint firstAttribute="trailing" secondItem="NVG-ho-Og4" secondAttribute="trailing" id="izk-ll-4bs"/>
+                                                                <constraint firstItem="NVG-ho-Og4" firstAttribute="top" secondItem="sQe-KJ-wya" secondAttribute="top" id="vWE-nw-a6c"/>
+                                                                <constraint firstItem="NVG-ho-Og4" firstAttribute="leading" secondItem="sQe-KJ-wya" secondAttribute="leading" id="xzh-pd-9eZ"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dyr-gL-0PX">
                                                             <rect key="frame" x="296" y="0.0" width="288" height="44"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPn-rg-Qc2">
-                                                                    <rect key="frame" x="8" y="8" width="272" height="28"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                                                                    <color key="backgroundColor" red="0.97647058823529409" green="0.31764705882352939" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="21"/>
                                                                     <state key="normal" title="View Responses">
                                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -196,12 +197,11 @@
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="oPn-rg-Qc2" secondAttribute="trailing" id="AxU-Bc-LA0"/>
-                                                                <constraint firstItem="oPn-rg-Qc2" firstAttribute="leading" secondItem="Dyr-gL-0PX" secondAttribute="leadingMargin" id="IbC-rS-red"/>
-                                                                <constraint firstItem="oPn-rg-Qc2" firstAttribute="bottom" secondItem="Dyr-gL-0PX" secondAttribute="bottomMargin" id="W38-xs-0z6"/>
-                                                                <constraint firstItem="oPn-rg-Qc2" firstAttribute="top" secondItem="Dyr-gL-0PX" secondAttribute="topMargin" id="ZDA-6X-upd"/>
+                                                                <constraint firstAttribute="trailing" secondItem="oPn-rg-Qc2" secondAttribute="trailing" id="Mjg-2b-h94"/>
+                                                                <constraint firstItem="oPn-rg-Qc2" firstAttribute="leading" secondItem="Dyr-gL-0PX" secondAttribute="leading" id="VYo-Ki-4Cz"/>
+                                                                <constraint firstItem="oPn-rg-Qc2" firstAttribute="top" secondItem="Dyr-gL-0PX" secondAttribute="top" id="ayv-Nt-EvQ"/>
+                                                                <constraint firstAttribute="bottom" secondItem="oPn-rg-Qc2" secondAttribute="bottom" id="s0q-wd-o1k"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -275,12 +275,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="znq-Bl-4mu">
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="znq-Bl-4mu">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label TBD" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mie-aR-hre">
-                                                    <rect key="frame" x="0.0" y="0.0" width="550" height="59"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="542" height="59"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -296,18 +296,20 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="mie-aR-hre" firstAttribute="leading" secondItem="znq-Bl-4mu" secondAttribute="leadingMargin" id="7YP-6x-X5r"/>
                                                 <constraint firstItem="mie-aR-hre" firstAttribute="top" secondItem="znq-Bl-4mu" secondAttribute="topMargin" id="9Rr-fj-ZbC"/>
                                                 <constraint firstItem="mie-aR-hre" firstAttribute="bottom" secondItem="znq-Bl-4mu" secondAttribute="bottomMargin" id="EOp-yD-SaJ"/>
                                                 <constraint firstItem="yDy-0q-c7l" firstAttribute="trailing" secondItem="znq-Bl-4mu" secondAttribute="trailingMargin" id="FD6-Yg-1tv"/>
                                                 <constraint firstItem="yDy-0q-c7l" firstAttribute="bottom" secondItem="znq-Bl-4mu" secondAttribute="bottomMargin" id="MMS-iw-fL1"/>
                                                 <constraint firstItem="yDy-0q-c7l" firstAttribute="top" secondItem="znq-Bl-4mu" secondAttribute="topMargin" id="Q1r-aN-ImD"/>
-                                                <constraint firstItem="mie-aR-hre" firstAttribute="top" secondItem="znq-Bl-4mu" secondAttribute="topMargin" id="RH6-18-pAU"/>
-                                                <constraint firstItem="yDy-0q-c7l" firstAttribute="leading" secondItem="mie-aR-hre" secondAttribute="trailing" id="UAx-j4-9vp"/>
-                                                <constraint firstItem="mie-aR-hre" firstAttribute="bottom" secondItem="znq-Bl-4mu" secondAttribute="bottomMargin" id="f2w-kQ-3iK"/>
                                                 <constraint firstItem="yDy-0q-c7l" firstAttribute="leading" secondItem="mie-aR-hre" secondAttribute="trailing" id="l87-pR-0Tx"/>
-                                                <constraint firstItem="mie-aR-hre" firstAttribute="leading" secondItem="znq-Bl-4mu" secondAttribute="leadingMargin" id="tMK-Jt-56A"/>
+                                                <constraint firstItem="mie-aR-hre" firstAttribute="leading" secondItem="znq-Bl-4mu" secondAttribute="leadingMargin" constant="8" id="tMK-Jt-56A"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="tMK-Jt-56A"/>
+                                                    <exclude reference="l87-pR-0Tx"/>
+                                                </mask>
+                                            </variation>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -439,6 +441,7 @@
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AC-us-4Kg">
                                                             <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
+                                                            <color key="backgroundColor" red="0.45490196078431372" green="0.6470588235294118" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="21"/>
                                                             <state key="normal" title="Submit Response">
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -448,7 +451,6 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.41568627450980394" green="0.61568627450980395" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="3AC-us-4Kg" firstAttribute="top" secondItem="aIm-J7-wH5" secondAttribute="top" id="NY5-Fg-Upp"/>
                                                         <constraint firstAttribute="bottom" secondItem="3AC-us-4Kg" secondAttribute="bottom" id="QLv-k6-e7e"/>
@@ -618,6 +620,7 @@
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEk-tf-S6I">
                                                             <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
+                                                            <color key="backgroundColor" red="0.45490196078431372" green="0.6470588235294118" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="23"/>
                                                             <state key="normal" title="Submit Question">
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -627,7 +630,6 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.4823529411764706" green="0.6705882352941176" blue="0.44705882352941179" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="aEk-tf-S6I" firstAttribute="leading" secondItem="buz-x6-J3G" secondAttribute="leading" id="5gQ-KN-qcf"/>
                                                         <constraint firstItem="aEk-tf-S6I" firstAttribute="top" secondItem="buz-x6-J3G" secondAttribute="top" id="XjL-IM-Z7a"/>
