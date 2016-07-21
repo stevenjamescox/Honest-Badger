@@ -7,14 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class FrontPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // TESTING
-        QuestionController.submitQuestion("IT WORKED")
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +21,7 @@ class FrontPageViewController: UIViewController {
     }
     
     @IBAction func didPressEnter(sender: AnyObject) {
-        // *** PROCESSES ANONYMOUS AUTHENTICATION THROUGH FIREBASE
+        }
     }
 
     /*
@@ -36,4 +34,3 @@ class FrontPageViewController: UIViewController {
     }
     */
 
-}

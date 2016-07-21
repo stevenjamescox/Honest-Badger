@@ -20,7 +20,6 @@ class Response: Equatable {
         return "questions/\(question?.identifier ?? "")/responses"
     }
  
-    // MARK: TODO: add replaceResponseKey with autoID [from Firebase]
     var dictionaryCopy: [String: AnyObject]{
         return [FirebaseController.ref.childByAutoId().key: response]
     }
@@ -31,7 +30,7 @@ class Response: Equatable {
         self.identifier = nil
     }
     
-     init?(dictionary: [String: AnyObject]) {
+     required init?(dictionary: [String: AnyObject]) {
         self.response = dictionary.values.first as? String ?? ""
         self.identifier = dictionary.keys.first
     }

@@ -14,6 +14,10 @@ class QuestionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // TESTING
+        QuestionController.submitQuestion("IT WORKED")
+        
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
         // Uncomment the following line to preserve selection between presentations

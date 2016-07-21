@@ -44,16 +44,19 @@ class Question: FirebaseType, Equatable {
         { return nil }
         self.questionText = questionText
         self.identifier = identifier
+        
         if let responsesArray = dictionary[responsesKey] as? [[String: AnyObject]]{
             responses = responsesArray.flatMap({Response(dictionary: $0)})
         } else {
             responses = []
         }
+        
         if let timestampInterval = dictionary[timestampKey] as? NSTimeInterval {
             self.timestamp = NSDate(timeIntervalSince1970: timestampInterval)
         } else {
             self.timestamp = NSDate()
         }
+        
         if let timeLimitInterval = dictionary[timeLimitKey] as? NSTimeInterval {
             self.timeLimit = NSDate(timeIntervalSince1970: timeLimitInterval)
         } else {

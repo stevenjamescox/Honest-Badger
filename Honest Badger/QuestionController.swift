@@ -11,11 +11,14 @@ import Foundation
 class QuestionController {
     
     static func submitQuestion(questionText: String){
-        var question = Question(questionText: "IT WORKED AGAIN", timeLimit: NSDate())
+        var question = Question(questionText: questionText, timeLimit: NSDate())
         question.save()
-        var response = Response(question: Question.identifier, response: "it's wonderful")
-        response.save()
     }
+    
+   /* static func submitResponse(question: Question, responseText: String){
+        var response = Response(question: Question.identifier, response: responseText)
+        response.save()
+    }*/
     
     static func fetchQuestions(completion: (questions: [Question]) -> Void){
         
