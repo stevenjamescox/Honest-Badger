@@ -16,10 +16,10 @@ class Response: Equatable {
     var response: String
     var identifier: String?
     
-//    var endpoint: String {
-//        return "questions/\(question.identifier ?? "")/responses"
-//    }
-    
+    var endpoint: String {
+        return "questions/\(question?.identifier ?? "")/responses"
+    }
+ 
     // MARK: TODO: add replaceResponseKey with autoID [from Firebase]
     var dictionaryCopy: [String: AnyObject]{
         return [FirebaseController.ref.childByAutoId().key: response]

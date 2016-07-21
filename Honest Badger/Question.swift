@@ -41,11 +41,8 @@ class Question: FirebaseType, Equatable {
     
     required init?(dictionary: [String: AnyObject], identifier: String){
         guard let questionText = dictionary[questionTextKey] as? String else
-            //responsesArray = dictionary[responsesKey] as? [[String: AnyObject]] else
         { return nil }
         self.questionText = questionText
-        
-        //self.responses = responsesArray.flatMap{Response(dictionary: $0)}
         self.identifier = identifier
         if let responsesArray = dictionary[responsesKey] as? [[String: AnyObject]]{
             responses = responsesArray.flatMap({Response(dictionary: $0)})
@@ -66,5 +63,5 @@ class Question: FirebaseType, Equatable {
 }
 
 func ==(lhs: Question, rhs: Question) -> Bool {
-    return lhs.questionText == rhs.questionText && lhs.timestamp == rhs.timestamp
+    return lhs.questionText == rhs.questionText && lhs.timestamp == rhs.timestamp && lhs.timeLimit == rhs.timeLimit
 }
