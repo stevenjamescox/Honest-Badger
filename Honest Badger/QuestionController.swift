@@ -15,10 +15,10 @@ class QuestionController {
         question.save()
     }
     
-   /* static func submitResponse(question: Question, responseText: String){
-        var response = Response(question: Question.identifier, response: responseText)
-        response.save()
-    }*/
+   static func submitResponse(question: Question, responseText: String){
+        let response = Response(question: question, response: responseText)
+        FirebaseController.ref.child("questions").child(question.identifier ?? "").child("responses").updateChildValues(response.dictionaryCopy)
+    }
     
     static func fetchQuestions(completion: (questions: [Question]) -> Void){
         

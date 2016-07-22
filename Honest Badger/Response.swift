@@ -30,7 +30,7 @@ class Response: Equatable {
         self.identifier = nil
     }
     
-     required init?(dictionary: [String: AnyObject]) {
+    required init?(dictionary: [String: AnyObject]) {
         self.response = dictionary.values.first as? String ?? ""
         self.identifier = dictionary.keys.first
     }

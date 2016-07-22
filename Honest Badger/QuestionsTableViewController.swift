@@ -16,7 +16,7 @@ class QuestionsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // TESTING
-        QuestionController.submitQuestion("IT WORKED")
+        //QuestionController.submitQuestion("IT WORKED")
         
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
