@@ -21,12 +21,12 @@
 		958D0A341D3D6B3800BA5664 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A331D3D6B3800BA5664 /* Question.swift */; };
 		958D0A371D3D6BB900BA5664 /* ResponsesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A361D3D6BB900BA5664 /* ResponsesTableViewController.swift */; };
 		958D9E1F1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png in Resources */ = {isa = PBXBuildFile; fileRef = 958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */; };
+		95BA6F9B1D441CE100B2E5D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95BA6F9A1D441CE100B2E5D4 /* GoogleService-Info.plist */; };
 		95D543A71D3E860800069611 /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D543A61D3E860800069611 /* ResponseController.swift */; };
 		95D716281D2ED53100EAE5B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D716271D2ED53100EAE5B3 /* AppDelegate.swift */; };
 		95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D7162B1D2ED53100EAE5B3 /* Main.storyboard */; };
 		95D7162F1D2ED53100EAE5B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D7162E1D2ED53100EAE5B3 /* Assets.xcassets */; };
 		95D716321D2ED53100EAE5B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D716301D2ED53100EAE5B3 /* LaunchScreen.storyboard */; };
-		95D7163A1D2ED65700EAE5B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95D716391D2ED65700EAE5B3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +46,7 @@
 		958D0A331D3D6B3800BA5664 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		958D0A361D3D6BB900BA5664 /* ResponsesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsesTableViewController.swift; sourceTree = "<group>"; };
 		958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1066634_LGPNG_2JR02878HK546464B.png; sourceTree = "<group>"; };
+		95BA6F9A1D441CE100B2E5D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95D543A61D3E860800069611 /* ResponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseController.swift; sourceTree = "<group>"; };
 		95D716241D2ED53100EAE5B3 /* Honest Badger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honest Badger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D716271D2ED53100EAE5B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		95D7162E1D2ED53100EAE5B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95D716311D2ED53100EAE5B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95D716331D2ED53100EAE5B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95D716391D2ED65700EAE5B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3A2842BC9F4819C102CECF3 /* Pods-Honest Badger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honest Badger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,8 +109,8 @@
 		958D0A291D3D6A4F00BA5664 /* plists */ = {
 			isa = PBXGroup;
 			children = (
+				95BA6F9A1D441CE100B2E5D4 /* GoogleService-Info.plist */,
 				95D716331D2ED53100EAE5B3 /* Info.plist */,
-				95D716391D2ED65700EAE5B3 /* GoogleService-Info.plist */,
 			);
 			name = plists;
 			sourceTree = "<group>";
@@ -265,10 +265,10 @@
 				95D716321D2ED53100EAE5B3 /* LaunchScreen.storyboard in Resources */,
 				9564AE3E1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf in Resources */,
 				9564AE3C1D36D2CA00460B3A /* Rockwell.ttf in Resources */,
-				95D7163A1D2ED65700EAE5B3 /* GoogleService-Info.plist in Resources */,
 				958D9E1F1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png in Resources */,
 				95D7162F1D2ED53100EAE5B3 /* Assets.xcassets in Resources */,
 				95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */,
+				95BA6F9B1D441CE100B2E5D4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

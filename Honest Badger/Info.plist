@@ -40,14 +40,5 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-    <key>CFBundleIconFiles</key>
-    <array>
-        <string>Icon-60.png</string>
-        <string>Icon-60@2x.png</string>
-        <string>Icon-Spotlight-40.png</string>
-        <string>Icon-Spotlight-40@2x.png</string>
-        <string>Icon-Small.png</string>
-        <string>Icon-Small@2x.png</string>
-    </array>
 </dict>
 </plist>
