@@ -18,6 +18,7 @@
 		955145B01D3D7FF00064D897 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145AF1D3D7FF00064D897 /* FirebaseController.swift */; };
 		9564AE3C1D36D2CA00460B3A /* Rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9564AE3B1D36D2CA00460B3A /* Rockwell.ttf */; };
 		9564AE3E1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */; };
+		95898D9D1D46A6FD00642E97 /* 1066635_LGPNG_2JR02878HK546464B.png in Resources */ = {isa = PBXBuildFile; fileRef = 95898D9C1D46A6FD00642E97 /* 1066635_LGPNG_2JR02878HK546464B.png */; };
 		958D0A2C1D3D6A8D00BA5664 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */; };
 		958D0A311D3D6B0B00BA5664 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A301D3D6B0B00BA5664 /* QuestionController.swift */; };
 		958D0A341D3D6B3800BA5664 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A331D3D6B3800BA5664 /* Question.swift */; };
@@ -45,6 +46,7 @@
 		955145AF1D3D7FF00064D897 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		9564AE3B1D36D2CA00460B3A /* Rockwell.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockwell.ttf; sourceTree = "<group>"; };
 		9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AbadiMTCondensedExtraBold.ttf; sourceTree = "<group>"; };
+		95898D9C1D46A6FD00642E97 /* 1066635_LGPNG_2JR02878HK546464B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1066635_LGPNG_2JR02878HK546464B.png; sourceTree = "<group>"; };
 		958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		958D0A301D3D6B0B00BA5664 /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		958D0A331D3D6B3800BA5664 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */,
 				958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */,
 				9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */,
+				95898D9C1D46A6FD00642E97 /* 1066635_LGPNG_2JR02878HK546464B.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				9564AE3E1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf in Resources */,
 				9564AE3C1D36D2CA00460B3A /* Rockwell.ttf in Resources */,
 				9523891C1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png in Resources */,
+				95898D9D1D46A6FD00642E97 /* 1066635_LGPNG_2JR02878HK546464B.png in Resources */,
 				958D9E1F1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png in Resources */,
 				95D7162F1D2ED53100EAE5B3 /* Assets.xcassets in Resources */,
 				95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */,
