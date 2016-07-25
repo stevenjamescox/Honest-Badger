@@ -12,6 +12,7 @@ class SubmitResponseTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = false
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
 

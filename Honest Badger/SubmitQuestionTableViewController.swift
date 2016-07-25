@@ -12,8 +12,14 @@ class SubmitQuestionTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = false
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let date = dateFormatter.dateFromString("02:00")
+        timeLimitPicker.date = date!
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,6 +40,13 @@ class SubmitQuestionTableViewController: UITableViewController {
     
     
     @IBOutlet weak var timeLimitPicker: UIDatePicker!
+    
+    @IBAction func timeLimitPickerAction(sender: AnyObject) {
+                
+    }
+    
+    
+    
     // CONFIGURES APPEARANCE OF TIME LIMIT PICKER
     // SETS DEFAULT TIME LIMIT for first appearance
     
@@ -58,6 +71,7 @@ class SubmitQuestionTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 6
     }
+    
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -71,7 +85,7 @@ class SubmitQuestionTableViewController: UITableViewController {
     
     @IBAction func didPressSubmitQuestion(sender: AnyObject) {
         let questionText = questionEntryField.text ?? ""
-        let timeLimit = timeLimitPicker.countDownDuration
+        let timeLimit = timeLimitPicker.countDownDuration + Double((NSDate().timeIntervalSince1970)*1000)
         QuestionController.submitQuestion(questionText)
     }
     
