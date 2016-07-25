@@ -12,6 +12,7 @@ class QuestionsTableViewController: UITableViewController {
 
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
         

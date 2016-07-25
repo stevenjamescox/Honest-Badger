@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FrontPageViewController: UIViewController {
 
@@ -21,6 +22,15 @@ class FrontPageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func didPressEnterAnonymously(sender: AnyObject) {
+        FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user, error) in
+            // ...
+        }
+
+    }
+    
     
 
     /*
