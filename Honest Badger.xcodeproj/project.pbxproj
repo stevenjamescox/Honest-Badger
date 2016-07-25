@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3CFC06AA8331118E9379F392 /* Pods_Honest_Badger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */; };
+		9523891A1D4668E200AC69C7 /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952389191D4668E200AC69C7 /* FrontPageViewController.swift */; };
+		9523891C1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png in Resources */ = {isa = PBXBuildFile; fileRef = 9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */; };
 		952E3B1F1D382E1B00754A9B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952E3B1E1D382E1B00754A9B /* StoreKit.framework */; };
 		955145A41D3D71A40064D897 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */; };
 		955145A81D3D72A00064D897 /* SubmitQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */; };
@@ -33,6 +35,8 @@
 		83349A628BB6A93D96289F1D /* Pods-Honest Badger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honest Badger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger.debug.xcconfig"; sourceTree = "<group>"; };
 		943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honest_Badger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9511F3D91D3FDF990049F29A /* Honest Badger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Honest Badger.entitlements"; sourceTree = "<group>"; };
+		952389191D4668E200AC69C7 /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
+		9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1066629_LGPNG_2JR02878HK546464B.png; sourceTree = "<group>"; };
 		952E3B1E1D382E1B00754A9B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitQuestionTableViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				9564AE3B1D36D2CA00460B3A /* Rockwell.ttf */,
 				9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */,
 				958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */,
+				9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 		958D0A2D1D3D6AA100BA5664 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				952389191D4668E200AC69C7 /* FrontPageViewController.swift */,
 				958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */,
 				955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */,
 				955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */,
@@ -265,6 +271,7 @@
 				95D716321D2ED53100EAE5B3 /* LaunchScreen.storyboard in Resources */,
 				9564AE3E1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf in Resources */,
 				9564AE3C1D36D2CA00460B3A /* Rockwell.ttf in Resources */,
+				9523891C1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png in Resources */,
 				958D9E1F1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png in Resources */,
 				95D7162F1D2ED53100EAE5B3 /* Assets.xcassets in Resources */,
 				95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */,
@@ -336,6 +343,7 @@
 				955145A41D3D71A40064D897 /* QuestionTableViewCell.swift in Sources */,
 				955145AE1D3D797D0064D897 /* Response.swift in Sources */,
 				955145A81D3D72A00064D897 /* SubmitQuestionTableViewController.swift in Sources */,
+				9523891A1D4668E200AC69C7 /* FrontPageViewController.swift in Sources */,
 				958D0A2C1D3D6A8D00BA5664 /* QuestionsTableViewController.swift in Sources */,
 				958D0A311D3D6B0B00BA5664 /* QuestionController.swift in Sources */,
 			);
