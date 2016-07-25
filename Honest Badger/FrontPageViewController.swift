@@ -12,8 +12,9 @@ import Firebase
 class FrontPageViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
+        super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }

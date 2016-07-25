@@ -13,9 +13,12 @@ class QuestionsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         
+        navigationController!.navigationBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
+        navigationController!.navigationBar.tintColor = UIColor.blackColor()
+
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
-        
+
         // TESTING
         //QuestionController.submitQuestion("IT WORKED")
         

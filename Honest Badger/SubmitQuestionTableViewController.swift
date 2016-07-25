@@ -12,7 +12,8 @@ class SubmitQuestionTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = false
+        navBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
+        navBar.tintColor = UIColor.blackColor()
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -35,21 +36,19 @@ class SubmitQuestionTableViewController: UITableViewController {
 
     // MARK: - Outlets
     
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     @IBOutlet weak var questionEntryField: UITextField!
 
-    
-    
     @IBOutlet weak var timeLimitPicker: UIDatePicker!
     
     @IBAction func timeLimitPickerAction(sender: AnyObject) {
-                
+        
     }
     
-    
-    
-    // CONFIGURES APPEARANCE OF TIME LIMIT PICKER
-    // SETS DEFAULT TIME LIMIT for first appearance
-    
+    @IBAction func cancelButtonTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     //***IBAction func setTimestamp
     //***adds NOW time to TIME LEFT to create the END question timestamp
     
@@ -60,8 +59,6 @@ class SubmitQuestionTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-// THEY'RE STATIC CELLS, SO CAN REMOVE THE NEXT TWO FUNCTIONS? or how should they be filled in?
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -69,25 +66,23 @@ class SubmitQuestionTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        return 7
     }
-    
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
     
     @IBAction func didPressSubmitQuestion(sender: AnyObject) {
-        let questionText = questionEntryField.text ?? ""
-        let timeLimit = timeLimitPicker.countDownDuration + Double((NSDate().timeIntervalSince1970)*1000)
-        QuestionController.submitQuestion(questionText)
+        if (questionEntryField.text != "") {
+        let questionText = questionEntryField.text
+        let _ = timeLimitPicker.countDownDuration + Double((NSDate().timeIntervalSince1970)*1000)
+        QuestionController.submitQuestion(questionText!)
+        questionEntryField.text = ""
+        self.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+        return
+        }
+    
     }
-    
-    
+
 }
+    
+    
+
