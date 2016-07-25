@@ -35,13 +35,11 @@ class QuestionsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
-        // RETURNS TOTAL NUMBER OF Data Point 2s (quantity of questions)
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("questionCell", forIndexPath: indexPath) as? QuestionTableViewCell ?? QuestionTableViewCell()
 
-        // *********PRESENTS CELL AS QUESTIONTABLEVIEWCELL (custom cell)
         let question = questions[indexPath.row]
         cell.textLabel?.text = question.questionText
         

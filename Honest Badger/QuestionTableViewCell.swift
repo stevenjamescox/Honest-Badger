@@ -11,8 +11,7 @@ import UIKit
 class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
 
     
-    //IBOUTLET
-    //presents text of RESPECTIVE QUESTION from dataPoint 2 
+    @IBOutlet weak var questionLabel: UILabel!
     
     
     //func hasTimePasssed
