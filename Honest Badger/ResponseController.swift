@@ -11,8 +11,9 @@ import GameplayKit
 
 class ResponseController{
 
-    func submitResponse(question: Question, response: String){
-        
+    static func submitResponse(question: Question, responseText: String){
+        let response = Response(question: question, response: responseText)
+        FirebaseController.ref.child("questions").child(question.identifier ?? "").child("responses").updateChildValues(response.dictionaryCopy)
     }
     
     func fetchResponses(question: Question, completion: (responses: [Response]) -> Void){

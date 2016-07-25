@@ -69,6 +69,11 @@ class SubmitQuestionTableViewController: UITableViewController {
         return 11
     }
     
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
+    }
+    
     @IBAction func didPressSubmitQuestion(sender: AnyObject) {
         if (questionEntryField.text != "") {
         let questionText = questionEntryField.text
