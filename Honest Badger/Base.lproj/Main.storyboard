@@ -166,7 +166,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="0Ql-hX-MUT">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="didPressCreateQuestion:" destination="q8u-zd-BRG" id="NGZ-ZM-vyQ"/>
                                 <segue destination="b2M-of-bxX" kind="presentation" identifier="toSubmitQuestionSegue" id="KVP-Q3-8Xm"/>
                             </connections>
                         </barButtonItem>

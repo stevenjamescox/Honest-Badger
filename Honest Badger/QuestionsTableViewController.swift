@@ -10,7 +10,10 @@ import UIKit
 
 class QuestionsTableViewController: UITableViewController {
 
-
+    let frontPageViewController = FrontPageViewController()
+    
+    var questions = [Question]()
+    
     override func viewDidLoad() {
         
         navigationController!.navigationBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
@@ -18,46 +21,34 @@ class QuestionsTableViewController: UITableViewController {
 
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = false
-
-        // TESTING
-        //QuestionController.submitQuestion("IT WORKED")
         
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        QuestionController.fetchQuestions { (questions) in
+            self.questions = questions
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return questions.count
         // RETURNS TOTAL NUMBER OF Data Point 2s (quantity of questions)
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("questionCell", forIndexPath: indexPath) as? QuestionTableViewCell ?? QuestionTableViewCell()
 
-        *********PRESENTS CELL AS QUESTIONTABLEVIEWCELL (custom cell)
-
+        // *********PRESENTS CELL AS QUESTIONTABLEVIEWCELL (custom cell)
+        let question = questions[indexPath.row]
+        cell.textLabel?.text = question.questionText
+        
         return cell
     }
-    */
 
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -102,9 +93,5 @@ class QuestionsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func didPressCreateQuestion(sender: AnyObject) {
-    }
-    
 
 }

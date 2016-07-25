@@ -43,7 +43,7 @@ class SubmitQuestionTableViewController: UITableViewController {
     @IBOutlet weak var timeLimitPicker: UIDatePicker!
     
     @IBAction func timeLimitPickerAction(sender: AnyObject) {
-        
+
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
@@ -77,8 +77,11 @@ class SubmitQuestionTableViewController: UITableViewController {
     @IBAction func didPressSubmitQuestion(sender: AnyObject) {
         if (questionEntryField.text != "") {
         let questionText = questionEntryField.text
-        let _ = timeLimitPicker.countDownDuration + Double((NSDate().timeIntervalSince1970)*1000)
-        QuestionController.submitQuestion(questionText!)
+        
+        let timeLimitDouble = timeLimitPicker.date.timeIntervalSince1970
+        let timeLimit = NSDate(timeIntervalSince1970: timeLimitDouble)
+            
+        QuestionController.submitQuestion(questionText!, timeLimit: timeLimit)
         questionEntryField.text = ""
         self.dismissViewControllerAnimated(true, completion: nil)
         } else {
