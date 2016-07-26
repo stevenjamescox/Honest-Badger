@@ -26,7 +26,7 @@ class QuestionsTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         QuestionController.fetchQuestions { (questions) in
-            self.questions = questions
+            self.questions = questions.sort {$0.timeLimit.timeIntervalSince1970 > $1.timeLimit.timeIntervalSince1970}
             self.tableView.reloadData()
         }
     }
@@ -40,6 +40,7 @@ class QuestionsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("questionCell", forIndexPath: indexPath) as? QuestionTableViewCell ?? QuestionTableViewCell()
 
+        
         let question = questions[indexPath.row]
        
         cell.loadQuestionInfo(question)

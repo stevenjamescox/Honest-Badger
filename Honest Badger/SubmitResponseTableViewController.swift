@@ -14,7 +14,7 @@ class SubmitResponseTableViewController: UITableViewController {
         super.viewDidLoad()
         navBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
         navBar.tintColor = UIColor.blackColor()
-        tableView.estimatedRowHeight = 120
+        tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
 
         // Uncomment the following line to preserve selection between presentations

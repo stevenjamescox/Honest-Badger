@@ -15,13 +15,13 @@ class FrontPageViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
         
-        // TESTING
-//        QuestionController.fetchQuestions { (questions) in
-//            var questionArray = questions.sort {$0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970}
-//            print(questionArray.count)
-//            print(questionArray[0].questionText)
-//        }
-    }
+      /*   FOR TESTING, ETC.
+      QuestionController.fetchQuestions { (questions) in
+            var questionArray = questions.sort {$0.timeLimit.timeIntervalSince1970 < $1.timeLimit.timeIntervalSince1970}
+            print(questionArray.count)
+           print(questionArray[0].questionText)
+        }
+    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

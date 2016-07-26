@@ -14,7 +14,7 @@ class SubmitQuestionTableViewController: UITableViewController {
         super.viewDidLoad()
         navBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
         navBar.tintColor = UIColor.blackColor()
-        tableView.estimatedRowHeight = 120
+        tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
         let dateFormatter = NSDateFormatter()
@@ -78,8 +78,8 @@ class SubmitQuestionTableViewController: UITableViewController {
         if (questionEntryField.text != "") {
         let questionText = questionEntryField.text
         
-        let timeLimitDouble = timeLimitPicker.date.timeIntervalSince1970
-        let timeLimit = NSDate(timeIntervalSince1970: timeLimitDouble)
+        let timeLimitDouble = timeLimitPicker.countDownDuration
+        let timeLimit = NSDate(timeIntervalSince1970: (timeLimitDouble + NSDate().timeIntervalSince1970))
             
         QuestionController.submitQuestion(questionText!, timeLimit: timeLimit)
         questionEntryField.text = ""
