@@ -14,6 +14,9 @@ class SubmitResponseTableViewController: UITableViewController {
         super.viewDidLoad()
         navBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
         navBar.tintColor = UIColor.blackColor()
+        
+        responseEntryField.becomeFirstResponder()
+        
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
 
@@ -37,7 +40,7 @@ class SubmitResponseTableViewController: UITableViewController {
     @IBOutlet weak var questionPresent: UILabel!
     //presents RESPECTIVE questionText from dataPoint 2
     
-    @IBOutlet weak var responseEntryField: UITextField!
+    @IBOutlet weak var responseEntryField: UITextView!
     
     //****IBAction actualSubmitResponse(){}
     // calls submitQuestion in ResponseController

@@ -17,6 +17,8 @@ class SubmitQuestionTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        questionEntryField.becomeFirstResponder()
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         let date = dateFormatter.dateFromString("02:00")
@@ -37,9 +39,9 @@ class SubmitQuestionTableViewController: UITableViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var navBar: UINavigationBar!
-    
-    @IBOutlet weak var questionEntryField: UITextField!
 
+    @IBOutlet weak var questionEntryField: UITextView!
+    
     @IBOutlet weak var timeLimitPicker: UIDatePicker!
     
     @IBAction func timeLimitPickerAction(sender: AnyObject) {
