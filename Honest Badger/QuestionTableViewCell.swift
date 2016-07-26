@@ -61,43 +61,51 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     
     var questionPerm: Question?
     
+    //var formatter = NSDateFormatter()
+    
+    var formatter2 = NSDateIntervalFormatter()
+    
     func timerFired(timer: NSTimer?){
         
         guard let question = self.questionPerm else
-        { return }
-        let now = NSDate().timeIntervalSince1970
         
-        if now > question.timeLimit.timeIntervalSince1970{
+        { return }
+        
+        //formatter.dateFormat = "HH:mm:ss"
+        
+        formatter2.dateTemplate = "HH:mm:ss"
+        
+        //let now = NSDate().timeIntervalSince1970
+        
+        //let interval = NSDate().timeIntervalSinceDate(question.timeLimit)
+        
+        let dateComparisonResult: NSComparisonResult = NSDate().compare(question.timeLimit)
+        
+        //if now > question.timeLimit.timeIntervalSince1970
             
-            submitResponseButton.titleLabel?.text = "Submit Repsonse"
+        if dateComparisonResult == NSComparisonResult.OrderedDescending
+            
+        {
+            submitResponseButton.setTitle("Submit Response", forState: .Normal)
             submitResponseButton.backgroundColor = UIColor(red: 133/255, green: 178/255, blue: 131/255, alpha: 1)
-            viewResponsesButton.titleLabel?.text =  "\((question.timeLimit.timeIntervalSince1970 - now) / 60 / 60) left"
+            let timeLeft = formatter2.stringFromDate(NSDate(), toDate: question.timeLimit)
+            viewResponsesButton.setTitle(" \(timeLeft) left", forState: .Normal)
             viewResponsesButton.backgroundColor = .whiteColor()
             
         } else {
             
-            submitResponseButton.titleLabel?.text? = " \(question.responses.count) responses"
+            submitResponseButton.setTitle(" \(question.responses.count) responses", forState: .Normal)
             submitResponseButton.backgroundColor = .whiteColor()
-            viewResponsesButton.titleLabel?.text = "View Responses"
+            viewResponsesButton.setTitle("View Responses", forState: .Normal)
             viewResponsesButton.backgroundColor = UIColor(red: 249/255, green: 81/255, blue: 197/255, alpha: 1)
-            
         }
-
-        
     }
 
     func loadQuestionInfo(question: Question) {
-
         self.questionPerm = question
         self.timerFired(nil)
-    
         questionLabel.text = "  \(question.questionText)"
-        
-
-        
-        
     }
-    
 }
    
     
