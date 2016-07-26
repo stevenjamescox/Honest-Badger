@@ -41,7 +41,8 @@ class QuestionsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("questionCell", forIndexPath: indexPath) as? QuestionTableViewCell ?? QuestionTableViewCell()
 
         let question = questions[indexPath.row]
-        cell.textLabel?.text = question.questionText
+       
+        cell.loadQuestionInfo(question)
         
         return cell
     }

@@ -52,7 +52,12 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
         // Configure the view for the selected state
     }
 
+    func loadQuestionInfo(question: Question) {
     
+    questionLabel.text = "  \(question.questionText)"
+    
+    }
+   
     
     
     
