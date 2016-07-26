@@ -9,10 +9,14 @@
 import UIKit
 
 class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
-
     
     @IBOutlet weak var questionLabel: UILabel!
     
+    @IBOutlet weak var reportQuestionButton: UIButton!
+    
+    @IBOutlet weak var submitResponseButton: UIButton!
+    
+    @IBOutlet weak var viewResponsesButton: UIButton!
     
     //func hasTimePasssed
     //checks to see if timestamp has passed for RESPECTIVE QUESTION
@@ -43,7 +47,8 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -51,14 +56,51 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
 
         // Configure the view for the selected state
     }
+    
+    var timer: NSTimer?
+    
+    var questionPerm: Question?
+    
+    func timerFired(timer: NSTimer?){
+        
+        guard let question = self.questionPerm else
+        { return }
+        let now = NSDate().timeIntervalSince1970
+        
+        if now > question.timeLimit.timeIntervalSince1970{
+            
+            submitResponseButton.titleLabel?.text = "Submit Repsonse"
+            submitResponseButton.backgroundColor = UIColor(red: 133/255, green: 178/255, blue: 131/255, alpha: 1)
+            viewResponsesButton.titleLabel?.text =  "\((question.timeLimit.timeIntervalSince1970 - now) / 60 / 60) left"
+            viewResponsesButton.backgroundColor = .whiteColor()
+            
+        } else {
+            
+            submitResponseButton.titleLabel?.text? = " \(question.responses.count) responses"
+            submitResponseButton.backgroundColor = .whiteColor()
+            viewResponsesButton.titleLabel?.text = "View Responses"
+            viewResponsesButton.backgroundColor = UIColor(red: 249/255, green: 81/255, blue: 197/255, alpha: 1)
+            
+        }
+
+        
+    }
 
     func loadQuestionInfo(question: Question) {
+
+        self.questionPerm = question
+        self.timerFired(nil)
     
-    questionLabel.text = "  \(question.questionText)"
-    
+        questionLabel.text = "  \(question.questionText)"
+        
+
+        
+        
     }
+    
+}
    
     
     
     
-}
+

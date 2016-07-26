@@ -22,7 +22,7 @@ class FrontPageViewController: UIViewController {
            print(questionArray[0].questionText)
         } */
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

@@ -161,6 +161,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="questionLabel" destination="jqH-Jc-1oi" id="yMp-bS-KXo"/>
+                                    <outlet property="reportQuestionButton" destination="mYS-mt-p80" id="fqV-nU-l6A"/>
+                                    <outlet property="submitResponseButton" destination="NVG-ho-Og4" id="Xpv-nj-Fhk"/>
+                                    <outlet property="viewResponsesButton" destination="oPn-rg-Qc2" id="9hf-gS-V1f"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
