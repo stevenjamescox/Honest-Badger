@@ -20,8 +20,8 @@ class FrontPageViewController: UIViewController {
             var questionArray = questions.sort {$0.timeLimit.timeIntervalSince1970 < $1.timeLimit.timeIntervalSince1970}
             print(questionArray.count)
            print(questionArray[0].questionText)
-        }
-    }*/
+        } */
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
