@@ -86,7 +86,6 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
             let question = questions[indexPath.row]
             
             if question.timeLimit.timeIntervalSince1970 > NSDate().timeIntervalSince1970{
-                
                     self.performSegueWithIdentifier("toSubmitResponseSegue", sender: self)
                 } else { return }
             } else { return }

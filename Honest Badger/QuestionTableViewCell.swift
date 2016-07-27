@@ -26,13 +26,15 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+       
+        
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
     }
     
     var question: Question?
     
     var timer: NSTimer?
-    var formatter = NSDateFormatter()
+    var formatter = NSDateComponentsFormatter()
     
     weak var delegate: QuestionResponseDelegate?
     
@@ -49,14 +51,9 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
             submitResponseButton.setTitle("Submit Response", forState: .Normal)
             submitResponseButton.backgroundColor = UIColor(red: 133/255, green: 178/255, blue: 131/255, alpha: 1)
          
-            formatter.dateFormat = "H:mm:ss"
-            let interval = question.timeLimit.timeIntervalSinceDate(NSDate())
-            print(interval)
-            let date = NSDate(timeIntervalSinceReferenceDate: interval)
-            print(date)
-            let formattedDateString = formatter.stringFromDate(date)
-
-            viewResponsesButton.setTitle("\(formattedDateString) left\n to respond", forState: .Normal)
+            formatter.unitsStyle = .Positional
+            let interval = question.timeLimit.timeIntervalSince1970 - NSDate().timeIntervalSince1970
+            viewResponsesButton.setTitle(" \(formatter.stringFromTimeInterval(interval)!) left\n to respond", forState: .Normal)
             viewResponsesButton.backgroundColor = .whiteColor()
             
         } else {
