@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -812,18 +813,28 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1066634_LGPNG_2JR02878HK546464B.png" translatesAutoresizingMaskIntoConstraints="NO" id="rQb-rB-VsX">
-                                        <rect key="frame" x="0.0" y="120" width="560" height="276"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="IxX-Vl-tUv"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="120" width="560" height="260"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give &amp; Receive Anonymous Feedback" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="j59-F7-cX6">
+                                        <rect key="frame" x="140" y="380" width="280" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="Bnd-26-Bal"/>
+                                            <constraint firstAttribute="height" constant="80" id="XLH-X6-j2C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="28"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="puU-qf-zU9">
-                                        <rect key="frame" x="155" y="396" width="250" height="44"/>
+                                        <rect key="frame" x="110" y="460" width="341" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EG-T7-Mlu">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="341" height="60"/>
                                                 <color key="backgroundColor" red="0.45490196078431372" green="0.6470588235294118" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="2EG-T7-Mlu" secondAttribute="height" multiplier="125:22" id="iN8-DS-BTj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="26"/>
                                                 <state key="normal" title="Enter Anonymously">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -837,22 +848,11 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="2EG-T7-Mlu" secondAttribute="bottom" id="8T6-Ex-iaR"/>
                                             <constraint firstAttribute="trailing" secondItem="2EG-T7-Mlu" secondAttribute="trailing" id="GlF-yY-mL4"/>
-                                            <constraint firstAttribute="width" constant="250" id="NIs-df-mO7"/>
                                             <constraint firstItem="2EG-T7-Mlu" firstAttribute="top" secondItem="puU-qf-zU9" secondAttribute="top" id="nnS-Tn-owe"/>
-                                            <constraint firstAttribute="height" constant="44" id="tPm-mQ-zrf"/>
+                                            <constraint firstAttribute="height" constant="60" id="tPm-mQ-zrf"/>
                                             <constraint firstItem="2EG-T7-Mlu" firstAttribute="leading" secondItem="puU-qf-zU9" secondAttribute="leading" id="w6S-Vn-UVb"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give &amp; Receive Anonymous Feedback" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="j59-F7-cX6">
-                                        <rect key="frame" x="140" y="440" width="280" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="280" id="Bnd-26-Bal"/>
-                                            <constraint firstAttribute="height" constant="80" id="XLH-X6-j2C"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="28"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="puU-qf-zU9" firstAttribute="top" secondItem="rQb-rB-VsX" secondAttribute="bottom" constant="8" id="Sgp-JQ-xRW"/>

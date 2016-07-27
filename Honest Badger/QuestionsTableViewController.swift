@@ -26,7 +26,7 @@ class QuestionsTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         QuestionController.fetchQuestions { (questions) in
-            self.questions = questions.sort {$0.timeLimit.timeIntervalSince1970 < $1.timeLimit.timeIntervalSince1970}
+            self.questions = questions.sort {$0.timeLimit.timeIntervalSince1970 > $1.timeLimit.timeIntervalSince1970}
             self.tableView.reloadData()
         }
     }
