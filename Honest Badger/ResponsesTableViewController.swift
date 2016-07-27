@@ -17,7 +17,7 @@ class ResponsesTableViewController: UITableViewController {
         self.navigationController?.navigationBarHidden = false
         navigationController!.navigationBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
         navigationController!.navigationBar.tintColor = UIColor.blackColor()
-        tableView.estimatedRowHeight = 80.0
+        tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     

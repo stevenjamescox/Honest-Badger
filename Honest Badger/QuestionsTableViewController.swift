@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionsTableViewController: UITableViewController, QuestionResponseDelegate {
+class QuestionsTableViewController: UITableViewController, QuestionResponseDelegate, SubmitResponseDelegate {
 
     let frontPageViewController = FrontPageViewController()
     
@@ -66,31 +66,27 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
         
         if segue.identifier == "toSubmitResponseSegue" {
             let submitResponseTableViewController = segue.destinationViewController as? SubmitResponseTableViewController
-            if let indexPath = tableView.indexPathForSelectedRow{
+            if let indexPath = currentIndexPath {
                 let question = questions[indexPath.row]
                 submitResponseTableViewController?.question = question
             }
             
         }
     }
-    /*
-    func shouldButtonBeActive(question: Question) -> Bool{
-        if let indexPath = tableView.indexPathForSelectedRow
-            { let question = questions[indexPath.row]
-      if question.timeLimit.timeIntervalSince1970 > NSDate().timeIntervalSince1970{
-        return true
-      } else {
-        return false
-                }}
-}
-    */
+  
+    
+    func submitResponseToQuestionButtonTapped(sender: QuestionTableViewCell) {
+        let indexPath = tableView.indexPathForCell(sender)
+        currentIndexPath = indexPath
+    }
     
     @IBAction func submitResponseButtonTapped(sender: AnyObject) {
         
-        if let indexPath = tableView.indexPathForSelectedRow{
+        if let indexPath = currentIndexPath {
             let question = questions[indexPath.row]
             
-                if question.timeLimit.timeIntervalSince1970 > NSDate().timeIntervalSince1970{
+            if question.timeLimit.timeIntervalSince1970 > NSDate().timeIntervalSince1970{
+                
                     self.performSegueWithIdentifier("toSubmitResponseSegue", sender: self)
                 } else { return }
             } else { return }

@@ -12,6 +12,10 @@ protocol QuestionResponseDelegate: class {
     func viewResponseButtonTapped(sender: QuestionTableViewCell)
 }
 
+protocol SubmitResponseDelegate: class {
+    func submitResponseToQuestionButtonTapped(sender: QuestionTableViewCell)
+}
+
 class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     
     @IBOutlet weak var questionLabel: UILabel!

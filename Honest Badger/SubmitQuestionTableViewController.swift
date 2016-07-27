@@ -23,12 +23,6 @@ class SubmitQuestionTableViewController: UITableViewController {
         dateFormatter.dateFormat = "HH:mm"
         let date = dateFormatter.dateFromString("02:00")
         timeLimitPicker.date = date!
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
