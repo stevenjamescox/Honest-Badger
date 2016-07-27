@@ -41,6 +41,7 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
          
             formatter.dateFormat = "H:mm:ss"
             let interval = question.timeLimit.timeIntervalSinceDate(NSDate())
+            print(interval)
             let date = NSDate(timeIntervalSince1970: interval)
             let formattedDateString = formatter.stringFromDate(date)
 
