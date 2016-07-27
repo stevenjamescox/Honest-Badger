@@ -17,6 +17,7 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     @IBOutlet weak var submitResponseButton: UIButton!
     
     @IBOutlet weak var viewResponsesButton: UIButton!
+
     
     //func hasTimePasssed
     //checks to see if timestamp has passed for RESPECTIVE QUESTION
@@ -126,6 +127,19 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
         self.timerFired(nil)
         questionLabel.text = "  \(question.questionText)"
     }
+    
+    /*@IBAction func submitResponseStartButtonTapped(sender: AnyObject) {
+        questionsTableViewController.performSegueWithIdentifier("toSubmitResponseSegue", sender: QuestionTableViewCell())
+        
+    }
+    
+    @IBAction func viewResponsesStartButtonTapped(sender: AnyObject) {
+        self.performSegueWithIdentifier("toViewResponsesSegue", sender: QuestionTableViewCell())
+        
+    }
+    
+    */
+    
 }
    
     

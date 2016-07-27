@@ -92,7 +92,7 @@
                                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
-                                                                        <segue destination="EPu-Oe-i9Q" kind="presentation" identifier="toSubmitResponseSegue" id="2oV-el-31m"/>
+                                                                        <action selector="submitResponseStartButtonTapped:" destination="wXf-gM-NHA" eventType="touchUpInside" id="6zB-9s-jsB"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -114,7 +114,7 @@
                                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
-                                                                        <segue destination="cRj-RB-COW" kind="show" identifier="toViewResponsesSegue" id="joU-S3-jvp"/>
+                                                                        <action selector="viewResponsesStartButtonTapped:" destination="wXf-gM-NHA" eventType="touchUpInside" id="fpk-Fb-F6F"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -180,6 +180,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="cRj-RB-COW" kind="show" identifier="toViewResponsesSegue" id="0CT-Ej-ERO"/>
+                        <segue destination="EPu-Oe-i9Q" kind="presentation" identifier="toSubmitResponseSegue" id="aAO-pS-KAQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sS-ve-mDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -339,9 +343,9 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="KvZ-c4-QbA" secondAttribute="bottom" id="UbZ-eP-d6n"/>
-                                                <constraint firstItem="KvZ-c4-QbA" firstAttribute="top" secondItem="UNR-js-xI6" secondAttribute="topMargin" id="X4b-Ir-cD5"/>
-                                                <constraint firstItem="KvZ-c4-QbA" firstAttribute="leading" secondItem="UNR-js-xI6" secondAttribute="leadingMargin" id="yG0-pp-yWU"/>
+                                                <constraint firstItem="KvZ-c4-QbA" firstAttribute="top" secondItem="UNR-js-xI6" secondAttribute="topMargin" id="sJa-x6-TVU"/>
+                                                <constraint firstItem="KvZ-c4-QbA" firstAttribute="bottom" secondItem="UNR-js-xI6" secondAttribute="bottomMargin" id="tei-kU-S1D"/>
+                                                <constraint firstItem="KvZ-c4-QbA" firstAttribute="leading" secondItem="UNR-js-xI6" secondAttribute="leadingMargin" id="yWK-Qb-aId"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.52156862745098043" green="0.10588235294117647" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>

@@ -10,6 +10,8 @@ import UIKit
 
 class SubmitResponseTableViewController: UITableViewController {
 
+    var question: Question?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
@@ -17,6 +19,7 @@ class SubmitResponseTableViewController: UITableViewController {
         
         responseEntryField.becomeFirstResponder()
 
+        questionPresent.text = "\(question)"
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
 
