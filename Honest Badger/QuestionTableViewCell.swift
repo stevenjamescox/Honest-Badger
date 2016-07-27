@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol QuestionResponseDelegate: class {
+    func viewResponseButtonTapped(sender: QuestionTableViewCell)
+}
+
 class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -26,6 +30,8 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     var timer: NSTimer?
     var formatter = NSDateFormatter()
     
+    weak var delegate: QuestionResponseDelegate?
+    
     func timerFired(timer: NSTimer?){
         
         guard let question = self.question else
@@ -42,7 +48,8 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
             formatter.dateFormat = "H:mm:ss"
             let interval = question.timeLimit.timeIntervalSinceDate(NSDate())
             print(interval)
-            let date = NSDate(timeIntervalSince1970: interval)
+            let date = NSDate(timeIntervalSinceReferenceDate: interval)
+            print(date)
             let formattedDateString = formatter.stringFromDate(date)
 
             viewResponsesButton.setTitle("\(formattedDateString) left\n to respond", forState: .Normal)
@@ -55,6 +62,10 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
             viewResponsesButton.setTitle("View Responses", forState: .Normal)
             viewResponsesButton.backgroundColor = UIColor(red: 249/255, green: 81/255, blue: 197/255, alpha: 1)
         }
+    }
+    
+    @IBAction func viewResponseButtonTapped(sender: UIButton) {
+        self.delegate?.viewResponseButtonTapped(self)
     }
 
     func loadQuestionInfo(question: Question) {

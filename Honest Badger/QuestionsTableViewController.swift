@@ -8,11 +8,14 @@
 
 import UIKit
 
-class QuestionsTableViewController: UITableViewController {
+class QuestionsTableViewController: UITableViewController, QuestionResponseDelegate {
 
     let frontPageViewController = FrontPageViewController()
     
     var questions = [Question]()
+    var altQ: Question?
+    
+    var currentIndexPath: NSIndexPath?
     
     override func viewDidLoad() {
         
@@ -26,7 +29,7 @@ class QuestionsTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         QuestionController.fetchQuestions { (questions) in
-            self.questions = questions.sort {$0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970}
+            self.questions = questions.sort {$0.timeLimit.timeIntervalSince1970 > $1.timeLimit.timeIntervalSince1970}
             self.tableView.reloadData()
         }
     }
@@ -42,6 +45,7 @@ class QuestionsTableViewController: UITableViewController {
 
         let question = questions[indexPath.row]
        
+        cell.delegate = self
         cell.loadQuestionInfo(question)
         
         return cell
@@ -53,7 +57,7 @@ class QuestionsTableViewController: UITableViewController {
         
         if segue.identifier == "toViewResponsesSegue" {
             let responsesTableViewController = segue.destinationViewController as? ResponsesTableViewController
-            if let indexPath = tableView.indexPathForSelectedRow{
+            if let indexPath = currentIndexPath {
                 let question = questions[indexPath.row]
                 responsesTableViewController?.question = question
             }
@@ -69,23 +73,43 @@ class QuestionsTableViewController: UITableViewController {
             
         }
     }
-    
+    /*
+    func shouldButtonBeActive(question: Question) -> Bool{
+        if let indexPath = tableView.indexPathForSelectedRow
+            { let question = questions[indexPath.row]
+      if question.timeLimit.timeIntervalSince1970 > NSDate().timeIntervalSince1970{
+        return true
+      } else {
+        return false
+                }}
+}
+    */
     
     @IBAction func submitResponseButtonTapped(sender: AnyObject) {
-        self.performSegueWithIdentifier("toSubmitResponseSegue", sender: self)
         
-        
+        if let indexPath = tableView.indexPathForSelectedRow{
+            let question = questions[indexPath.row]
+            
+                if question.timeLimit.timeIntervalSince1970 > NSDate().timeIntervalSince1970{
+                    self.performSegueWithIdentifier("toSubmitResponseSegue", sender: self)
+                } else { return }
+            } else { return }
     }
     
-    
+    func viewResponseButtonTapped(sender: QuestionTableViewCell) {
+        let indexPath = tableView.indexPathForCell(sender)
+        currentIndexPath = indexPath
+    }
+
     @IBAction func viewResponsesButtonTapped(sender: AnyObject) {
+       
+        if let indexPath = currentIndexPath {
+            let question = questions[indexPath.row]
+
+        if question.timeLimit.timeIntervalSince1970 < NSDate().timeIntervalSince1970{
+
         self.performSegueWithIdentifier("toViewResponsesSegue", sender: self)
+            } else { return }
+        } else { return }
     }
-    
-    
-    
-    
-    
-    
-    
 }
