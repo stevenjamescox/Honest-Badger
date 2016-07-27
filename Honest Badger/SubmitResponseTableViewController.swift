@@ -19,7 +19,7 @@ class SubmitResponseTableViewController: UITableViewController {
         
         responseEntryField.becomeFirstResponder()
 
-        questionPresent.text = "\(question)"
+        questionPresent.text = "\(question?.questionText)"
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
     }

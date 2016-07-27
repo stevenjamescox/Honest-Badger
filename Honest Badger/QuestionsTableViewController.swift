@@ -72,7 +72,6 @@ class QuestionsTableViewController: UITableViewController {
     
     
     @IBAction func submitResponseButtonTapped(sender: AnyObject) {
-        
         self.performSegueWithIdentifier("toSubmitResponseSegue", sender: self)
         
         
@@ -80,7 +79,6 @@ class QuestionsTableViewController: UITableViewController {
     
     
     @IBAction func viewResponsesButtonTapped(sender: AnyObject) {
-        
         self.performSegueWithIdentifier("toViewResponsesSegue", sender: self)
     }
     

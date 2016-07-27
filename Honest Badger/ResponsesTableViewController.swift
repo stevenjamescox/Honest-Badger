@@ -17,7 +17,7 @@ class ResponsesTableViewController: UITableViewController {
         self.navigationController?.navigationBarHidden = false
         navigationController!.navigationBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
         navigationController!.navigationBar.tintColor = UIColor.blackColor()
-        tableView.estimatedRowHeight = 60.0
+        tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
         // Uncomment the following line to preserve selection between presentations
@@ -35,17 +35,26 @@ class ResponsesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return question?.responses.count ?? 0
+        
+        if question?.responses.count > 0 {
+        return (question?.responses.count)!
+        } else {
+        return 1
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("responseCell", forIndexPath: indexPath)
         
         
-        let response = question?.responses[indexPath.row]
-        
-        cell.textLabel?.text = response?.response
-        
+        if let response = question?.responses[indexPath.row]{
+        if question?.responses.count > 0 {
+        cell.textLabel?.text = "\(response)"
+        }
+        else {
+        cell.textLabel?.text = "no responses"
+        }
+        }
         // ***************
         //RUNS RANDOMIZE FUNCTION FROM RESPONSE CONTROLLER, PRESENTS RESPONSES FOR RESPECTIVE QUESTION
         // *********
