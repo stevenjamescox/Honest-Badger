@@ -93,7 +93,7 @@
                                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
-                                                                        <action selector="submitResponseButtonTapped:" destination="q8u-zd-BRG" eventType="touchUpInside" id="0Qs-KQ-yXU"/>
+                                                                        <action selector="submitResponseToQuestionButtonTapped:" destination="wXf-gM-NHA" eventType="touchUpInside" id="D9j-Qf-nt4"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -115,8 +115,7 @@
                                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
-                                                                        <action selector="viewResponseButtonTapped:" destination="wXf-gM-NHA" eventType="touchUpInside" id="lfV-Pv-PEd"/>
-                                                                        <action selector="viewResponsesButtonTapped:" destination="q8u-zd-BRG" eventType="touchUpInside" id="m6j-YR-ppR"/>
+                                                                        <action selector="viewResponseButtonTapped:" destination="wXf-gM-NHA" eventType="touchUpInside" id="5Pm-jS-HPJ"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>

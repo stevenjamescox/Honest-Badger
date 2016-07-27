@@ -13,7 +13,6 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
     let frontPageViewController = FrontPageViewController()
     
     var questions = [Question]()
-    var altQ: Question?
     
     var currentIndexPath: NSIndexPath?
     
@@ -46,6 +45,7 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
         let question = questions[indexPath.row]
        
         cell.delegate = self
+        cell.delegate2 = self
         cell.loadQuestionInfo(question)
         
         return cell
@@ -61,7 +61,6 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
                 let question = questions[indexPath.row]
                 responsesTableViewController?.question = question
             }
-            
         }
         
         if segue.identifier == "toSubmitResponseSegue" {
@@ -70,41 +69,29 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
                 let question = questions[indexPath.row]
                 submitResponseTableViewController?.question = question
             }
-            
         }
     }
   
-    
     func submitResponseToQuestionButtonTapped(sender: QuestionTableViewCell) {
-        let indexPath = tableView.indexPathForCell(sender)
-        currentIndexPath = indexPath
-    }
-    
-    @IBAction func submitResponseButtonTapped(sender: AnyObject) {
-        
-        if let indexPath = currentIndexPath {
+        if let indexPath = tableView.indexPathForCell(sender) {
+            currentIndexPath = indexPath
             let question = questions[indexPath.row]
             
             if question.timeLimit.timeIntervalSince1970 > NSDate().timeIntervalSince1970{
-                    self.performSegueWithIdentifier("toSubmitResponseSegue", sender: self)
-                } else { return }
+                self.performSegueWithIdentifier("toSubmitResponseSegue", sender: self)
             } else { return }
+        }
     }
     
     func viewResponseButtonTapped(sender: QuestionTableViewCell) {
-        let indexPath = tableView.indexPathForCell(sender)
+        if let indexPath = tableView.indexPathForCell(sender) {
         currentIndexPath = indexPath
-    }
-
-    @IBAction func viewResponsesButtonTapped(sender: AnyObject) {
-       
-        if let indexPath = currentIndexPath {
             let question = questions[indexPath.row]
-
-        if question.timeLimit.timeIntervalSince1970 < NSDate().timeIntervalSince1970{
-
-        self.performSegueWithIdentifier("toViewResponsesSegue", sender: self)
+            
+            if question.timeLimit.timeIntervalSince1970 < NSDate().timeIntervalSince1970{
+                
+                self.performSegueWithIdentifier("toViewResponsesSegue", sender: self)
             } else { return }
-        } else { return }
+        }
     }
 }

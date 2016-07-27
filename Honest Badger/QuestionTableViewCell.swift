@@ -27,7 +27,6 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
        
-        
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
     }
     
@@ -37,6 +36,7 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     var formatter = NSDateComponentsFormatter()
     
     weak var delegate: QuestionResponseDelegate?
+    weak var delegate2: SubmitResponseDelegate?
     
     func timerFired(timer: NSTimer?){
         
@@ -50,16 +50,21 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
         {
             submitResponseButton.setTitle("Submit Response", forState: .Normal)
             submitResponseButton.backgroundColor = UIColor(red: 133/255, green: 178/255, blue: 131/255, alpha: 1)
+            submitResponseButton.enabled = true
          
             formatter.unitsStyle = .Positional
             let interval = question.timeLimit.timeIntervalSince1970 - NSDate().timeIntervalSince1970
             viewResponsesButton.setTitle(" \(formatter.stringFromTimeInterval(interval)!) left\n to respond", forState: .Normal)
+            viewResponsesButton.enabled = false
             viewResponsesButton.backgroundColor = .whiteColor()
             
         } else {
             
             submitResponseButton.setTitle(" \(question.responses.count) responses\n    received", forState: .Normal)
             submitResponseButton.backgroundColor = .whiteColor()
+            
+            submitResponseButton.enabled = false
+            viewResponsesButton.enabled = true
             viewResponsesButton.setTitle("View Responses", forState: .Normal)
             viewResponsesButton.backgroundColor = UIColor(red: 249/255, green: 81/255, blue: 197/255, alpha: 1)
         }
@@ -67,6 +72,10 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     
     @IBAction func viewResponseButtonTapped(sender: UIButton) {
         self.delegate?.viewResponseButtonTapped(self)
+    }
+    
+    @IBAction func submitResponseToQuestionButtonTapped(sender: UIButton) {
+        self.delegate2?.submitResponseToQuestionButtonTapped(self)
     }
 
     func loadQuestionInfo(question: Question) {
