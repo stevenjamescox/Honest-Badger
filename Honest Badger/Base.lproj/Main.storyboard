@@ -84,7 +84,7 @@
                                                         <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="sQe-KJ-wya">
                                                             <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="NVG-ho-Og4">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="NVG-ho-Og4">
                                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
                                                                     <color key="backgroundColor" red="0.52156862745098043" green="0.69803921568627447" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="18"/>
@@ -106,7 +106,7 @@
                                                         <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Dyr-gL-0PX">
                                                             <rect key="frame" x="296" y="0.0" width="288" height="44"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="oPn-rg-Qc2">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="oPn-rg-Qc2">
                                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
                                                                     <color key="backgroundColor" red="0.97647058823529409" green="0.31764705882352939" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="18"/>

@@ -61,7 +61,7 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     
     var questionPerm: Question?
     
-    //var formatter = NSDateFormatter()
+    var formatter = NSDateFormatter()
     
     var formatter2 = NSDateIntervalFormatter()
     
@@ -71,25 +71,45 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
         
         { return }
         
-        //formatter.dateFormat = "HH:mm:ss"
+        formatter.dateFormat = "H:mm:ss"
+        formatter2.dateTemplate = "H:mm:ss"
         
-        formatter2.dateTemplate = "HH:mm:ss"
         
-        //let now = NSDate().timeIntervalSince1970
-        
-        //let interval = NSDate().timeIntervalSinceDate(question.timeLimit)
+        let interval = question.timeLimit.timeIntervalSinceDate(NSDate())
+        print(interval)
+        //if now > question.timeLimit.timeIntervalSince1970
         
         let dateComparisonResult: NSComparisonResult = NSDate().compare(question.timeLimit)
-        
-        //if now > question.timeLimit.timeIntervalSince1970
-            
+
         if dateComparisonResult == NSComparisonResult.OrderedDescending
             
         {
             submitResponseButton.setTitle("Submit Response", forState: .Normal)
             submitResponseButton.backgroundColor = UIColor(red: 133/255, green: 178/255, blue: 131/255, alpha: 1)
-            let timeLeft = formatter2.stringFromDate(NSDate(), toDate: question.timeLimit)
-            viewResponsesButton.setTitle(" \(timeLeft) left", forState: .Normal)
+            
+            
+            /*let now = NSDate().timeIntervalSince1970
+             let unixTimeDiff = "\(now - question.timeLimit.timeIntervalSince1970)" as String
+            print(unixTimeDiff)
+            */
+            
+            
+            func stringFromTimeInterval(interval:NSTimeInterval) -> NSString {
+                
+                let ti = NSInteger(interval)
+                
+                let ms = Int((interval % 1) * 1000)
+                
+                let seconds = ti % 60
+                let minutes = (ti / 60) % 60
+                let hours = (ti / 3600)
+                
+                return NSString(format: "%0.2d:%0.2d:%0.2d.%0.3d",hours,minutes,seconds,ms)
+            }
+            
+            let timeLeft = stringFromTimeInterval(interval)
+ 
+            viewResponsesButton.setTitle("\(timeLeft) left", forState: .Normal)
             viewResponsesButton.backgroundColor = .whiteColor()
             
         } else {
