@@ -128,18 +128,6 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
         questionLabel.text = "  \(question.questionText)"
     }
     
-    /*@IBAction func submitResponseStartButtonTapped(sender: AnyObject) {
-        questionsTableViewController.performSegueWithIdentifier("toSubmitResponseSegue", sender: QuestionTableViewCell())
-        
-    }
-    
-    @IBAction func viewResponsesStartButtonTapped(sender: AnyObject) {
-        self.performSegueWithIdentifier("toViewResponsesSegue", sender: QuestionTableViewCell())
-        
-    }
-    
-    */
-    
 }
    
     

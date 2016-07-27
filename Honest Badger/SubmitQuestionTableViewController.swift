@@ -51,23 +51,10 @@ class SubmitQuestionTableViewController: UITableViewController {
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    //***IBAction func setTimestamp
-    //***adds NOW time to TIME LEFT to create the END question timestamp
-    
-    //****IBAction actualSubmitQuestion(){}
-    // calls submitQuestion in QuestionController
-    //---uses the entered text in questionEntryField (if not nil) to fill dataPoint 2
-    //---uses entered time in timeLimitPicker (does the comparison in function) to fill dataPoint 5
     
     // MARK: - Table view data source
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 11
     }
     

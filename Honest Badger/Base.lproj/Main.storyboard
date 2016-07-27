@@ -92,7 +92,7 @@
                                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
-                                                                        <action selector="submitResponseStartButtonTapped:" destination="wXf-gM-NHA" eventType="touchUpInside" id="6zB-9s-jsB"/>
+                                                                        <action selector="submitResponseButtonTapped:" destination="q8u-zd-BRG" eventType="touchUpInside" id="0Qs-KQ-yXU"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -114,7 +114,7 @@
                                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
                                                                     <connections>
-                                                                        <action selector="viewResponsesStartButtonTapped:" destination="wXf-gM-NHA" eventType="touchUpInside" id="fpk-Fb-F6F"/>
+                                                                        <action selector="viewResponsesButtonTapped:" destination="q8u-zd-BRG" eventType="touchUpInside" id="m6j-YR-ppR"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -181,8 +181,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="cRj-RB-COW" kind="show" identifier="toViewResponsesSegue" id="0CT-Ej-ERO"/>
-                        <segue destination="EPu-Oe-i9Q" kind="presentation" identifier="toSubmitResponseSegue" id="aAO-pS-KAQ"/>
+                        <segue destination="EPu-Oe-i9Q" kind="presentation" identifier="toSubmitResponseSegue" id="JJ1-iW-XmA"/>
+                        <segue destination="cRj-RB-COW" kind="show" identifier="toViewResponsesSegue" id="qmP-VP-o8Z"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sS-ve-mDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
