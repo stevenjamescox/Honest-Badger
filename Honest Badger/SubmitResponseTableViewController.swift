@@ -87,9 +87,16 @@ class SubmitResponseTableViewController: UITableViewController {
     }
     
     @IBAction func didPressSubmitResponse(sender: AnyObject) {
+        if (responseEntryField.text != "") {
+        let responseText = responseEntryField.text
+        ResponseController.submitResponse(question!, responseText: responseText)
+        responseEntryField.text = ""
+        self.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+        return
+        }
     }
-    
-    
+
     func timerFired(timer: NSTimer?){
         
         guard let question = self.question else
