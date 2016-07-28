@@ -12,6 +12,10 @@ class SubmitResponseTableViewController: UITableViewController {
 
     var question: Question?
     
+    var timer: NSTimer?
+    var formatter = NSDateComponentsFormatter()
+    var cellHeight: CGFloat?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
@@ -22,6 +26,8 @@ class SubmitResponseTableViewController: UITableViewController {
         questionPresent.text = "\(question!.questionText)"
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
     }
    
     // MARK: - Outlets
@@ -29,7 +35,7 @@ class SubmitResponseTableViewController: UITableViewController {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var questionPresent: UILabel!
     @IBOutlet weak var responseEntryField: UITextView!
-
+    @IBOutlet weak var countdownClock: UILabel!
 
     // MARK: - Table view data source
     
@@ -48,6 +54,36 @@ class SubmitResponseTableViewController: UITableViewController {
         cell.layoutMargins = UIEdgeInsetsZero
     }
 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        switch indexPath.row {
+        case 0:
+            return 65
+        case 1:
+            return 30
+        case 2:
+            return cellHeight! - 52 ?? 44
+        case 3:
+            return 30
+        case 4:
+            return 150
+        case 5:
+            return 70
+        case 6:
+            return 4
+        case 7:
+            return 70
+        case 8:
+            return 4
+        case 9:
+            return 90
+        case 10:
+            return 90
+        default:
+            return 44
+        }
+    }
+    
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -55,4 +91,18 @@ class SubmitResponseTableViewController: UITableViewController {
     @IBAction func didPressSubmitResponse(sender: AnyObject) {
     }
     
+    
+    func timerFired(timer: NSTimer?){
+        
+        guard let question = self.question else
+            
+        { return }
+            
+            formatter.unitsStyle = .Positional
+            let interval = question.timeLimit.timeIntervalSince1970 - NSDate().timeIntervalSince1970
+            countdownClock.text = " \(formatter.stringFromTimeInterval(interval)!)"
+
+        }
+    
+
 }

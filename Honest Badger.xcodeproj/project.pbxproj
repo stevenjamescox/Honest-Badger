@@ -102,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				955145AF1D3D7FF00064D897 /* FirebaseController.swift */,
+				95FE6F111D495B2400019404 /* NSDatePlusExtensions.swift */,
 			);
 			name = "Non-Model Controllers";
 			sourceTree = "<group>";
@@ -140,11 +141,10 @@
 			isa = PBXGroup;
 			children = (
 				952389191D4668E200AC69C7 /* FrontPageViewController.swift */,
-				958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */,
-				95FE6F111D495B2400019404 /* NSDatePlusExtensions.swift */,
-				955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */,
 				955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */,
 				955145A91D3D72C00064D897 /* SubmitResponseTableViewController.swift */,
+				958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */,
+				955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */,
 				958D0A361D3D6BB900BA5664 /* ResponsesTableViewController.swift */,
 				95C7D6E81D499DA0006F588F /* ResponsesTableViewCell.swift */,
 			);

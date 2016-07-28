@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MessageUI
 
-class ResponsesTableViewController: UITableViewController {
+class ResponsesTableViewController: UITableViewController, ResponseReportDelegate, MFMailComposeViewControllerDelegate {
     
     var question: Question?
+    
+    var currentIndexPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +33,27 @@ class ResponsesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if question?.responses.count > 0 {
-            return (question?.responses.count)!
-        } else {
-            return 1
-        }
+        return question?.responses.count ?? 0
+       
     }
     
+    /*
+     let cell = tableView.dequeueReusableCellWithIdentifier("questionCell", forIndexPath: indexPath) as? QuestionTableViewCell ?? QuestionTableViewCell()
+     
+     let question = questions[indexPath.row]
+ 
+ */
+    
+    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("responseCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("responseCell", forIndexPath: indexPath) as? ResponsesTableViewCell ?? ResponsesTableViewCell()
+
         
         if question?.responses.count > 0 {
             if let response = question?.responses[indexPath.row]{
-                cell.textLabel?.text = "\(response)"
+                cell.delegate = self
+                cell.loadResponseInfo(response)
             }
         } else {
             cell.textLabel?.text = "no responses"
@@ -54,6 +65,15 @@ class ResponsesTableViewController: UITableViewController {
         return cell
     }
     /*
+     
+     
+     let question = questions[indexPath.row]
+     
+     cell.delegate = self
+     cell.loadQuestionInfo(question)
+     
+     return cell
+     
      override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
      
@@ -65,49 +85,9 @@ class ResponsesTableViewController: UITableViewController {
      }
      */
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
+    func reportResponseButtonTapped(sender: ResponsesTableViewCell){
+}
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+   
     
 }

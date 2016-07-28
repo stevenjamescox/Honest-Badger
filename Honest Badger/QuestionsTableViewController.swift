@@ -68,6 +68,9 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
             let submitResponseTableViewController = segue.destinationViewController as? SubmitResponseTableViewController
             if let indexPath = currentIndexPath {
                 let question = questions[indexPath.row]
+                if let cell = tableView.cellForRowAtIndexPath(indexPath) as? QuestionTableViewCell {
+                    submitResponseTableViewController?.cellHeight = cell.frame.height
+                }
                 submitResponseTableViewController?.question = question
             }
         }
@@ -108,6 +111,7 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+
     
     func reportQuestionButtonTapped(sender: QuestionTableViewCell){
         if let indexPath = tableView.indexPathForCell(sender) {
@@ -117,10 +121,9 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
              if MFMailComposeViewController.canSendMail() {
                 let composeVC = MFMailComposeViewController()
                 composeVC.mailComposeDelegate = self
-                
-                composeVC.setToRecipients(["address@example.com"])
-                composeVC.setSubject("Hello!")
-                composeVC.setMessageBody("Hello from California!", isHTML: false)
+                composeVC.setToRecipients(["report@honestbadger.com"])
+                composeVC.setSubject("Inappropriate Question Report")
+                composeVC.setMessageBody("Question to report:\n'\(question.questionText)'\n\n Do you have any comments to add?: \n\n\n\n\n\n\n\n\n \n*******************\nDeveloper Data:\n\(question.identifier!)\nts:\(question.timestamp.timeIntervalSince1970)\ntL:\(question.timeLimit.timeIntervalSince1970)\n*******************", isHTML: false)
                 
                 self.presentViewController(composeVC, animated: true, completion: nil)
             } else {
@@ -128,5 +131,4 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
             }
         }
     }
-    
 }
