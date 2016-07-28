@@ -76,7 +76,7 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     }
     
     @IBAction func reportQuestionButtonTapped(sender: UIButton) {
-    self.delegate?.reportQuestionButtonTapped(self)
+        self.delegate?.reportQuestionButtonTapped(self)
     }
     
     

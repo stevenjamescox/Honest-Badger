@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class QuestionsTableViewController: UITableViewController, QuestionResponseDelegate{
+class QuestionsTableViewController: UITableViewController, QuestionResponseDelegate, MFMailComposeViewControllerDelegate{
 
     let frontPageViewController = FrontPageViewController()
     
@@ -30,6 +31,7 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
         QuestionController.fetchQuestions { (questions) in
             self.questions = questions.sort {$0.timeLimit.timeIntervalSince1970 > $1.timeLimit.timeIntervalSince1970}
             self.tableView.reloadData()
+            
         }
     }
 
@@ -94,9 +96,37 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
         }
     }
     
+    func showSendMailErrorAlert(){
+        let sendMailErrorAlert =
+            UIAlertController(title: "Couldn't Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel){ (action) in print(action)}
+        sendMailErrorAlert.addAction(dismissAction)
+        
+        self.presentViewController(sendMailErrorAlert, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func reportQuestionButtonTapped(sender: QuestionTableViewCell){
-    
-    
+        if let indexPath = tableView.indexPathForCell(sender) {
+            currentIndexPath = indexPath
+            let question = questions[indexPath.row]
+            
+             if MFMailComposeViewController.canSendMail() {
+                let composeVC = MFMailComposeViewController()
+                composeVC.mailComposeDelegate = self
+                
+                composeVC.setToRecipients(["address@example.com"])
+                composeVC.setSubject("Hello!")
+                composeVC.setMessageBody("Hello from California!", isHTML: false)
+                
+                self.presentViewController(composeVC, animated: true, completion: nil)
+            } else {
+                 self.showSendMailErrorAlert()
+            }
+        }
     }
     
 }
