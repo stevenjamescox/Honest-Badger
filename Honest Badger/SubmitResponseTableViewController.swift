@@ -24,8 +24,6 @@ class SubmitResponseTableViewController: UITableViewController {
         responseEntryField.becomeFirstResponder()
 
         questionPresent.text = "\(question!.questionText)"
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
     }
@@ -62,7 +60,7 @@ class SubmitResponseTableViewController: UITableViewController {
         case 1:
             return 30
         case 2:
-            return cellHeight! - 52 ?? 44
+            return cellHeight! - 52 ?? 50
         case 3:
             return 30
         case 4:
@@ -80,7 +78,7 @@ class SubmitResponseTableViewController: UITableViewController {
         case 10:
             return 90
         default:
-            return 44
+            return 50
         }
     }
     
@@ -95,14 +93,22 @@ class SubmitResponseTableViewController: UITableViewController {
     func timerFired(timer: NSTimer?){
         
         guard let question = self.question else
-            
+        
         { return }
-            
+        
+        let dateComparisonResult: NSComparisonResult = NSDate().compare(question.timeLimit)
+         if dateComparisonResult == NSComparisonResult.OrderedAscending {
+        
             formatter.unitsStyle = .Positional
-            let interval = question.timeLimit.timeIntervalSince1970 - NSDate().timeIntervalSince1970
+        let interval: Double = question.timeLimit.timeIntervalSince1970 - NSDate().timeIntervalSince1970
             countdownClock.text = " \(formatter.stringFromTimeInterval(interval)!)"
+            countdownClock.textColor = .blackColor()
 
+        } else{
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
         }
     
+    }
 
 }
