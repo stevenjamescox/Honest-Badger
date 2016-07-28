@@ -29,39 +29,33 @@ class ResponsesTableViewController: UITableViewController, ResponseReportDelegat
         cell.layoutMargins = UIEdgeInsetsZero
     }
     
+    // MARK: - Table view delegate
+    
+    
+    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        alert.addAction(UIAlertAction(title: "Report as inappropriate", style: .Destructive) { action in
+            print("reported at \(indexPath)")
+            // TODO: Send email
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { action in
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        })
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return question?.responses.count ?? 0
-       
+            return (question?.responses.count)!
     }
-    
-    /*
-     let cell = tableView.dequeueReusableCellWithIdentifier("questionCell", forIndexPath: indexPath) as? QuestionTableViewCell ?? QuestionTableViewCell()
-     
-     let question = questions[indexPath.row]
- 
- */
-    
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("responseCell", forIndexPath: indexPath) as? ResponsesTableViewCell ?? ResponsesTableViewCell()
-
-        
-        if question?.responses.count > 0 {
-            if let response = question?.responses[indexPath.row]{
-                cell.delegate = self
-                cell.loadResponseInfo(response)
-            }
-        } else {
-            cell.textLabel?.text = "no responses"
-        }
-        // ***************
-        //RUNS RANDOMIZE FUNCTION FROM RESPONSE CONTROLLER, PRESENTS RESPONSES FOR RESPECTIVE QUESTION
-        // *********
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("simpleResponse", forIndexPath: indexPath)
+        guard let response = question?.responses[indexPath.row] where question?.responses.count > 0 else { return cell }
+        cell.textLabel?.text = response
         return cell
     }
     /*

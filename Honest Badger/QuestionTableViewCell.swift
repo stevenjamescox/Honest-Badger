@@ -51,6 +51,7 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
             
             formatter.unitsStyle = .Positional
             let interval = question.timeLimit.timeIntervalSince1970 - NSDate().timeIntervalSince1970
+            
             viewResponsesButton.setTitle(" \(formatter.stringFromTimeInterval(interval)!) left\n to respond", forState: .Normal)
             viewResponsesButton.enabled = false
             viewResponsesButton.backgroundColor = .whiteColor()
@@ -58,9 +59,10 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
         } else {
             
             submitResponseButton.setTitle(" \(question.responses.count) responses\n    received", forState: .Normal)
+            print(question.responses.count)
             submitResponseButton.backgroundColor = .whiteColor()
-            
             submitResponseButton.enabled = false
+            
             viewResponsesButton.enabled = true
             viewResponsesButton.setTitle("View Responses", forState: .Normal)
             viewResponsesButton.backgroundColor = UIColor(red: 249/255, green: 81/255, blue: 197/255, alpha: 1)
@@ -78,7 +80,6 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     @IBAction func reportQuestionButtonTapped(sender: UIButton) {
         self.delegate?.reportQuestionButtonTapped(self)
     }
-    
     
     func loadQuestionInfo(question: Question) {
         self.question = question

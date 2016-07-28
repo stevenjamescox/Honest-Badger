@@ -260,6 +260,23 @@
                                     <outlet property="responseLabel" destination="mie-aR-hre" id="agU-aM-ieR"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="15" reuseIdentifier="simpleResponse" textLabel="9Ac-DB-2Ce" rowHeight="60" style="IBUITableViewCellStyleDefault" id="G3t-6j-aey" customClass="ResponsesTableViewCell" customModule="Honest_Badger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="152" width="600" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G3t-6j-aey" id="eXF-88-9Y1">
+                                    <rect key="frame" x="0.0" y="0.0" width="553" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Ac-DB-2Ce">
+                                            <rect key="frame" x="15" y="0.0" width="538" height="59"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="cRj-RB-COW" id="Caj-za-LlA"/>

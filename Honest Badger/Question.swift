@@ -16,7 +16,7 @@ class Question: FirebaseType, Equatable {
     private let timeLimitKey = "timeLimit"
     
     var questionText: String
-    var responses: [Response]
+    var responses: [String]
     var timestamp: NSDate
     var timeLimit: NSDate
     var identifier: String?
@@ -26,7 +26,7 @@ class Question: FirebaseType, Equatable {
     }
     
     var dictionaryCopy: [String: AnyObject] {
-        return [questionTextKey: questionText, timestampKey: timestamp.timeIntervalSince1970, timeLimitKey: timeLimit.timeIntervalSince1970 ,responsesKey: responses.map{$0.dictionaryCopy}]
+        return [questionTextKey: questionText, timestampKey: timestamp.timeIntervalSince1970, timeLimitKey: timeLimit.timeIntervalSince1970 ]
     }
     
     
@@ -45,8 +45,8 @@ class Question: FirebaseType, Equatable {
         self.questionText = questionText
         self.identifier = identifier
         
-        if let responsesArray = dictionary[responsesKey] as? [[String: AnyObject]]{
-            responses = responsesArray.flatMap({Response(dictionary: $0)})
+        if let responsesArray = dictionary[responsesKey] as? [String: String] {
+            responses = responsesArray.flatMap { $0.1 } // Randomize order?
         } else {
             responses = []
         }
