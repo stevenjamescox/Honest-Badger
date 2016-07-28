@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class ResponsesTableViewController: UITableViewController, ResponseReportDelegate, MFMailComposeViewControllerDelegate {
+class ResponsesTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     var question: Question?
     
@@ -78,10 +78,5 @@ class ResponsesTableViewController: UITableViewController, ResponseReportDelegat
      return cell
      }
      */
-    
-    func reportResponseButtonTapped(sender: ResponsesTableViewCell){
-}
-    
-   
     
 }

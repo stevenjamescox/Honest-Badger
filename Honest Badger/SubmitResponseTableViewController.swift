@@ -27,7 +27,22 @@ class SubmitResponseTableViewController: UITableViewController {
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
     }
+    
+    /*
    
+    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        alert.addAction(UIAlertAction(title: "Report as inappropriate", style: .Destructive) { action in
+            print("reported at \(indexPath)")
+            // TODO: Send email
+            })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { action in
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            })
+        presentViewController(alert, animated: true, completion: nil)
+    }*/
+    
     // MARK: - Outlets
     
     @IBOutlet weak var navBar: UINavigationBar!

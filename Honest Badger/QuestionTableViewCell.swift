@@ -59,7 +59,6 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
         } else {
             
             submitResponseButton.setTitle(" \(question.responses.count) responses\n    received", forState: .Normal)
-            print(question.responses.count)
             submitResponseButton.backgroundColor = .whiteColor()
             submitResponseButton.enabled = false
             

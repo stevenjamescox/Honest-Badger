@@ -26,15 +26,4 @@ class QuestionController {
             completion(questions: questions)
         })
     }
-    
-    
 }
-
-
-//func submitQuestion(){
-//auto generates questionID at dataPoint 1
-//sets questionText: String at dataPoint 2
-//sets timestamp: Double at datapoint 5 based on question COMPLETION time, NOT creation time (adds NOW time to TIMELIMIT entry to produce the timestamp)
-
-
-

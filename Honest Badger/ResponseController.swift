@@ -14,10 +14,4 @@ class ResponseController{
     static func submitResponse(question: Question, responseText: String){
         FirebaseController.ref.child("questions").child(question.identifier ?? "").child("responses").updateChildValues([FirebaseController.ref.childByAutoId().key: responseText])
     }
-    
-    func fetchResponses(question: Question, completion: (responses: [Response]) -> Void){
-    
-    ///?? is this necessary: no, or does it piggyback off of the passed question?
-    }
-
 }

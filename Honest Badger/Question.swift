@@ -30,7 +30,7 @@ class Question: FirebaseType, Equatable {
     }
     
     
-    init(questionText: String, timeLimit: NSDate, responses: [Response] = []){
+    init(questionText: String, timeLimit: NSDate, responses: [String] = []){
         
         self.questionText = questionText
         self.responses = []
