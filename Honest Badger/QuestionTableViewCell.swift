@@ -10,10 +10,8 @@ import UIKit
 
 protocol QuestionResponseDelegate: class {
     func viewResponseButtonTapped(sender: QuestionTableViewCell)
-}
-
-protocol SubmitResponseDelegate: class {
     func submitResponseToQuestionButtonTapped(sender: QuestionTableViewCell)
+    func reportQuestionButtonTapped(sender: QuestionTableViewCell)
 }
 
 class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
@@ -26,7 +24,7 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       
+        
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
     }
     
@@ -36,14 +34,13 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     var formatter = NSDateComponentsFormatter()
     
     weak var delegate: QuestionResponseDelegate?
-    weak var delegate2: SubmitResponseDelegate?
     
     func timerFired(timer: NSTimer?){
         
         guard let question = self.question else
-        
+            
         { return }
-
+        
         let dateComparisonResult: NSComparisonResult = NSDate().compare(question.timeLimit)
         if dateComparisonResult == NSComparisonResult.OrderedAscending
             
@@ -51,7 +48,7 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
             submitResponseButton.setTitle("Submit Response", forState: .Normal)
             submitResponseButton.backgroundColor = UIColor(red: 133/255, green: 178/255, blue: 131/255, alpha: 1)
             submitResponseButton.enabled = true
-         
+            
             formatter.unitsStyle = .Positional
             let interval = question.timeLimit.timeIntervalSince1970 - NSDate().timeIntervalSince1970
             viewResponsesButton.setTitle(" \(formatter.stringFromTimeInterval(interval)!) left\n to respond", forState: .Normal)
@@ -75,9 +72,14 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     }
     
     @IBAction func submitResponseToQuestionButtonTapped(sender: UIButton) {
-        self.delegate2?.submitResponseToQuestionButtonTapped(self)
+        self.delegate?.submitResponseToQuestionButtonTapped(self)
     }
-
+    
+    @IBAction func reportQuestionButtonTapped(sender: UIButton) {
+    self.delegate?.reportQuestionButtonTapped(self)
+    }
+    
+    
     func loadQuestionInfo(question: Question) {
         self.question = question
         self.timerFired(nil)

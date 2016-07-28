@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionsTableViewController: UITableViewController, QuestionResponseDelegate, SubmitResponseDelegate {
+class QuestionsTableViewController: UITableViewController, QuestionResponseDelegate{
 
     let frontPageViewController = FrontPageViewController()
     
@@ -45,7 +45,6 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
         let question = questions[indexPath.row]
        
         cell.delegate = self
-        cell.delegate2 = self
         cell.loadQuestionInfo(question)
         
         return cell
@@ -94,4 +93,10 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
             } else { return }
         }
     }
+    
+    func reportQuestionButtonTapped(sender: QuestionTableViewCell){
+    
+    
+    }
+    
 }
