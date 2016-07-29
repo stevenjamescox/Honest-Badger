@@ -34,6 +34,11 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
             
         }
     }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
+    }
 
     // MARK: - Table view data source
     

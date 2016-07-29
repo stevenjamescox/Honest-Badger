@@ -14,13 +14,6 @@ class FrontPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
-        
-      /*   FOR TESTING, ETC.
-      QuestionController.fetchQuestions { (questions) in
-            var questionArray = questions.sort {$0.timeLimit.timeIntervalSince1970 < $1.timeLimit.timeIntervalSince1970}
-            print(questionArray.count)
-           print(questionArray[0].questionText)
-        } */
     }
     
     override func didReceiveMemoryWarning() {
