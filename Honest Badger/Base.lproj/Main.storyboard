@@ -46,43 +46,33 @@
                                                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="673-Qm-aWm">
                                                     <rect key="frame" x="0.0" y="0.0" width="584" height="51"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQR-uI-9tS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="584" height="51"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqH-Jc-1oi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="534" height="51"/>
-                                                                    <color key="backgroundColor" red="0.44313725490196076" green="0.0" blue="0.45490196078431372" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
-                                                                    <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="21"/>
-                                                                    <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYS-mt-p80">
-                                                                    <rect key="frame" x="534" y="0.0" width="50" height="51"/>
-                                                                    <color key="backgroundColor" red="0.41176470590000003" green="0.0" blue="0.45098039220000002" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="50" id="2wb-La-wfd"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <state key="normal" title="report">
-                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    </state>
-                                                                    <connections>
-                                                                        <action selector="reportQuestionButtonTapped:" destination="wXf-gM-NHA" eventType="touchUpInside" id="dd3-AI-yfv"/>
-                                                                    </connections>
-                                                                </button>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="jqH-Jc-1oi" firstAttribute="top" secondItem="rQR-uI-9tS" secondAttribute="top" id="rtj-Zt-hOj"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="sRN-pG-n0p"/>
-                                                            </constraints>
-                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqH-Jc-1oi">
+                                                            <rect key="frame" x="12" y="12" width="560" height="27"/>
+                                                            <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="21"/>
+                                                            <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="rQR-uI-9tS" secondAttribute="bottom" id="AR4-qr-wkW"/>
-                                                        <constraint firstItem="rQR-uI-9tS" firstAttribute="leading" secondItem="673-Qm-aWm" secondAttribute="leading" id="Pi5-eV-tFU"/>
-                                                        <constraint firstItem="rQR-uI-9tS" firstAttribute="top" secondItem="673-Qm-aWm" secondAttribute="top" id="n28-0n-9pU"/>
-                                                        <constraint firstAttribute="trailing" secondItem="rQR-uI-9tS" secondAttribute="trailing" id="tWi-tU-UHZ"/>
+                                                        <constraint firstItem="jqH-Jc-1oi" firstAttribute="top" secondItem="673-Qm-aWm" secondAttribute="topMargin" constant="8" id="3Cr-ji-jg3"/>
+                                                        <constraint firstItem="jqH-Jc-1oi" firstAttribute="leading" secondItem="673-Qm-aWm" secondAttribute="leadingMargin" constant="8" id="BYa-iS-qpz"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="jqH-Jc-1oi" secondAttribute="trailing" constant="8" id="Di7-6b-v8k"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="jqH-Jc-1oi" secondAttribute="bottom" constant="8" id="FTU-Kg-INJ"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="jqH-Jc-1oi" secondAttribute="bottom" constant="4" id="KgL-ba-sAL"/>
+                                                        <constraint firstItem="jqH-Jc-1oi" firstAttribute="top" secondItem="673-Qm-aWm" secondAttribute="topMargin" constant="4" id="TKS-fe-vie"/>
+                                                        <constraint firstItem="jqH-Jc-1oi" firstAttribute="leading" secondItem="673-Qm-aWm" secondAttribute="leadingMargin" constant="4" id="YSo-I5-iF8"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="jqH-Jc-1oi" secondAttribute="trailing" constant="4" id="bzs-Se-V2s"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="3Cr-ji-jg3"/>
+                                                            <exclude reference="BYa-iS-qpz"/>
+                                                            <exclude reference="Di7-6b-v8k"/>
+                                                            <exclude reference="FTU-Kg-INJ"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vd1-1z-Vhr">
                                                     <rect key="frame" x="0.0" y="59" width="584" height="44"/>
@@ -167,7 +157,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="questionLabel" destination="jqH-Jc-1oi" id="yMp-bS-KXo"/>
-                                    <outlet property="reportQuestionButton" destination="mYS-mt-p80" id="fqV-nU-l6A"/>
                                     <outlet property="submitResponseButton" destination="NVG-ho-Og4" id="Xpv-nj-Fhk"/>
                                     <outlet property="viewResponsesButton" destination="oPn-rg-Qc2" id="9hf-gS-V1f"/>
                                 </connections>
@@ -857,7 +846,7 @@
                                 </state>
                                 <connections>
                                     <action selector="didPressEnterAnonymously:" destination="6jO-DH-1VM" eventType="touchUpInside" id="qEA-Py-Ani"/>
-                                    <segue destination="aBH-hV-NRk" kind="presentation" id="ORC-rv-G1S"/>
+                                    <segue destination="aBH-hV-NRk" kind="presentation" modalTransitionStyle="flipHorizontal" id="ORC-rv-G1S"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give &amp; Receive Anonymous Feedback" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="j59-F7-cX6">
@@ -876,6 +865,7 @@
                             <constraint firstItem="j59-F7-cX6" firstAttribute="top" secondItem="rQb-rB-VsX" secondAttribute="bottom" id="5C8-EO-cHy"/>
                             <constraint firstItem="rQb-rB-VsX" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="6ca-Lf-jPt"/>
                             <constraint firstItem="rQb-rB-VsX" firstAttribute="top" secondItem="NFV-1J-B5Q" secondAttribute="bottom" constant="8" id="Ehu-r5-fWj"/>
+                            <constraint firstItem="NFV-1J-B5Q" firstAttribute="top" secondItem="tSL-ld-O3o" secondAttribute="bottom" constant="6" id="ObB-IW-ScL"/>
                             <constraint firstItem="2EG-T7-Mlu" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="U3P-WE-CVn"/>
                             <constraint firstItem="2EG-T7-Mlu" firstAttribute="top" secondItem="j59-F7-cX6" secondAttribute="bottom" id="W2s-ww-zkZ"/>
                             <constraint firstItem="j59-F7-cX6" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="YHr-wF-Sfg"/>
