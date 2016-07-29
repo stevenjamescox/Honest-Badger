@@ -75,7 +75,7 @@ class SubmitResponseTableViewController: UITableViewController {
         case 1:
             return 30
         case 2:
-            return cellHeight! - 52 ?? 50
+            return cellHeight! - 60 ?? 50
         case 3:
             return 30
         case 4:

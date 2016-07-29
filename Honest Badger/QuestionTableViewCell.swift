@@ -33,11 +33,6 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     var timer: NSTimer?
     var formatter = NSDateComponentsFormatter()
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.layoutMargins = UIEdgeInsetsZero
-    }
-    
     weak var delegate: QuestionResponseDelegate?
     
     func timerFired(timer: NSTimer?){
