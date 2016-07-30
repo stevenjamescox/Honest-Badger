@@ -79,9 +79,9 @@ class SubmitResponseTableViewController: UITableViewController {
         case 3:
             return 30
         case 4:
-            return 150
+            return 120
         case 5:
-            return 70
+            return 50
         case 6:
             return 4
         case 7:

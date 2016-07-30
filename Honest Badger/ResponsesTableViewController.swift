@@ -33,6 +33,8 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
     
     
     override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        
+        
         tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         alert.addAction(UIAlertAction(title: "Report as inappropriate", style: .Destructive) { action in
@@ -43,40 +45,43 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         })
         presentViewController(alert, animated: true, completion: nil)
+        
+        
     }
     
     // MARK: - Table view data source
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return (question?.responses.count)!
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
     }
     
     
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else {
+            return (question?.responses.count)!
+        }
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        switch indexPath.section {
+        case 0:
+        let responseQuestionReferenceCell = tableView.dequeueReusableCellWithIdentifier("responseQuestionReference", forIndexPath: indexPath)
+        guard let questionTextForCell = question?.questionText else { return responseQuestionReferenceCell }
+        
+        responseQuestionReferenceCell.textLabel?.text = questionTextForCell
+        
+        return responseQuestionReferenceCell
+    
+        default:
         let cell = tableView.dequeueReusableCellWithIdentifier("simpleResponse", forIndexPath: indexPath)
         guard let response = question?.responses[indexPath.row] where question?.responses.count > 0 else { return cell }
+        
         cell.textLabel?.text = response
+        
         return cell
+
     }
-    /*
-     
-     
-     let question = questions[indexPath.row]
-     
-     cell.delegate = self
-     cell.loadQuestionInfo(question)
-     
-     return cell
-     
-     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-     
-     // ***************
-     RUNS RANDOMIZE FUNCTION FROM RESPONSE CONTROLLER, PRESENTS RESPONSES FOR RESPECTIVE QUESTION
-     // *********
-     
-     return cell
-     }
-     */
-    
+}
 }
