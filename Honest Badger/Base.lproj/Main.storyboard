@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -177,13 +176,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sS-ve-mDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3699" y="428"/>
+            <point key="canvasLocation" x="3701" y="428"/>
         </scene>
         <!--Responses-->
         <scene sceneID="WZO-kZ-P3z">
             <objects>
                 <tableViewController id="cRj-RB-COW" customClass="ResponsesTableViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ihE-4e-zTR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ihE-4e-zTR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -516,7 +515,7 @@
         <scene sceneID="tlX-wh-IRW">
             <objects>
                 <tableViewController id="b2M-of-bxX" customClass="SubmitQuestionTableViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rZx-sb-lr8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rZx-sb-lr8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -775,62 +774,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honest Badger" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="289" translatesAutoresizingMaskIntoConstraints="NO" id="NFV-1J-B5Q">
-                                <rect key="frame" x="210" y="26" width="180" height="130"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V7V-xh-5SJ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDd-eV-yRX">
+                                        <rect key="frame" x="8" y="8" width="584" height="564"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honest Badger" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFV-1J-B5Q">
+                                                <rect key="frame" x="202" y="18" width="180" height="130"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="130" id="4xW-2Q-FzA"/>
+                                                    <constraint firstAttribute="width" constant="180" id="KNq-aL-kZp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="50"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EG-T7-Mlu">
+                                                <rect key="frame" x="153" y="487" width="278" height="49"/>
+                                                <color key="backgroundColor" red="0.45490196078431372" green="0.6470588235294118" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="278" id="J0h-qQ-Q5L"/>
+                                                    <constraint firstAttribute="height" constant="49" id="a2w-Bw-cls"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="23"/>
+                                                <state key="normal" title="Enter Anonymously">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didPressEnterAnonymously:" destination="6jO-DH-1VM" eventType="touchUpInside" id="qEA-Py-Ani"/>
+                                                    <segue destination="aBH-hV-NRk" kind="presentation" modalTransitionStyle="flipHorizontal" id="ORC-rv-G1S"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1066634_LGPNG_2JR02878HK546464B.png" translatesAutoresizingMaskIntoConstraints="NO" id="rQb-rB-VsX">
+                                                <rect key="frame" x="-1708" y="146" width="4000" height="272"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="272" id="REE-Qo-0sd"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give &amp; Receive Anonymous Feedback" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j59-F7-cX6">
+                                                <rect key="frame" x="152" y="412" width="280" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="Cfd-bX-RRw"/>
+                                                    <constraint firstAttribute="width" constant="280" id="DeP-C9-5Fb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="28"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="2EG-T7-Mlu" firstAttribute="centerX" secondItem="YDd-eV-yRX" secondAttribute="centerX" id="9Ey-dX-Aaz"/>
+                                            <constraint firstItem="NFV-1J-B5Q" firstAttribute="centerX" secondItem="YDd-eV-yRX" secondAttribute="centerX" id="CQ9-KZ-Y3c"/>
+                                            <constraint firstItem="j59-F7-cX6" firstAttribute="top" secondItem="rQb-rB-VsX" secondAttribute="bottom" constant="-6" id="O6N-EI-nSg"/>
+                                            <constraint firstItem="rQb-rB-VsX" firstAttribute="centerX" secondItem="YDd-eV-yRX" secondAttribute="centerX" id="ODh-3N-lcr"/>
+                                            <constraint firstItem="rQb-rB-VsX" firstAttribute="top" secondItem="NFV-1J-B5Q" secondAttribute="bottom" constant="-2" id="RRj-Yk-X52"/>
+                                            <constraint firstItem="2EG-T7-Mlu" firstAttribute="top" secondItem="j59-F7-cX6" secondAttribute="bottom" id="TvE-cJ-pWF"/>
+                                            <constraint firstItem="rQb-rB-VsX" firstAttribute="centerY" secondItem="YDd-eV-yRX" secondAttribute="centerY" id="WMk-ZW-yAa"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="5U5-0l-ubh"/>
-                                    <constraint firstAttribute="width" constant="180" id="PO7-eF-Um0"/>
+                                    <constraint firstItem="YDd-eV-yRX" firstAttribute="centerY" secondItem="V7V-xh-5SJ" secondAttribute="centerY" id="gh9-cV-vbv"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="YDd-eV-yRX" secondAttribute="trailing" id="lWk-su-QHC"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="YDd-eV-yRX" secondAttribute="bottom" id="mgH-Zx-81i"/>
+                                    <constraint firstItem="YDd-eV-yRX" firstAttribute="leading" secondItem="V7V-xh-5SJ" secondAttribute="leadingMargin" id="ocY-uu-f5P"/>
+                                    <constraint firstItem="YDd-eV-yRX" firstAttribute="top" secondItem="V7V-xh-5SJ" secondAttribute="topMargin" id="tMc-UK-mlb"/>
+                                    <constraint firstItem="YDd-eV-yRX" firstAttribute="centerX" secondItem="V7V-xh-5SJ" secondAttribute="centerX" id="ydj-Gb-bTN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="53"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1066634_LGPNG_2JR02878HK546464B.png" translatesAutoresizingMaskIntoConstraints="NO" id="rQb-rB-VsX">
-                                <rect key="frame" x="20" y="164" width="560" height="272"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="272" id="hKX-ye-DYg"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EG-T7-Mlu">
-                                <rect key="frame" x="161" y="511" width="278" height="49"/>
-                                <color key="backgroundColor" red="0.45490196078431372" green="0.6470588235294118" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="2EG-T7-Mlu" secondAttribute="height" multiplier="300:53" id="awW-9n-y5u"/>
-                                    <constraint firstAttribute="width" constant="278" id="vph-zQ-BuF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="23"/>
-                                <state key="normal" title="Enter Anonymously">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressEnterAnonymously:" destination="6jO-DH-1VM" eventType="touchUpInside" id="qEA-Py-Ani"/>
-                                    <segue destination="aBH-hV-NRk" kind="presentation" modalTransitionStyle="flipHorizontal" id="ORC-rv-G1S"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give &amp; Receive Anonymous Feedback" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="j59-F7-cX6">
-                                <rect key="frame" x="160" y="436" width="280" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="Bnd-26-Bal"/>
-                                    <constraint firstAttribute="height" constant="75" id="XLH-X6-j2C"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="28"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="j59-F7-cX6" firstAttribute="top" secondItem="rQb-rB-VsX" secondAttribute="bottom" id="5C8-EO-cHy"/>
-                            <constraint firstItem="rQb-rB-VsX" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="6ca-Lf-jPt"/>
-                            <constraint firstItem="rQb-rB-VsX" firstAttribute="top" secondItem="NFV-1J-B5Q" secondAttribute="bottom" constant="8" id="Ehu-r5-fWj"/>
-                            <constraint firstItem="NFV-1J-B5Q" firstAttribute="top" secondItem="tSL-ld-O3o" secondAttribute="bottom" constant="6" id="ObB-IW-ScL"/>
-                            <constraint firstItem="2EG-T7-Mlu" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="U3P-WE-CVn"/>
-                            <constraint firstItem="2EG-T7-Mlu" firstAttribute="top" secondItem="j59-F7-cX6" secondAttribute="bottom" id="W2s-ww-zkZ"/>
-                            <constraint firstItem="j59-F7-cX6" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="YHr-wF-Sfg"/>
-                            <constraint firstItem="NFV-1J-B5Q" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="epl-2a-oZX"/>
-                            <constraint firstItem="rQb-rB-VsX" firstAttribute="leading" secondItem="QHf-FK-aTw" secondAttribute="leading" constant="20" id="hg8-jk-PYQ"/>
-                            <constraint firstItem="rQb-rB-VsX" firstAttribute="centerY" secondItem="QHf-FK-aTw" secondAttribute="centerY" id="tIK-I1-bVp"/>
-                            <constraint firstAttribute="trailing" secondItem="rQb-rB-VsX" secondAttribute="trailing" constant="20" id="zKe-QU-sNq"/>
+                            <constraint firstAttribute="trailing" secondItem="V7V-xh-5SJ" secondAttribute="trailing" id="207-5U-Pns"/>
+                            <constraint firstAttribute="bottom" secondItem="V7V-xh-5SJ" secondAttribute="bottom" id="IN8-ri-hgo"/>
+                            <constraint firstItem="V7V-xh-5SJ" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="TSz-r5-iY5"/>
+                            <constraint firstItem="V7V-xh-5SJ" firstAttribute="leading" secondItem="QHf-FK-aTw" secondAttribute="leading" id="edp-cO-mq5"/>
+                            <constraint firstItem="V7V-xh-5SJ" firstAttribute="top" secondItem="tSL-ld-O3o" secondAttribute="bottom" id="pWd-yQ-zuW"/>
+                            <constraint firstItem="j59-F7-cX6" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="tfG-bB-qJl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uLn-NU-rwm"/>

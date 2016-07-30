@@ -11,7 +11,6 @@ import UIKit
 protocol QuestionResponseDelegate: class {
     func viewResponseButtonTapped(sender: QuestionTableViewCell)
     func submitResponseToQuestionButtonTapped(sender: QuestionTableViewCell)
-    func reportQuestionButtonTapped(sender: QuestionTableViewCell)
 }
 
 class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
@@ -74,10 +73,6 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     
     @IBAction func submitResponseToQuestionButtonTapped(sender: UIButton) {
         self.delegate?.submitResponseToQuestionButtonTapped(self)
-    }
-    
-    @IBAction func reportQuestionButtonTapped(sender: UIButton) {
-        self.delegate?.reportQuestionButtonTapped(self)
     }
     
     func loadQuestionInfo(question: Question) {
