@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import MessageUI
 
-class SubmitResponseTableViewController: UITableViewController {
+class SubmitResponseTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
     var question: Question?
-    
+    var currentIndexPath: NSIndexPath?
     var timer: NSTimer?
     var formatter = NSDateComponentsFormatter()
     var cellHeight: CGFloat?
@@ -27,21 +28,6 @@ class SubmitResponseTableViewController: UITableViewController {
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
     }
-    
-    /*
-   
-    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
-        tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-        alert.addAction(UIAlertAction(title: "Report as inappropriate", style: .Destructive) { action in
-            print("reported at \(indexPath)")
-            // TODO: Send email
-            })
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { action in
-            tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            })
-        presentViewController(alert, animated: true, completion: nil)
-    }*/
     
     // MARK: - Outlets
     
@@ -96,6 +82,47 @@ class SubmitResponseTableViewController: UITableViewController {
             return 50
         }
     }
+    
+    func showSendMailErrorAlert(){
+        let sendMailErrorAlert =
+            UIAlertController(title: "Couldn't Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel){ (action) in print(action)}
+        sendMailErrorAlert.addAction(dismissAction)
+        
+        self.presentViewController(sendMailErrorAlert, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        
+            tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+            alert.addAction(UIAlertAction(title: "Report question as inappropriate", style: .Destructive) { action in
+                print("reported question at \(indexPath)")
+                
+                    if MFMailComposeViewController.canSendMail() {
+                        let composeVC = MFMailComposeViewController()
+                        composeVC.mailComposeDelegate = self
+                        composeVC.setToRecipients(["report@honestbadger.com"])
+                        composeVC.setSubject("Inappropriate Question Report")
+                        composeVC.setMessageBody("Question to report:\n'\(self.question!.questionText)'\n\n Thank you for your report! Do you have any comments to add?: \n\n\n\n\n\n\n \n*******************\nDeveloper Data:\n\(self.question!.identifier!)\nts:\(self.question!.timestamp.timeIntervalSince1970)\ntL:\(self.question!.timeLimit.timeIntervalSince1970)\n*******************", isHTML: false)
+                        
+                        self.presentViewController(composeVC, animated: true, completion: nil)
+                    } else {
+                        self.showSendMailErrorAlert()
+                    }
+                
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                })
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { action in
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                })
+            presentViewController(alert, animated: true, completion: nil)
+    }
+
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)

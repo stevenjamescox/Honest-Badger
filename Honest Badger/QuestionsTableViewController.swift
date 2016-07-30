@@ -128,7 +128,7 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
                 composeVC.mailComposeDelegate = self
                 composeVC.setToRecipients(["report@honestbadger.com"])
                 composeVC.setSubject("Inappropriate Question Report")
-                composeVC.setMessageBody("Question to report:\n'\(question.questionText)'\n\n Do you have any comments to add?: \n\n\n\n\n\n\n\n\n \n*******************\nDeveloper Data:\n\(question.identifier!)\nts:\(question.timestamp.timeIntervalSince1970)\ntL:\(question.timeLimit.timeIntervalSince1970)\n*******************", isHTML: false)
+                composeVC.setMessageBody("Question to report:\n'\(question.questionText)'\n\n Thank you for your report! Do you have any comments to add?: \n\n\n\n\n\n\n \n*******************\nDeveloper Data:\n\(question.identifier!)\nts:\(question.timestamp.timeIntervalSince1970)\ntL:\(question.timeLimit.timeIntervalSince1970)\n*******************", isHTML: false)
                 
                 self.presentViewController(composeVC, animated: true, completion: nil)
             } else {

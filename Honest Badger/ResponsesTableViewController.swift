@@ -34,19 +34,41 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
     
     override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         
-        
+        switch indexPath.section {
+        case 0:
+
         tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-        alert.addAction(UIAlertAction(title: "Report as inappropriate", style: .Destructive) { action in
-            print("reported at \(indexPath)")
+        alert.addAction(UIAlertAction(title: "Report question as inappropriate", style: .Destructive) { action in
+            print("reported question at \(indexPath)")
             // TODO: Send email
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { action in
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         })
         presentViewController(alert, animated: true, completion: nil)
         
-        
+        default:
+            
+            tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+            alert.addAction(UIAlertAction(title: "Report response as inappropriate", style: .Destructive) { action in
+                print("reported response at \(indexPath)")
+                // TODO: Send email
+                
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                })
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { action in
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                })
+            presentViewController(alert, animated: true, completion: nil)
+            
+            
+            
+            
+        }
     }
     
     // MARK: - Table view data source
