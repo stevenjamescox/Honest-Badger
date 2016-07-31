@@ -781,7 +781,7 @@
                                         <rect key="frame" x="8" y="8" width="584" height="564"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honest Badger" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFV-1J-B5Q">
-                                                <rect key="frame" x="202" y="18" width="180" height="130"/>
+                                                <rect key="frame" x="202" y="-21" width="180" height="130"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="130" id="4xW-2Q-FzA"/>
                                                     <constraint firstAttribute="width" constant="180" id="KNq-aL-kZp"/>
@@ -791,7 +791,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EG-T7-Mlu">
-                                                <rect key="frame" x="153" y="487" width="278" height="49"/>
+                                                <rect key="frame" x="153" y="526" width="278" height="49"/>
                                                 <color key="backgroundColor" red="0.45490196078431372" green="0.6470588235294118" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="278" id="J0h-qQ-Q5L"/>
@@ -806,14 +806,8 @@
                                                     <segue destination="aBH-hV-NRk" kind="presentation" modalTransitionStyle="flipHorizontal" id="ORC-rv-G1S"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1066634_LGPNG_2JR02878HK546464B.png" translatesAutoresizingMaskIntoConstraints="NO" id="rQb-rB-VsX">
-                                                <rect key="frame" x="-1708" y="146" width="4000" height="272"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="272" id="REE-Qo-0sd"/>
-                                                </constraints>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give &amp; Receive Anonymous Feedback" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j59-F7-cX6">
-                                                <rect key="frame" x="152" y="412" width="280" height="75"/>
+                                                <rect key="frame" x="152" y="451" width="280" height="75"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="Cfd-bX-RRw"/>
                                                     <constraint firstAttribute="width" constant="280" id="DeP-C9-5Fb"/>
@@ -822,6 +816,13 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1066634_LGPNG_2JR02878HK546464B.png" translatesAutoresizingMaskIntoConstraints="NO" id="rQb-rB-VsX">
+                                                <rect key="frame" x="-1708" y="107" width="4000" height="350"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="350" id="QOD-6C-59S"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="272" id="REE-Qo-0sd"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>

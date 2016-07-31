@@ -29,8 +29,21 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
         cell.layoutMargins = UIEdgeInsetsZero
     }
     
-    // MARK: - Table view delegate
     
+    func showSendMailErrorAlert(){
+        let sendMailErrorAlert =
+            UIAlertController(title: "Couldn't Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel){ (action) in print(action)}
+        sendMailErrorAlert.addAction(dismissAction)
+        
+        self.presentViewController(sendMailErrorAlert, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    // MARK: - Table view delegate
     
     override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         
@@ -41,8 +54,20 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         alert.addAction(UIAlertAction(title: "Report question as inappropriate", style: .Destructive) { action in
             print("reported question at \(indexPath)")
-            // TODO: Send email
+          
             
+            if MFMailComposeViewController.canSendMail() {
+                let composeVC = MFMailComposeViewController()
+                composeVC.mailComposeDelegate = self
+                composeVC.setToRecipients(["report@honestbadger.com"])
+                composeVC.setSubject("Inappropriate Question Report")
+                composeVC.setMessageBody("Question to report:\n'\(self.question!.questionText)'\n\n Thank you for your report! Do you have any comments to add?: \n\n\n\n\n\n\n \n*******************\nDeveloper Data:\n\(self.question!.identifier!)\nts:\(self.question!.timestamp.timeIntervalSince1970)\ntL:\(self.question!.timeLimit.timeIntervalSince1970)\n*******************", isHTML: false)
+                
+                self.presentViewController(composeVC, animated: true, completion: nil)
+            } else {
+                self.showSendMailErrorAlert()
+            }
+
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { action in
@@ -56,17 +81,27 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
             let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
             alert.addAction(UIAlertAction(title: "Report response as inappropriate", style: .Destructive) { action in
                 print("reported response at \(indexPath)")
-                // TODO: Send email
                 
+                let responseTextForEmail = self.question?.responses[indexPath.row]
+                
+                if MFMailComposeViewController.canSendMail() {
+                    let composeVC = MFMailComposeViewController()
+                    composeVC.mailComposeDelegate = self
+                    composeVC.setToRecipients(["report@honestbadger.com"])
+                    composeVC.setSubject("Inappropriate Response Report")
+                    composeVC.setMessageBody("Response to report:\n'\(responseTextForEmail!)'\n\n Thank you for your report! Do you have any comments to add?: \n\n\n\n\n\n\n \n*******************\nDeveloper Data:\n\(self.question!.identifier!)\nts:\(self.question!.timestamp.timeIntervalSince1970)\ntL:\(self.question!.timeLimit.timeIntervalSince1970)\n*******************", isHTML: false)
+                    
+                    self.presentViewController(composeVC, animated: true, completion: nil)
+                } else {
+                    self.showSendMailErrorAlert()
+                }
+
                 tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 })
             alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { action in
                 tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 })
             presentViewController(alert, animated: true, completion: nil)
-            
-            
-            
             
         }
     }
