@@ -230,11 +230,7 @@
                             <outlet property="delegate" destination="cRj-RB-COW" id="jLG-st-3y1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Responses" id="Tir-ol-S1m">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="82V-nm-mzc">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Responses" id="Tir-ol-S1m"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZY-SX-mZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
