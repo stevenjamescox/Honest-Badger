@@ -26,15 +26,32 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
         tableView.rowHeight = UITableViewAutomaticDimension
         
         QuestionController.fetchQuestions { (questions) in
-            self.questions = questions.sort {$0.timeLimit.timeIntervalSince1970 > $1.timeLimit.timeIntervalSince1970}
-            self.tableView.reloadData()
             
+            let firstSort = questions.divide({ $0.timeLimit.timeIntervalSince1970 >= NSDate().timeIntervalSince1970 })
+            
+            let openQuestions = firstSort.slice
+            let closedQuestions = firstSort.remainder
+
+            let sortedOpenQuestions = openQuestions.sort {($0.timeLimit.timeIntervalSince1970) < ($1.timeLimit.timeIntervalSince1970)}
+            let sortedClosedQuestions = closedQuestions.sort {($0.timeLimit.timeIntervalSince1970) > ($1.timeLimit.timeIntervalSince1970)}
+            
+            let fullySortedArray = sortedOpenQuestions + sortedClosedQuestions
+
+            self.questions = fullySortedArray
+            self.tableView.reloadData()
+        
         }
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.separatorInset = UIEdgeInsetsZero
         cell.layoutMargins = UIEdgeInsetsZero
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -99,5 +116,25 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
                 self.performSegueWithIdentifier("toViewResponsesSegue", sender: self)
             } else { return }
         }
+    }
+}
+
+extension SequenceType {
+    
+    /**
+     Returns a tuple with 2 arrays.
+     The first array (the slice) contains the elements of self that match the predicate.
+     The second array (the remainder) contains the elements of self that do not match the predicate.
+     */
+    func divide(@noescape predicate: (Self.Generator.Element) -> Bool) -> (slice: [Self.Generator.Element], remainder: [Self.Generator.Element]) {
+        var slice:     [Self.Generator.Element] = []
+        var remainder: [Self.Generator.Element] = []
+        forEach {
+            switch predicate($0) {
+            case true  : slice.append($0)
+            case false : remainder.append($0)
+            }
+        }
+        return (slice, remainder)
     }
 }
