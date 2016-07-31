@@ -16,8 +16,6 @@ protocol QuestionResponseDelegate: class {
 class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var reportQuestionButton: UIButton!
-    
     @IBOutlet weak var submitResponseButton: UIButton!
     @IBOutlet weak var viewResponsesButton: UIButton!
     

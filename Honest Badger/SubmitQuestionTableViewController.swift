@@ -28,11 +28,8 @@ class SubmitQuestionTableViewController: UITableViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var navBar: UINavigationBar!
-
     @IBOutlet weak var questionEntryField: UITextView!
-    
     @IBOutlet weak var timeLimitPicker: UIDatePicker!
-    
     @IBAction func timeLimitPickerAction(sender: AnyObject) {
 
     }
@@ -46,12 +43,7 @@ class SubmitQuestionTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 11
     }
-    
-    /*override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.layoutMargins = UIEdgeInsetsZero
-    }*/
-    
+
     @IBAction func didPressSubmitQuestion(sender: AnyObject) {
         if (questionEntryField.text != "") {
         let questionText = questionEntryField.text
@@ -65,10 +57,20 @@ class SubmitQuestionTableViewController: UITableViewController {
         } else {
         return
         }
-    
     }
-
+    
+    @IBAction func didPressSubmitQuestionAlt(sender: AnyObject) {
+        if (questionEntryField.text != "") {
+            let questionText = questionEntryField.text
+            
+            let timeLimitDouble = timeLimitPicker.countDownDuration
+            let timeLimit = NSDate(timeIntervalSince1970: (timeLimitDouble + NSDate().timeIntervalSince1970))
+            
+            QuestionController.submitQuestion(questionText!, timeLimit: timeLimit)
+            questionEntryField.text = ""
+            self.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            return
+        }
+    }
 }
-    
-    
-

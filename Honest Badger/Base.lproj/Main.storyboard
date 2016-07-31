@@ -244,7 +244,7 @@
         <scene sceneID="9Pd-xE-rhw">
             <objects>
                 <tableViewController id="EPu-Oe-i9Q" customClass="SubmitResponseTableViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="I56-Tf-Zmg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="I56-Tf-Zmg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -267,6 +267,12 @@
                                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <connections>
                                                                     <action selector="cancelButtonTapped:" destination="EPu-Oe-i9Q" id="dHn-FM-L8c"/>
+                                                                </connections>
+                                                            </barButtonItem>
+                                                            <barButtonItem key="rightBarButtonItem" title="Submit" id="EQy-ps-Icr">
+                                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <connections>
+                                                                    <action selector="didPressSubmitResponseAlternate:" destination="EPu-Oe-i9Q" id="2a1-EM-j7E"/>
                                                                 </connections>
                                                             </barButtonItem>
                                                         </navigationItem>
@@ -324,6 +330,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.52156862745098043" green="0.10588235294117647" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="30" id="hI8-qr-e1M">
                                         <rect key="frame" x="0.0" y="139" width="600" height="30"/>
@@ -538,6 +545,11 @@
                                                             <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SDC-NY-Uj2">
                                                                 <connections>
                                                                     <action selector="cancelButtonTapped:" destination="b2M-of-bxX" id="HSN-XB-Ltc"/>
+                                                                </connections>
+                                                            </barButtonItem>
+                                                            <barButtonItem key="rightBarButtonItem" title="Submit" id="Co9-gs-ySU">
+                                                                <connections>
+                                                                    <action selector="didPressSubmitQuestionAlt:" destination="b2M-of-bxX" id="mD0-gL-Uuz"/>
                                                                 </connections>
                                                             </barButtonItem>
                                                         </navigationItem>

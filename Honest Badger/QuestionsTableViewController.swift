@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import MessageUI
 
-class QuestionsTableViewController: UITableViewController, QuestionResponseDelegate, MFMailComposeViewControllerDelegate{
-
-    let frontPageViewController = FrontPageViewController()
+class QuestionsTableViewController: UITableViewController, QuestionResponseDelegate {
     
     var questions = [Question]()
     
@@ -101,39 +98,6 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
                 
                 self.performSegueWithIdentifier("toViewResponsesSegue", sender: self)
             } else { return }
-        }
-    }
-    
-    func showSendMailErrorAlert(){
-        let sendMailErrorAlert =
-            UIAlertController(title: "Couldn't Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
-        let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel){ (action) in print(action)}
-        sendMailErrorAlert.addAction(dismissAction)
-        
-        self.presentViewController(sendMailErrorAlert, animated: true, completion: nil)
-    }
-    
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-
-    
-    func reportQuestionButtonTapped(sender: QuestionTableViewCell){
-        if let indexPath = tableView.indexPathForCell(sender) {
-            currentIndexPath = indexPath
-            let question = questions[indexPath.row]
-            
-             if MFMailComposeViewController.canSendMail() {
-                let composeVC = MFMailComposeViewController()
-                composeVC.mailComposeDelegate = self
-                composeVC.setToRecipients(["report@honestbadger.com"])
-                composeVC.setSubject("Inappropriate Question Report")
-                composeVC.setMessageBody("Question to report:\n'\(question.questionText)'\n\n Thank you for your report! Do you have any comments to add?: \n\n\n\n\n\n\n \n*******************\nDeveloper Data:\n\(question.identifier!)\nts:\(question.timestamp.timeIntervalSince1970)\ntL:\(question.timeLimit.timeIntervalSince1970)\n*******************", isHTML: false)
-                
-                self.presentViewController(composeVC, animated: true, completion: nil)
-            } else {
-                 self.showSendMailErrorAlert()
-            }
         }
     }
 }

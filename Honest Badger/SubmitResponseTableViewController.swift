@@ -39,12 +39,10 @@ class SubmitResponseTableViewController: UITableViewController, MFMailComposeVie
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 11
     }
     
@@ -123,7 +121,6 @@ class SubmitResponseTableViewController: UITableViewController, MFMailComposeVie
             presentViewController(alert, animated: true, completion: nil)
     }
 
-    
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -138,6 +135,18 @@ class SubmitResponseTableViewController: UITableViewController, MFMailComposeVie
         return
         }
     }
+    
+    @IBAction func didPressSubmitResponseAlternate(sender: AnyObject) {
+        if (responseEntryField.text != "") {
+            let responseText = responseEntryField.text
+            ResponseController.submitResponse(question!, responseText: responseText)
+            responseEntryField.text = ""
+            self.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            return
+        }
+    }
+    
 
     func timerFired(timer: NSTimer?){
         
@@ -157,7 +166,5 @@ class SubmitResponseTableViewController: UITableViewController, MFMailComposeVie
         
         self.dismissViewControllerAnimated(true, completion: nil)
         }
-    
     }
-
 }

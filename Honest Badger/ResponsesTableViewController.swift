@@ -49,13 +49,12 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
         
         switch indexPath.section {
         case 0:
-
+        
         tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         alert.addAction(UIAlertAction(title: "Report question as inappropriate", style: .Destructive) { action in
             print("reported question at \(indexPath)")
           
-            
             if MFMailComposeViewController.canSendMail() {
                 let composeVC = MFMailComposeViewController()
                 composeVC.mailComposeDelegate = self
@@ -102,7 +101,6 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
                 tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 })
             presentViewController(alert, animated: true, completion: nil)
-            
         }
     }
     
@@ -112,7 +110,6 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
         return 2
     }
     
-    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
@@ -120,6 +117,7 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
             return (question?.responses.count)!
         }
     }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         switch indexPath.section {
@@ -139,6 +137,6 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
         
         return cell
 
+        }
     }
-}
 }
