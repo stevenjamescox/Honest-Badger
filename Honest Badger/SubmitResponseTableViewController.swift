@@ -146,10 +146,8 @@ class SubmitResponseTableViewController: UITableViewController, MFMailComposeVie
             return
         }
     }
-    
 
     func timerFired(timer: NSTimer?){
-        
         guard let question = self.question else
         
         { return }

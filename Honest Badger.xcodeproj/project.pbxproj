@@ -29,7 +29,7 @@
 		95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D7162B1D2ED53100EAE5B3 /* Main.storyboard */; };
 		95D7162F1D2ED53100EAE5B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D7162E1D2ED53100EAE5B3 /* Assets.xcassets */; };
 		95D716321D2ED53100EAE5B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D716301D2ED53100EAE5B3 /* LaunchScreen.storyboard */; };
-		95FE6F121D495B2400019404 /* NSDatePlusExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE6F111D495B2400019404 /* NSDatePlusExtensions.swift */; };
+		95FE6F121D495B2400019404 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE6F111D495B2400019404 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +59,7 @@
 		95D7162E1D2ED53100EAE5B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95D716311D2ED53100EAE5B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95D716331D2ED53100EAE5B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95FE6F111D495B2400019404 /* NSDatePlusExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDatePlusExtensions.swift; sourceTree = "<group>"; };
+		95FE6F111D495B2400019404 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F3A2842BC9F4819C102CECF3 /* Pods-Honest Badger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honest Badger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				955145AF1D3D7FF00064D897 /* FirebaseController.swift */,
-				95FE6F111D495B2400019404 /* NSDatePlusExtensions.swift */,
+				95FE6F111D495B2400019404 /* Extensions.swift */,
 			);
 			name = "Non-Model Controllers";
 			sourceTree = "<group>";
@@ -338,7 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95FE6F121D495B2400019404 /* NSDatePlusExtensions.swift in Sources */,
+				95FE6F121D495B2400019404 /* Extensions.swift in Sources */,
 				955145B01D3D7FF00064D897 /* FirebaseController.swift in Sources */,
 				958D0A341D3D6B3800BA5664 /* Question.swift in Sources */,
 				958D0A371D3D6BB900BA5664 /* ResponsesTableViewController.swift in Sources */,
