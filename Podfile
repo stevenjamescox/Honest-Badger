@@ -7,7 +7,7 @@ target 'Honest Badger' do
 
   # Pods for Honest Badger
 pod 'Firebase'
-pod 'FirebaseAuth’
-pod 'FirebaseDatabase’
+pod 'FirebaseAuth'
+pod 'FirebaseDatabase'
 
 end

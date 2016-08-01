@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Question: FirebaseType, Equatable {
+class Question: FirebaseType {
     
     private let questionTextKey = "questionText"
     private let responsesKey = "responses"
@@ -25,7 +25,7 @@ class Question: FirebaseType, Equatable {
         return "questions"
     }
     
-    var dictionaryCopy: [String: AnyObject] {
+   var dictionaryCopy: [String: AnyObject] {
         return [questionTextKey: questionText, timestampKey: timestamp.timeIntervalSince1970, timeLimitKey: timeLimit.timeIntervalSince1970 ]
     }
     
@@ -63,8 +63,4 @@ class Question: FirebaseType, Equatable {
             self.timeLimit = NSDate()
         }
     }
-}
-
-func ==(lhs: Question, rhs: Question) -> Bool {
-    return lhs.questionText == rhs.questionText && lhs.timestamp == rhs.timestamp && lhs.timeLimit == rhs.timeLimit
 }
