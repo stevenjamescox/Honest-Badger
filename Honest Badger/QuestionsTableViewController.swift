@@ -38,7 +38,6 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
 
             self.questions = fullySortedArray
             self.tableView.reloadData()
-        
         }
     }
     
