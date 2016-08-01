@@ -23,7 +23,6 @@ class SubmitResponseTableViewController: UITableViewController, MFMailComposeVie
         navBar.tintColor = UIColor.blackColor()
         
         responseEntryField.becomeFirstResponder()
-
         questionPresent.text = "\(question!.questionText)"
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
