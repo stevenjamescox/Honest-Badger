@@ -784,10 +784,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Jeu-ef-L1J">
-                                <rect key="frame" x="12" y="143" width="576" height="314"/>
+                                <rect key="frame" x="12" y="158" width="576" height="284"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1066634_LGPNG_2JR02878HK546464B.png" translatesAutoresizingMaskIntoConstraints="NO" id="rQb-rB-VsX">
-                                        <rect key="frame" x="0.0" y="0.0" width="576" height="314"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="576" height="284"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.61176470589999998" green="0.79215686269999996" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -798,14 +798,14 @@
                                     <constraint firstItem="rQb-rB-VsX" firstAttribute="top" secondItem="Jeu-ef-L1J" secondAttribute="top" id="Zb8-tJ-wo0"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j59-F7-cX6">
-                                <rect key="frame" x="183" y="461" width="234" height="65"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j59-F7-cX6">
+                                <rect key="frame" x="28" y="446" width="544" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="ROU-gV-UCe"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="ROU-gV-UCe"/>
                                 </constraints>
                                 <string key="text">Give &amp; Receive
 Anonymous Feedback</string>
-                                <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="33"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -824,9 +824,12 @@ Anonymous Feedback</string>
                                     <segue destination="aBH-hV-NRk" kind="presentation" modalTransitionStyle="flipHorizontal" id="ORC-rv-G1S"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honest Badger" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NFV-1J-B5Q">
-                                <rect key="frame" x="20" y="74" width="560" height="61"/>
-                                <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honest Badger" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="30" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NFV-1J-B5Q">
+                                <rect key="frame" x="20" y="43" width="560" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="85" id="xIg-9d-bL7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AbadiMT-CondensedExtraBold" family="Abadi MT Condensed Extra Bold" pointSize="61"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -837,12 +840,14 @@ Anonymous Feedback</string>
                         <constraints>
                             <constraint firstItem="NFV-1J-B5Q" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="5rg-ya-Ybd"/>
                             <constraint firstItem="2EG-T7-Mlu" firstAttribute="width" secondItem="QHf-FK-aTw" secondAttribute="height" multiplier="139:300" id="6gm-zz-LCB"/>
+                            <constraint firstItem="j59-F7-cX6" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QHf-FK-aTw" secondAttribute="leadingMargin" constant="8" id="7Ta-2F-BDh"/>
                             <constraint firstItem="Jeu-ef-L1J" firstAttribute="centerY" secondItem="QHf-FK-aTw" secondAttribute="centerY" id="Aiv-Hd-CVw"/>
                             <constraint firstItem="j59-F7-cX6" firstAttribute="top" secondItem="rQb-rB-VsX" secondAttribute="bottom" constant="4" id="C9r-zt-3F7"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="j59-F7-cX6" secondAttribute="trailing" constant="8" id="HtN-FF-7VC"/>
                             <constraint firstItem="j59-F7-cX6" firstAttribute="top" secondItem="Jeu-ef-L1J" secondAttribute="bottom" constant="4" id="StQ-Ia-6Z0"/>
                             <constraint firstItem="Jeu-ef-L1J" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="Tco-Wr-ELK"/>
                             <constraint firstItem="Jeu-ef-L1J" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QHf-FK-aTw" secondAttribute="leadingMargin" constant="-8" id="Vru-eX-y5Q"/>
-                            <constraint firstItem="Jeu-ef-L1J" firstAttribute="top" secondItem="NFV-1J-B5Q" secondAttribute="bottom" constant="8" id="W55-Pa-kra"/>
+                            <constraint firstItem="Jeu-ef-L1J" firstAttribute="top" secondItem="NFV-1J-B5Q" secondAttribute="bottom" constant="30" id="W55-Pa-kra"/>
                             <constraint firstItem="NFV-1J-B5Q" firstAttribute="leading" secondItem="QHf-FK-aTw" secondAttribute="leadingMargin" id="ZDx-jC-YA5"/>
                             <constraint firstItem="j59-F7-cX6" firstAttribute="centerX" secondItem="QHf-FK-aTw" secondAttribute="centerX" id="cYW-cB-lKE"/>
                             <constraint firstItem="cq1-Fr-pF4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2EG-T7-Mlu" secondAttribute="bottom" constant="16" id="hZS-hf-oa3"/>
