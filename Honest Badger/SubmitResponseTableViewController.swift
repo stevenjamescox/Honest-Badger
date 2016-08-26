@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class SubmitResponseTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class SubmitResponseTableViewController: UITableViewController, UITextViewDelegate, MFMailComposeViewControllerDelegate {
 
     var question: Question?
     var currentIndexPath: NSIndexPath?
@@ -23,6 +23,8 @@ class SubmitResponseTableViewController: UITableViewController, MFMailComposeVie
         navBar.tintColor = UIColor.blackColor()
         
         responseEntryField.becomeFirstResponder()
+        responseEntryField.delegate = self
+        
         questionPresent.text = "\(question!.questionText)"
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
@@ -34,6 +36,14 @@ class SubmitResponseTableViewController: UITableViewController, MFMailComposeVie
     @IBOutlet weak var questionPresent: UILabel!
     @IBOutlet weak var responseEntryField: UITextView!
     @IBOutlet weak var countdownClock: UILabel!
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        let newLength = textView.text!.characters.count + text.characters.count - range.length
+        if textView == responseEntryField {
+            return newLength <= 200
+        }
+        return true
+    }
 
     // MARK: - Table view data source
     

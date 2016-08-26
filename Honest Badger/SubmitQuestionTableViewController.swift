@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubmitQuestionTableViewController: UITableViewController {
+class SubmitQuestionTableViewController: UITableViewController, UITextViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,7 @@ class SubmitQuestionTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         questionEntryField.becomeFirstResponder()
+        questionEntryField.delegate = self
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "HH:mm"
@@ -30,12 +31,21 @@ class SubmitQuestionTableViewController: UITableViewController {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var questionEntryField: UITextView!
     @IBOutlet weak var timeLimitPicker: UIDatePicker!
+    
     @IBAction func timeLimitPickerAction(sender: AnyObject) {
 
     }
     
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        let newLength = textView.text!.characters.count + text.characters.count - range.length
+        if textView == questionEntryField {
+            return newLength <= 200
+        }
+        return true
     }
     
     // MARK: - Table view data source

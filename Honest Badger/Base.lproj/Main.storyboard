@@ -474,9 +474,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGC-Pm-tLa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Responses are anonymous. Submitted responses will be presented in random order when time limit is reached." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGC-Pm-tLa">
                                                     <rect key="frame" x="8" y="8" width="584" height="73"/>
-                                                    <string key="text">Responses are anonymous. Submitted responses will be presented in random order when time limit is reached (as long as at least three responses have been submitted).</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -735,9 +734,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-LF-evC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Responses are anonymous. Submitted responses will be presented in random order when time limit is reached." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-LF-evC">
                                                     <rect key="frame" x="8" y="28" width="584" height="34"/>
-                                                    <string key="text">Responses are anonymous. Submitted responses will be presented in random order when time limit is reached (as long as at least three responses have been submitted).</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -838,11 +836,10 @@ Anonymous Feedback</string>
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.45490196078431372" green="0.6470588235294118" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="didPressEnterAnonymously:" destination="6jO-DH-1VM" eventType="touchUpInside" id="qEA-Py-Ani"/>
-                                    <segue destination="aBH-hV-NRk" kind="presentation" modalTransitionStyle="flipHorizontal" id="ORC-rv-G1S"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honest Badger" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="30" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NFV-1J-B5Q">
@@ -885,6 +882,7 @@ Anonymous Feedback</string>
                         <outlet property="subTitleLabel" destination="j59-F7-cX6" id="UqM-hp-ZkW"/>
                         <outlet property="titleImageView" destination="Jeu-ef-L1J" id="qka-FJ-jCF"/>
                         <outlet property="titleLabel" destination="NFV-1J-B5Q" id="d61-0I-sMG"/>
+                        <segue destination="aBH-hV-NRk" kind="presentation" identifier="fromLoginToQuestionsTableView" modalTransitionStyle="flipHorizontal" id="eaf-9A-eUx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRV-5e-Ycc" userLabel="First Responder" sceneMemberID="firstResponder"/>
