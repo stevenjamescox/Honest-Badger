@@ -139,7 +139,7 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
         let responseText = responseEntryField.text
         ResponseController.submitResponse(question!, responseText: responseText)
         responseEntryField.text = ""
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.createAlert("Thanks!", message: "Thanks for your response! Come back when the clock runs out to view the rest of the responses.")
         } else {
         return
         }
@@ -150,10 +150,20 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
             let responseText = responseEntryField.text
             ResponseController.submitResponse(question!, responseText: responseText)
             responseEntryField.text = ""
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.createAlert("Thanks!", message: "Thanks for your response! Come back when the clock runs out to view the rest of the responses.")
         } else {
             return
         }
+    }
+    
+    func createAlert(title: String, message: String = "") {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .Default) {
+            UIAlertAction in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        alert.addAction(okayAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
     func timerFired(timer: NSTimer?){

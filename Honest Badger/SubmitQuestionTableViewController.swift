@@ -61,16 +61,16 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
 
     @IBAction func didPressSubmitQuestion(sender: AnyObject) {
         if (questionEntryField.text != "") {
-        let questionText = questionEntryField.text
+            let questionText = questionEntryField.text
         
-        let timeLimitDouble = timeLimitPicker.countDownDuration
-        let timeLimit = NSDate(timeIntervalSince1970: (timeLimitDouble + NSDate().timeIntervalSince1970))
+            let timeLimitDouble = timeLimitPicker.countDownDuration
+            let timeLimit = NSDate(timeIntervalSince1970: (timeLimitDouble + NSDate().timeIntervalSince1970))
             
-        QuestionController.submitQuestion(questionText!, timeLimit: timeLimit)
-        questionEntryField.text = ""
-        self.dismissViewControllerAnimated(true, completion: nil)
+            QuestionController.submitQuestion(questionText!, timeLimit: timeLimit)
+            questionEntryField.text = ""
+            self.createAlert("Thanks!", message: "Thanks for your question! Come back when the clock runs out to view responses.")
         } else {
-        return
+            return
         }
     }
     
@@ -83,9 +83,19 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
             
             QuestionController.submitQuestion(questionText!, timeLimit: timeLimit)
             questionEntryField.text = ""
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.createAlert("Thanks!", message: "Thanks for your question! Come back when the clock runs out to view responses.")
         } else {
             return
         }
+    }
+    
+    func createAlert(title: String, message: String = "") {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .Default) {
+            UIAlertAction in
+            self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        alert.addAction(okayAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

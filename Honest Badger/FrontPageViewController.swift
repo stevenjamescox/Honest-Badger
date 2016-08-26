@@ -43,7 +43,7 @@ class FrontPageViewController: UIViewController {
                         case .ErrorCodeInternalError:
                             self.createAlert("Error: \(errCode.rawValue)", message: "Internal error. Please try again.")
                         case .ErrorCodeNetworkError:
-                            self.createAlert("Error: \(errCode.rawValue)", message: "Not able to connect to the network. Please test your connection and try again.")
+                            self.createAlert("Error: \(errCode.rawValue)", message: "Not able to connect to the Internt. Please test your connection and try again.")
                         default:
                             self.createAlert("Error: \(errCode.rawValue)", message: "Login failed due to an unexpected error. PLease try again.")
                         }
@@ -59,5 +59,4 @@ class FrontPageViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
         enterButton.enabled = true
     }
-        
 }
