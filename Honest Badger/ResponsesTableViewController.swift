@@ -130,7 +130,9 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
         guard let questionTextForCell = question?.questionText else { return responseQuestionReferenceCell }
         
         responseQuestionReferenceCell.textLabel?.text = questionTextForCell
-        
+        let customColorView = UIView()
+        customColorView.backgroundColor = UIColor(red: 0 / 255, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1)
+        responseQuestionReferenceCell.selectedBackgroundView = customColorView
         return responseQuestionReferenceCell
     
         default:
