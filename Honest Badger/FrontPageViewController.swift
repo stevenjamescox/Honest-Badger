@@ -29,9 +29,11 @@ class FrontPageViewController: UIViewController {
     
     @IBAction func didPressEnterAnonymously(sender: AnyObject) {
         enterButton.enabled = false
+        enterButton.setTitle("Logging In...", forState: .Normal)
         FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user, error) in
             
             if user != nil && error == nil {
+                print(user!.uid)
             self.performSegueWithIdentifier("fromLoginToQuestionsTableView", sender: self)
             }
             
@@ -58,5 +60,6 @@ class FrontPageViewController: UIViewController {
         alert.addAction(okayAction)
         self.presentViewController(alert, animated: true, completion: nil)
         enterButton.enabled = true
+        enterButton.setTitle("Enter Anonymously", forState: .Normal)
     }
 }
