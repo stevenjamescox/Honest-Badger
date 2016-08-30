@@ -11,6 +11,6 @@ import Foundation
 class ResponseController{
 
     static func submitResponse(question: Question, responseText: String){
-        FirebaseController.ref.child("questions").child(question.identifier ?? "").child("responses").updateChildValues([FirebaseController.ref.childByAutoId().key: responseText])
+        FirebaseController.ref.child("questions").child(question.identifier ?? "").child("responses").child(UserController.shared.currentUserID).setValue(responseText)
     }
 }

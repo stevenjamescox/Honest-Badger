@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameplayKit
 
 class Question: FirebaseType {
     
@@ -14,11 +15,13 @@ class Question: FirebaseType {
     private let responsesKey = "responses"
     private let timestampKey = "timestamp"
     private let timeLimitKey = "timeLimit"
+    private let authorIDKey = "authorID"
     
     var questionText: String
     var responses: [String]
     var timestamp: NSDate
     var timeLimit: NSDate
+    var authorID: String
     var identifier: String?
     
     var endpoint: String{
@@ -26,17 +29,16 @@ class Question: FirebaseType {
     }
     
    var dictionaryCopy: [String: AnyObject] {
-        return [questionTextKey: questionText, timestampKey: timestamp.timeIntervalSince1970, timeLimitKey: timeLimit.timeIntervalSince1970 ]
+    return [questionTextKey: questionText, timestampKey: timestamp.timeIntervalSince1970, timeLimitKey: timeLimit.timeIntervalSince1970, authorIDKey: authorID]
     }
     
-    
-    init(questionText: String, timeLimit: NSDate, responses: [String] = []){
-        
+    init(questionText: String, timeLimit: NSDate, authorID: String, responses: [String] = []){
         self.questionText = questionText
         self.responses = []
         self.timestamp = NSDate()
         self.timeLimit = timeLimit
         self.identifier = nil
+        self.authorID = authorID
     }
     
     required init?(dictionary: [String: AnyObject], identifier: String){
@@ -45,8 +47,15 @@ class Question: FirebaseType {
         self.questionText = questionText
         self.identifier = identifier
         
+        if let authorID = dictionary[authorIDKey] as? String {
+            self.authorID = authorID
+        } else {
+            authorID = ""
+        }
+    
         if let responsesArray = dictionary[responsesKey] as? [String: String] {
-            responses = responsesArray.flatMap { $0.1 } // Randomize order?
+            let responsesPreSort = responsesArray.flatMap { $0.1 }
+            responses = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(responsesPreSort) as! [String]
         } else {
             responses = []
         }

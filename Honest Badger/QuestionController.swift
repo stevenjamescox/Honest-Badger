@@ -11,7 +11,7 @@ import Foundation
 class QuestionController {
     
     static func submitQuestion(questionText: String, timeLimit: NSDate){
-        var question = Question(questionText: questionText, timeLimit: timeLimit)
+        var question = Question(questionText: questionText, timeLimit: timeLimit, authorID: UserController.shared.currentUserID)
         question.save()
     }
     

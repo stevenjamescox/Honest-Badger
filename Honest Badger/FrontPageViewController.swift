@@ -21,7 +21,7 @@ class FrontPageViewController: UIViewController {
         enterButton.sizeToFit()
         enterButton.enabled = true
     }
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleImageView: UIView!
     @IBOutlet weak var subTitleLabel: UILabel!
@@ -33,7 +33,7 @@ class FrontPageViewController: UIViewController {
         FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user, error) in
             
             if user != nil && error == nil {
-                print(user!.uid)
+            UserController.shared.currentUserID = (user?.uid)!
             self.performSegueWithIdentifier("fromLoginToQuestionsTableView", sender: self)
             }
             
