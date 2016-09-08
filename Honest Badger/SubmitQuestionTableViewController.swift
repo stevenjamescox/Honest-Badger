@@ -13,16 +13,16 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
-        navBar.tintColor = UIColor.blackColor()
+        navBar.tintColor = UIColor.black
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
         questionEntryField.becomeFirstResponder()
         questionEntryField.delegate = self
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        let date = dateFormatter.dateFromString("02:00")
+        let date = dateFormatter.date(from: "02:00")
         timeLimitPicker.date = date!
     }
 
@@ -32,15 +32,15 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
     @IBOutlet weak var questionEntryField: UITextView!
     @IBOutlet weak var timeLimitPicker: UIDatePicker!
     
-    @IBAction func timeLimitPickerAction(sender: AnyObject) {
+    @IBAction func timeLimitPickerAction(_ sender: AnyObject) {
 
     }
     
-    @IBAction func cancelButtonTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelButtonTapped(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newLength = textView.text!.characters.count + text.characters.count - range.length
         if textView == questionEntryField {
             return newLength <= 200
@@ -50,21 +50,21 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
     
     // MARK: - Table view data source
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 11
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.layoutMargins = UIEdgeInsetsZero
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
     }
 
-    @IBAction func didPressSubmitQuestion(sender: AnyObject) {
+    @IBAction func didPressSubmitQuestion(_ sender: AnyObject) {
         if (questionEntryField.text != "") {
             let questionText = questionEntryField.text
         
             let timeLimitDouble = timeLimitPicker.countDownDuration
-            let timeLimit = NSDate(timeIntervalSince1970: (timeLimitDouble + NSDate().timeIntervalSince1970))
+            let timeLimit = Date(timeIntervalSince1970: (timeLimitDouble + Date().timeIntervalSince1970))
             
             QuestionController.submitQuestion(questionText!, timeLimit: timeLimit)
             questionEntryField.text = ""
@@ -74,12 +74,12 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
         }
     }
     
-    @IBAction func didPressSubmitQuestionAlt(sender: AnyObject) {
+    @IBAction func didPressSubmitQuestionAlt(_ sender: AnyObject) {
         if (questionEntryField.text != "") {
             let questionText = questionEntryField.text
             
             let timeLimitDouble = timeLimitPicker.countDownDuration
-            let timeLimit = NSDate(timeIntervalSince1970: (timeLimitDouble + NSDate().timeIntervalSince1970))
+            let timeLimit = Date(timeIntervalSince1970: (timeLimitDouble + Date().timeIntervalSince1970))
             
             QuestionController.submitQuestion(questionText!, timeLimit: timeLimit)
             questionEntryField.text = ""
@@ -89,13 +89,13 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
         }
     }
     
-    func createAlert(title: String, message: String = "") {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .Default) {
+    func createAlert(_ title: String, message: String = "") {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default) {
             UIAlertAction in
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
             }
         alert.addAction(okayAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 }

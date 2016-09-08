@@ -11,16 +11,16 @@ import GameplayKit
 
 class Question: FirebaseType {
     
-    private let questionTextKey = "questionText"
-    private let responsesKey = "responses"
-    private let timestampKey = "timestamp"
-    private let timeLimitKey = "timeLimit"
-    private let authorIDKey = "authorID"
+    fileprivate let questionTextKey = "questionText"
+    fileprivate let responsesKey = "responses"
+    fileprivate let timestampKey = "timestamp"
+    fileprivate let timeLimitKey = "timeLimit"
+    fileprivate let authorIDKey = "authorID"
     
     var questionText: String
     var responses: [String]
-    var timestamp: NSDate
-    var timeLimit: NSDate
+    var timestamp: Date
+    var timeLimit: Date
     var authorID: String
     var identifier: String?
     
@@ -29,13 +29,13 @@ class Question: FirebaseType {
     }
     
    var dictionaryCopy: [String: AnyObject] {
-    return [questionTextKey: questionText, timestampKey: timestamp.timeIntervalSince1970, timeLimitKey: timeLimit.timeIntervalSince1970, authorIDKey: authorID]
+    return [questionTextKey: questionText as AnyObject, timestampKey: timestamp.timeIntervalSince1970 as AnyObject, timeLimitKey: timeLimit.timeIntervalSince1970 as AnyObject, authorIDKey: authorID as AnyObject]
     }
     
-    init(questionText: String, timeLimit: NSDate, authorID: String, responses: [String] = []){
+    init(questionText: String, timeLimit: Date, authorID: String, responses: [String] = []){
         self.questionText = questionText
         self.responses = []
-        self.timestamp = NSDate()
+        self.timestamp = Date()
         self.timeLimit = timeLimit
         self.identifier = nil
         self.authorID = authorID
@@ -55,21 +55,21 @@ class Question: FirebaseType {
     
         if let responsesArray = dictionary[responsesKey] as? [String: String] {
             let responsesPreSort = responsesArray.flatMap { $0.1 }
-            responses = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(responsesPreSort) as! [String]
+            responses = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: responsesPreSort) as! [String]
         } else {
             responses = []
         }
         
-        if let timestampInterval = dictionary[timestampKey] as? NSTimeInterval {
-            self.timestamp = NSDate(timeIntervalSince1970: timestampInterval)
+        if let timestampInterval = dictionary[timestampKey] as? TimeInterval {
+            self.timestamp = Date(timeIntervalSince1970: timestampInterval)
         } else {
-            self.timestamp = NSDate()
+            self.timestamp = Date()
         }
         
-        if let timeLimitInterval = dictionary[timeLimitKey] as? NSTimeInterval {
-            self.timeLimit = NSDate(timeIntervalSince1970: timeLimitInterval)
+        if let timeLimitInterval = dictionary[timeLimitKey] as? TimeInterval {
+            self.timeLimit = Date(timeIntervalSince1970: timeLimitInterval)
         } else {
-            self.timeLimit = NSDate()
+            self.timeLimit = Date()
         }
     }
 }

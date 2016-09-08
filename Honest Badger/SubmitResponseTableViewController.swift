@@ -12,22 +12,25 @@ import MessageUI
 class SubmitResponseTableViewController: UITableViewController, UITextViewDelegate, MFMailComposeViewControllerDelegate {
 
     var question: Question?
-    var currentIndexPath: NSIndexPath?
-    var timer: NSTimer?
-    var formatter = NSDateComponentsFormatter()
+    var currentIndexPath: IndexPath?
+    var timer: Timer?
+    var formatter = DateComponentsFormatter()
     var cellHeight: CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
-        navBar.tintColor = UIColor.blackColor()
+        navBar.tintColor = UIColor.black
         
         responseEntryField.becomeFirstResponder()
         responseEntryField.delegate = self
         
         questionPresent.text = "\(question!.questionText)"
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
+        
+        questionPresent.font = UIFont.init(name: "Rockwell", size: 21.0)
+        countdownClock.font = UIFont.init(name: "Rockwell", size: 26.0)
     }
     
     // MARK: - Outlets
@@ -37,7 +40,7 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
     @IBOutlet weak var responseEntryField: UITextView!
     @IBOutlet weak var countdownClock: UILabel!
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newLength = textView.text!.characters.count + text.characters.count - range.length
         if textView == responseEntryField {
             return newLength <= 200
@@ -47,28 +50,28 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
 
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 11
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.layoutMargins = UIEdgeInsetsZero
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.layoutMargins = UIEdgeInsets.zero
     }
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        switch indexPath.row {
+        switch (indexPath as NSIndexPath).row {
         case 0:
             return 65
         case 1:
             return 30
         case 2:
-            return cellHeight! - 60 ?? 50
+            return cellHeight! - 60 
         case 3:
             return 30
         case 4:
@@ -92,22 +95,22 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
     
     func showSendMailErrorAlert(){
         let sendMailErrorAlert =
-            UIAlertController(title: "Couldn't Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
-        let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel){ (action) in print(action)}
+            UIAlertController(title: "Couldn't Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel){ (action) in print(action)}
         sendMailErrorAlert.addAction(dismissAction)
         
-        self.presentViewController(sendMailErrorAlert, animated: true, completion: nil)
+        self.present(sendMailErrorAlert, animated: true, completion: nil)
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
-            tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
-            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-            alert.addAction(UIAlertAction(title: "Report question as inappropriate", style: .Destructive) { action in
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Report question as inappropriate", style: .destructive) { action in
                 print("reported question at \(indexPath)")
                 
                     if MFMailComposeViewController.canSendMail() {
@@ -117,27 +120,27 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
                         composeVC.setSubject("Inappropriate Question Report")
                         composeVC.setMessageBody("Question to report:\n'\(self.question!.questionText)'\n\n Thank you for your report! Do you have any comments to add?: \n\n\n\n\n\n\n \n*******************\nDeveloper Data:\n\(self.question!.identifier!)\nts:\(self.question!.timestamp.timeIntervalSince1970)\ntL:\(self.question!.timeLimit.timeIntervalSince1970)\n*******************", isHTML: false)
                         
-                        self.presentViewController(composeVC, animated: true, completion: nil)
+                        self.present(composeVC, animated: true, completion: nil)
                     } else {
                         self.showSendMailErrorAlert()
                     }
                 
-                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                tableView.deselectRow(at: indexPath, animated: true)
                 })
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { action in
-                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { action in
+                tableView.deselectRow(at: indexPath, animated: true)
                 })
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
     }
 
-    @IBAction func cancelButtonTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelButtonTapped(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func didPressSubmitResponse(sender: AnyObject) {
+    @IBAction func didPressSubmitResponse(_ sender: AnyObject) {
         if (responseEntryField.text != "") {
         let responseText = responseEntryField.text
-        ResponseController.submitResponse(question!, responseText: responseText)
+        ResponseController.submitResponse(question!, responseText: responseText!)
         responseEntryField.text = ""
         self.createAlert("Thanks!", message: "Thanks for your response! Come back when the clock runs out to view the rest of the responses.")
         } else {
@@ -145,10 +148,10 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
         }
     }
     
-    @IBAction func didPressSubmitResponseAlternate(sender: AnyObject) {
+    @IBAction func didPressSubmitResponseAlternate(_ sender: AnyObject) {
         if (responseEntryField.text != "") {
             let responseText = responseEntryField.text
-            ResponseController.submitResponse(question!, responseText: responseText)
+            ResponseController.submitResponse(question!, responseText: responseText!)
             responseEntryField.text = ""
             self.createAlert("Thanks!", message: "Thanks for your response! Come back when the clock runs out to view the rest of the responses.")
         } else {
@@ -156,32 +159,32 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
         }
     }
     
-    func createAlert(title: String, message: String = "") {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .Default) {
+    func createAlert(_ title: String, message: String = "") {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default) {
             UIAlertAction in
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }
         alert.addAction(okayAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 
-    func timerFired(timer: NSTimer?){
+    func timerFired(_ timer: Timer?){
         guard let question = self.question else
         
         { return }
         
-        let dateComparisonResult: NSComparisonResult = NSDate().compare(question.timeLimit)
-         if dateComparisonResult == NSComparisonResult.OrderedAscending {
+        let dateComparisonResult: ComparisonResult = Date().compare(question.timeLimit as Date)
+         if dateComparisonResult == ComparisonResult.orderedAscending {
         
-            formatter.unitsStyle = .Positional
-        let interval: Double = question.timeLimit.timeIntervalSince1970 - NSDate().timeIntervalSince1970
-            countdownClock.text = " \(formatter.stringFromTimeInterval(interval)!)"
-            countdownClock.textColor = .blackColor()
+            formatter.unitsStyle = .positional
+        let interval: Double = question.timeLimit.timeIntervalSince1970 - Date().timeIntervalSince1970
+            countdownClock.text = " \(formatter.string(from: interval)!)"
+            countdownClock.textColor = UIColor.black
 
         } else{
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         }
     }
 }

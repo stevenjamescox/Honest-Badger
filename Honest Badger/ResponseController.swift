@@ -10,7 +10,7 @@ import Foundation
 
 class ResponseController{
 
-    static func submitResponse(question: Question, responseText: String){
+    static func submitResponse(_ question: Question, responseText: String){
         FirebaseController.ref.child("questions").child(question.identifier ?? "").child("responses").child(UserController.shared.currentUserID).setValue(responseText)
     }
 }

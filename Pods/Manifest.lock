@@ -1,9 +1,9 @@
 PODS:
-  - Firebase (3.5.1):
-    - Firebase/Core (= 3.5.1)
-  - Firebase/Analytics (3.5.1):
-    - FirebaseAnalytics (~> 3.3.1)
-  - Firebase/Core (3.5.1):
+  - Firebase (3.5.2):
+    - Firebase/Core (= 3.5.2)
+  - Firebase/Analytics (3.5.2):
+    - FirebaseAnalytics (~> 3.3)
+  - Firebase/Core (3.5.2):
     - Firebase/Analytics
   - FirebaseAnalytics (3.3.1):
     - FirebaseInstanceID (~> 1.0)
@@ -35,7 +35,7 @@ DEPENDENCIES:
   - FirebaseDatabase
 
 SPEC CHECKSUMS:
-  Firebase: 9b3edeffaf60d56e377dc5281e91c4ba935a5ad9
+  Firebase: 94e63112efcad75226c0356a8f3032397b8547c9
   FirebaseAnalytics: d968d4d5f6aeb795cd64144337bcd233e530efc6
   FirebaseAuth: 26fd291c3b552fc9658420b867520d5ae080421c
   FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7

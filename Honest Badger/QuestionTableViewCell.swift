@@ -9,8 +9,8 @@
 import UIKit
 
 protocol QuestionResponseDelegate: class {
-    func viewResponseButtonTapped(sender: QuestionTableViewCell)
-    func submitResponseToQuestionButtonTapped(sender: QuestionTableViewCell)
+    func viewResponseButtonTapped(_ sender: QuestionTableViewCell)
+    func submitResponseToQuestionButtonTapped(_ sender: QuestionTableViewCell)
 }
 
 class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
@@ -21,59 +21,63 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        questionLabel.font = UIFont.init(name: "Rockwell", size:21.0)
+        submitResponseButton.titleLabel?.font = UIFont.init(name: "Rockwell", size: 18.0)
+        viewResponsesButton.titleLabel?.font = UIFont.init(name: "Rockwell", size: 18.0)
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
     }
     
     var question: Question?
     
-    var timer: NSTimer?
-    var formatter = NSDateComponentsFormatter()
+    var timer: Timer?
+    var formatter = DateComponentsFormatter()
     
     weak var delegate: QuestionResponseDelegate?
     
-    func timerFired(timer: NSTimer?){
+    func timerFired(_ timer: Timer?){
         
         guard let question = self.question else
             
         { return }
         
-        let dateComparisonResult: NSComparisonResult = NSDate().compare(question.timeLimit)
-        if dateComparisonResult == NSComparisonResult.OrderedAscending
+        let dateComparisonResult: ComparisonResult = Date().compare(question.timeLimit as Date)
+        if dateComparisonResult == ComparisonResult.orderedAscending
             
         {
-            submitResponseButton.setTitle("Submit Response", forState: .Normal)
+            submitResponseButton.setTitle("Submit Response", for: UIControlState())
             submitResponseButton.backgroundColor = UIColor(red: 133/255, green: 178/255, blue: 131/255, alpha: 1)
-            submitResponseButton.enabled = true
+            submitResponseButton.isEnabled = true
             
-            formatter.unitsStyle = .Positional
-            let interval = question.timeLimit.timeIntervalSince1970 - NSDate().timeIntervalSince1970
+            formatter.unitsStyle = .positional
+            let interval = question.timeLimit.timeIntervalSince1970 - Date().timeIntervalSince1970
             
-            viewResponsesButton.setTitle(" \(formatter.stringFromTimeInterval(interval)!) left\n to respond", forState: .Normal)
-            viewResponsesButton.enabled = false
-            viewResponsesButton.backgroundColor = .whiteColor()
+            viewResponsesButton.setTitle(" \(formatter.string(from: interval)!) left\n to respond", for: UIControlState())
+            viewResponsesButton.isEnabled = false
+            viewResponsesButton.backgroundColor = UIColor.white
             
         } else {
             
-            submitResponseButton.setTitle(" \(question.responses.count) responses\n    received", forState: .Normal)
-            submitResponseButton.backgroundColor = .whiteColor()
-            submitResponseButton.enabled = false
+            submitResponseButton.setTitle(" \(question.responses.count) responses\n    received", for: UIControlState())
+            submitResponseButton.backgroundColor = UIColor.white
+            submitResponseButton.isEnabled = false
             
-            viewResponsesButton.enabled = true
-            viewResponsesButton.setTitle("View Responses", forState: .Normal)
+            viewResponsesButton.isEnabled = true
+            viewResponsesButton.setTitle("View Responses", for: UIControlState())
             viewResponsesButton.backgroundColor = UIColor(red: 249/255, green: 81/255, blue: 197/255, alpha: 1)
         }
     }
     
-    @IBAction func viewResponseButtonTapped(sender: UIButton) {
+    @IBAction func viewResponseButtonTapped(_ sender: UIButton) {
         self.delegate?.viewResponseButtonTapped(self)
     }
     
-    @IBAction func submitResponseToQuestionButtonTapped(sender: UIButton) {
+    @IBAction func submitResponseToQuestionButtonTapped(_ sender: UIButton) {
         self.delegate?.submitResponseToQuestionButtonTapped(self)
     }
     
-    func loadQuestionInfo(question: Question) {
+    func loadQuestionInfo(_ question: Question) {
         self.question = question
         self.timerFired(nil)
         questionLabel.text = "\(question.questionText)"

@@ -10,19 +10,19 @@ import Foundation
 
 class QuestionController {
     
-    static func submitQuestion(questionText: String, timeLimit: NSDate){
+    static func submitQuestion(_ questionText: String, timeLimit: Date){
         var question = Question(questionText: questionText, timeLimit: timeLimit, authorID: UserController.shared.currentUserID)
         question.save()
     }
     
-    static func fetchQuestions(completion: (questions: [Question]) -> Void){
-        FirebaseController.ref.child("questions").observeEventType(.Value, withBlock: { (dataSnapshot) in
+    static func fetchQuestions(_ completion: @escaping (_ questions: [Question]) -> Void){
+        FirebaseController.ref.child("questions").observe(.value, with: { (dataSnapshot) in
             guard let dataDictionary = dataSnapshot.value as? [String: [String: AnyObject]] else {
-                completion(questions: [])
+                completion([])
                 return
             }
             let questions = dataDictionary.flatMap { Question(dictionary: $1, identifier: $0) }
-            completion(questions: questions)
+            completion(questions)
         })
     }
 }

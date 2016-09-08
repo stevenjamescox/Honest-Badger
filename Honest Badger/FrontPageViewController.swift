@@ -19,7 +19,8 @@ class FrontPageViewController: UIViewController {
         subTitleLabel.sizeToFit()
         subTitleLabel.adjustsFontSizeToFitWidth = true
         enterButton.sizeToFit()
-        enterButton.enabled = true
+        enterButton.titleLabel?.font = UIFont.init(name: "Rockwell", size: 23.0)
+        enterButton.isEnabled = true
     }
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -27,39 +28,39 @@ class FrontPageViewController: UIViewController {
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var enterButton: UIButton!
     
-    @IBAction func didPressEnterAnonymously(sender: AnyObject) {
-        enterButton.enabled = false
-        enterButton.setTitle("Logging In...", forState: .Normal)
-        FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user, error) in
+    @IBAction func didPressEnterAnonymously(_ sender: AnyObject) {
+        enterButton.isEnabled = false
+        enterButton.setTitle("Logging In...", for: UIControlState())
+        FIRAuth.auth()?.signInAnonymously() { (user, error) in
             
             if user != nil && error == nil {
             UserController.shared.currentUserID = (user?.uid)!
-            self.performSegueWithIdentifier("fromLoginToQuestionsTableView", sender: self)
+            self.performSegue(withIdentifier: "fromLoginToQuestionsTableView", sender: self)
             }
             
             if error != nil {
-                    if let errCode = FIRAuthErrorCode(rawValue: error!.code) {
+                    if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
                         switch errCode {
-                        case .ErrorCodeTooManyRequests:
+                        case .errorCodeTooManyRequests:
                             self.createAlert("Error: \(errCode.rawValue)", message: "Too many recent login attempts from your device. Please wait a little while and try again.")
-                        case .ErrorCodeInternalError:
+                        case .errorCodeInternalError:
                             self.createAlert("Error: \(errCode.rawValue)", message: "Internal error. Please try again.")
-                        case .ErrorCodeNetworkError:
-                            self.createAlert("Error: \(errCode.rawValue)", message: "Not able to connect to the Internt. Please test your connection and try again.")
+                        case .errorCodeNetworkError:
+                            self.createAlert("Error: \(errCode.rawValue)", message: "Not able to connect to the Internet. Please test your connection and try again.")
                         default:
-                            self.createAlert("Error: \(errCode.rawValue)", message: "Login failed due to an unexpected error. PLease try again.")
+                            self.createAlert("Error: \(errCode.rawValue)", message: "Login failed due to an unexpected error. Please try again.")
                         }
                     }
                 }
             }
         }
     
-    func createAlert(title: String, message: String = "") {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+    func createAlert(_ title: String, message: String = "") {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
         alert.addAction(okayAction)
-        self.presentViewController(alert, animated: true, completion: nil)
-        enterButton.enabled = true
-        enterButton.setTitle("Enter Anonymously", forState: .Normal)
+        self.present(alert, animated: true, completion: nil)
+        enterButton.isEnabled = true
+        enterButton.setTitle("Enter Anonymously", for: UIControlState())
     }
 }
