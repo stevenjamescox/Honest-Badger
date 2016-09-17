@@ -22,6 +22,7 @@ class Question: FirebaseType {
     var timestamp: Date
     var timeLimit: Date
     var authorID: String
+    var responseKeys: [String]
     var identifier: String?
     
     var endpoint: String{
@@ -32,11 +33,12 @@ class Question: FirebaseType {
     return [questionTextKey: questionText as AnyObject, timestampKey: timestamp.timeIntervalSince1970 as AnyObject, timeLimitKey: timeLimit.timeIntervalSince1970 as AnyObject, authorIDKey: authorID as AnyObject]
     }
     
-    init(questionText: String, timeLimit: Date, authorID: String, responses: [String] = []){
+    init(questionText: String, timeLimit: Date, authorID: String, responses: [String] = [], responseKeys: [String] = []){
         self.questionText = questionText
         self.responses = []
         self.timestamp = Date()
         self.timeLimit = timeLimit
+        self.responseKeys = []
         self.identifier = nil
         self.authorID = authorID
     }
@@ -58,6 +60,12 @@ class Question: FirebaseType {
             responses = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: responsesPreSort) as! [String]
         } else {
             responses = []
+        }
+        
+        if let responseKeysArray = dictionary[responsesKey] as? [String: String] {
+            responseKeys = responseKeysArray.flatMap { $0.0 }
+        } else {
+            responseKeys = []
         }
         
         if let timestampInterval = dictionary[timestampKey] as? TimeInterval {

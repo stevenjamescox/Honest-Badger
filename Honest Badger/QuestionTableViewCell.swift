@@ -25,7 +25,6 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
         submitResponseButton.titleLabel?.font = UIFont.init(name: "Rockwell", size: 18.0)
         viewResponsesButton.titleLabel?.font = UIFont.init(name: "Rockwell", size: 18.0)
         
-        
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
     }
     
@@ -43,19 +42,35 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
         { return }
         
         let dateComparisonResult: ComparisonResult = Date().compare(question.timeLimit as Date)
-        if dateComparisonResult == ComparisonResult.orderedAscending
+        if dateComparisonResult == ComparisonResult.orderedAscending {
             
-        {
-            submitResponseButton.setTitle("Submit Response", for: UIControlState())
-            submitResponseButton.backgroundColor = UIColor(red: 133/255, green: 178/255, blue: 131/255, alpha: 1)
-            submitResponseButton.isEnabled = true
+            if question.responseKeys.contains(UserController.shared.currentUserID) {
             
-            formatter.unitsStyle = .positional
-            let interval = question.timeLimit.timeIntervalSince1970 - Date().timeIntervalSince1970
+                submitResponseButton.setTitle("Edit Response", for: UIControlState())
+                submitResponseButton.backgroundColor = UIColor(red: 133/255, green: 178/255, blue: 131/255, alpha: 1)
+                submitResponseButton.isEnabled = true
+                
+                formatter.unitsStyle = .positional
+                let interval = question.timeLimit.timeIntervalSince1970 - Date().timeIntervalSince1970
+                
+                viewResponsesButton.setTitle(" \(formatter.string(from: interval)!) left\n to respond", for: UIControlState())
+                viewResponsesButton.isEnabled = false
+                viewResponsesButton.backgroundColor = UIColor.white
+                
+            } else {
             
-            viewResponsesButton.setTitle(" \(formatter.string(from: interval)!) left\n to respond", for: UIControlState())
-            viewResponsesButton.isEnabled = false
-            viewResponsesButton.backgroundColor = UIColor.white
+                submitResponseButton.setTitle("Submit Response", for: UIControlState())
+                submitResponseButton.backgroundColor = UIColor(red: 133/255, green: 178/255, blue: 131/255, alpha: 1)
+                submitResponseButton.isEnabled = true
+            
+                formatter.unitsStyle = .positional
+                let interval = question.timeLimit.timeIntervalSince1970 - Date().timeIntervalSince1970
+            
+                viewResponsesButton.setTitle(" \(formatter.string(from: interval)!) left\n to respond", for: UIControlState())
+                viewResponsesButton.isEnabled = false
+                viewResponsesButton.backgroundColor = UIColor.white
+                
+            }
             
         } else {
             
