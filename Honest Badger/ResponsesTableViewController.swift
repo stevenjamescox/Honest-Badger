@@ -159,7 +159,7 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
     
         default:
         let cell = tableView.dequeueReusableCell(withIdentifier: "simpleResponse", for: indexPath)
-        cell.textLabel?.font = UIFont.init(name: "Rockwell", size: 16.0)
+        //cell.textLabel?.font = UIFont.init(name: "Rockwell", size: 16.0)
         guard let response = question?.responses[(indexPath as NSIndexPath).row] , question?.responses.count > 0 else { return cell }
         
         cell.textLabel?.text = response

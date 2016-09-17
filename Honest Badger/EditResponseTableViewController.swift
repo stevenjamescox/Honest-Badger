@@ -40,6 +40,9 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
             
             questionPresent.font = UIFont.init(name: "Rockwell", size: 21.0)
             countdownClock.font = UIFont.init(name: "Rockwell", size: 26.0)
+            
+            timeLeftOutlet.font = UIFont.init(name: "Rockwell", size: 25.0)
+            reviseResponseButtonOutlet.titleLabel?.font = UIFont.init(name: "Rockwell", size: 21.0)
         }
         
         // MARK: - Outlets
@@ -48,6 +51,10 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
         @IBOutlet weak var questionPresent: UILabel!
         @IBOutlet weak var responseEntryField: UITextView!
         @IBOutlet weak var countdownClock: UILabel!
+    
+        @IBOutlet weak var reviseResponseButtonOutlet: UIButton!
+    
+        @IBOutlet weak var timeLeftOutlet: UILabel!
         
         func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
             let newLength = textView.text!.characters.count + text.characters.count - range.length

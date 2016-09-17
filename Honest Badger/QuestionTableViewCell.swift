@@ -47,7 +47,7 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
             if question.responseKeys.contains(UserController.shared.currentUserID) {
             
                 submitResponseButton.setTitle("Edit Response", for: UIControlState())
-                submitResponseButton.backgroundColor = UIColor(red: 133/255, green: 178/255, blue: 131/255, alpha: 1)
+                submitResponseButton.backgroundColor = UIColor(red: 169/255, green: 169/255, blue: 169/255, alpha: 1)
                 submitResponseButton.isEnabled = true
                 
                 formatter.unitsStyle = .positional

@@ -497,6 +497,8 @@
                         <outlet property="navBar" destination="aca-g6-PkS" id="Cnt-cG-IvC"/>
                         <outlet property="questionPresent" destination="KvZ-c4-QbA" id="cJw-gg-VDQ"/>
                         <outlet property="responseEntryField" destination="Bdg-7u-eLy" id="UiY-6t-IwS"/>
+                        <outlet property="submitResponseButtonOutlet" destination="3AC-us-4Kg" id="01u-z8-w2l"/>
+                        <outlet property="timeLeftOutlet" destination="XSp-GF-hpc" id="L7u-0P-nPL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMF-bp-GvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -746,6 +748,7 @@
                     <connections>
                         <outlet property="navBar" destination="EBy-7s-K38" id="dTl-12-WjS"/>
                         <outlet property="questionEntryField" destination="LdY-zB-qbC" id="Su7-I8-oSO"/>
+                        <outlet property="submitQuestionButtonOutlet" destination="aEk-tf-S6I" id="B4Z-n8-sk5"/>
                         <outlet property="timeLimitPicker" destination="xP8-te-NvQ" id="hWC-qV-nDX"/>
                     </connections>
                 </tableViewController>
@@ -1052,7 +1055,7 @@ Anonymous Feedback</string>
                                                         <constraint firstAttribute="height" constant="43" id="YhK-hR-euk"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Rockwell" family="Rockwell" pointSize="21"/>
-                                                    <state key="normal" title="Submit Response">
+                                                    <state key="normal" title="Revise Response">
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <state key="highlighted">
@@ -1133,6 +1136,8 @@ Anonymous Feedback</string>
                         <outlet property="navBar" destination="LQa-7L-UOO" id="8eC-XF-9Dz"/>
                         <outlet property="questionPresent" destination="Syr-Pk-xTb" id="JX5-iQ-1zj"/>
                         <outlet property="responseEntryField" destination="tk6-Me-9wx" id="xcC-Oc-7s2"/>
+                        <outlet property="reviseResponseButtonOutlet" destination="jtp-mr-4Ij" id="C1S-75-MKx"/>
+                        <outlet property="timeLeftOutlet" destination="LBI-Op-M2g" id="Hfp-ca-dKo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcX-PR-cuz" userLabel="First Responder" sceneMemberID="firstResponder"/>

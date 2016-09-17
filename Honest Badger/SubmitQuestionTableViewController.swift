@@ -16,7 +16,6 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
         navBar.tintColor = UIColor.black
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
-        
         questionEntryField.becomeFirstResponder()
         questionEntryField.delegate = self
         
@@ -24,6 +23,7 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
         dateFormatter.dateFormat = "HH:mm"
         let date = dateFormatter.date(from: "02:00")
         timeLimitPicker.date = date!
+        submitQuestionButtonOutlet.titleLabel?.font = UIFont.init(name: "Rockwell", size: 23.0)
     }
 
     // MARK: - Outlets
@@ -31,6 +31,9 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var questionEntryField: UITextView!
     @IBOutlet weak var timeLimitPicker: UIDatePicker!
+    
+    @IBOutlet weak var submitQuestionButtonOutlet: UIButton!
+    
     
     @IBAction func timeLimitPickerAction(_ sender: AnyObject) {
 
