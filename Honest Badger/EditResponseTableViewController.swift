@@ -103,7 +103,7 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
             case 9:
                 return 90
             case 10:
-                return 90
+                return 300
             default:
                 return 50
             }

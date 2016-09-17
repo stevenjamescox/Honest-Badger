@@ -94,7 +94,7 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
         case 9:
             return 90
         case 10:
-            return 90
+            return 300
         default:
             return 50
         }
