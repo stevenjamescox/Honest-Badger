@@ -43,6 +43,7 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
             
             timeLeftOutlet.font = UIFont.init(name: "Rockwell", size: 25.0)
             reviseResponseButtonOutlet.titleLabel?.font = UIFont.init(name: "Rockwell", size: 21.0)
+            deleteResponseButtonOutlet.titleLabel?.font = UIFont.init(name: "Rockwell", size: 21.0)
         }
         
         // MARK: - Outlets
@@ -53,6 +54,8 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
         @IBOutlet weak var countdownClock: UILabel!
     
         @IBOutlet weak var reviseResponseButtonOutlet: UIButton!
+    
+        @IBOutlet weak var deleteResponseButtonOutlet: UIButton!
     
         @IBOutlet weak var timeLeftOutlet: UILabel!
         
@@ -71,7 +74,7 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
         }
         
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 11
+            return 13
         }
         
         override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -101,8 +104,12 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
             case 8:
                 return 4
             case 9:
-                return 90
+                return 70
             case 10:
+                return 4
+            case 11:
+                return 90
+            case 12:
                 return 300
             default:
                 return 50
@@ -174,6 +181,12 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
                 return
             }
         }
+    
+    @IBAction func didPressDeleteResponse(_ sender: AnyObject) {
+        ResponseController.deleteResponse(question!)
+        self.createAlert("Success!", message: "Your response has been deleted. You may submit another response if desired.")
+    }
+    
         
         func createAlert(_ title: String, message: String = "") {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
