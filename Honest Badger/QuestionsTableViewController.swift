@@ -91,6 +91,17 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
                 submitResponseTableViewController?.question = question
             }
         }
+        
+        if segue.identifier == "toEditResponseSegue" {
+            let editResponseTableViewController = segue.destination as? EditResponseTableViewController
+            if let indexPath = currentIndexPath {
+                let question = questions[(indexPath as NSIndexPath).row]
+                if let cell = tableView.cellForRow(at: indexPath) as? QuestionTableViewCell {
+                    editResponseTableViewController?.cellHeight = cell.frame.height
+                }
+                editResponseTableViewController?.question = question
+            }
+        }
     }
   
     func submitResponseToQuestionButtonTapped(_ sender: QuestionTableViewCell) {
@@ -99,7 +110,16 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
             let question = questions[(indexPath as NSIndexPath).row]
             
             if question.timeLimit.timeIntervalSince1970 > Date().timeIntervalSince1970{
+                
+                if question.responseKeys.contains(UserController.shared.currentUserID) {
+                
+                self.performSegue(withIdentifier: "toEditResponseSegue", sender: self)
+                
+                } else {
+                    
                 self.performSegue(withIdentifier: "toSubmitResponseSegue", sender: self)
+                    
+                }
             } else { return }
         }
     }
