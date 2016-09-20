@@ -12,6 +12,7 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
         navBar.tintColor = UIColor.black
         tableView.estimatedRowHeight = 100
@@ -21,8 +22,10 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        let date = dateFormatter.date(from: "02:00")
+        let date = dateFormatter.date(from: "08:00")
         timeLimitPicker.date = date!
+        timeLimitPicker.datePickerMode = .countDownTimer
+        
         submitQuestionButtonOutlet.titleLabel?.font = UIFont.init(name: "Rockwell", size: 23.0)
     }
 

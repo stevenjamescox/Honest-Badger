@@ -168,7 +168,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sS-ve-mDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3701" y="428"/>
+            <point key="canvasLocation" x="3862" y="428"/>
         </scene>
         <!--Responses-->
         <scene sceneID="WZO-kZ-P3z">
@@ -229,7 +229,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZY-SX-mZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4489" y="428"/>
+            <point key="canvasLocation" x="4830" y="428"/>
         </scene>
         <!--Submit Response-->
         <scene sceneID="9Pd-xE-rhw">
@@ -760,7 +760,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijg-Xy-Iw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3154" y="1201"/>
+            <point key="canvasLocation" x="3153" y="1200"/>
         </scene>
         <!--Front Page View Controller-->
         <scene sceneID="FJw-bW-cam">
@@ -874,12 +874,12 @@ Anonymous Feedback</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9g-XT-nm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2929" y="428"/>
+            <point key="canvasLocation" x="2935" y="428"/>
         </scene>
-        <!--Edit Response Scene-->
+        <!--Edit Response-->
         <scene sceneID="F6Z-Mz-vQc">
             <objects>
-                <tableViewController title="Edit Response Scene" id="Jz6-nG-RWI" customClass="EditResponseTableViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Edit Response" id="Jz6-nG-RWI" customClass="EditResponseTableViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wXr-wY-RNx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1192,7 +1192,7 @@ Anonymous Feedback</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcX-PR-cuz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4658" y="1200"/>
+            <point key="canvasLocation" x="4647" y="1200"/>
         </scene>
     </scenes>
     <resources>

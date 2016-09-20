@@ -74,7 +74,14 @@ class QuestionTableViewCell: UITableViewCell, UITableViewDelegate {
             
         } else {
             
+            if question.responses.count == 1 {
+            submitResponseButton.setTitle(" \(question.responses.count) response\n    received", for: UIControlState())
+            }
+            
+            if question.responses.count != 1 {
             submitResponseButton.setTitle(" \(question.responses.count) responses\n    received", for: UIControlState())
+            }
+            
             submitResponseButton.backgroundColor = UIColor.white
             submitResponseButton.isEnabled = false
             

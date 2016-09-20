@@ -24,7 +24,7 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        QuestionController.fetchQuestions { (questions) in
+        QuestionController.fetch200Questions { (questions) in
             
             let firstSort = questions.divide({ $0.timeLimit.timeIntervalSince1970 >= Date().timeIntervalSince1970 })
             
