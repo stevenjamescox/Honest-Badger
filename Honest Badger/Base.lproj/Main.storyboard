@@ -21,7 +21,7 @@
             <objects>
                 <tableViewController id="q8u-zd-BRG" customClass="QuestionsTableViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Plb-Fu-vcR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -314,14 +314,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnE-RP-gsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5225" y="-288"/>
+            <point key="canvasLocation" x="5225" y="-367"/>
         </scene>
         <!--Responses-->
         <scene sceneID="WZO-kZ-P3z">
             <objects>
                 <tableViewController id="cRj-RB-COW" customClass="ResponsesTableViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ihE-4e-zTR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -375,7 +375,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZY-SX-mZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6708" y="427.73613193403304"/>
+            <point key="canvasLocation" x="7711" y="-542"/>
         </scene>
         <!--Submit Response-->
         <scene sceneID="9Pd-xE-rhw">
@@ -652,7 +652,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMF-bp-GvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3903" y="1200"/>
+            <point key="canvasLocation" x="7710" y="832"/>
         </scene>
         <!--Submit Question-->
         <scene sceneID="tlX-wh-IRW">
@@ -906,7 +906,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijg-Xy-Iw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3153" y="1200"/>
+            <point key="canvasLocation" x="7710" y="1548"/>
         </scene>
         <!--Front Page View Controller-->
         <scene sceneID="FJw-bW-cam">
@@ -1002,7 +1002,7 @@ Anonymous Feedback</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRV-5e-Ycc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2173" y="428"/>
+            <point key="canvasLocation" x="1236" y="-366"/>
         </scene>
         <!--Global-->
         <scene sceneID="WPE-cG-fba">
@@ -1010,7 +1010,7 @@ Anonymous Feedback</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aBH-hV-NRk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Global" image="global" id="PK2-BX-xyk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OJI-ak-m0w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OJI-ak-m0w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1339,18 +1339,17 @@ Anonymous Feedback</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcX-PR-cuz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4647" y="1200"/>
+            <point key="canvasLocation" x="7710" y="125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="suP-Wt-ziu">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sSx-Y1-Vhy" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="uIN-pE-fSb">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="uIN-pE-fSb">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.070313461120000004" green="0.78432720899999997" blue="0.86106544730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="aBH-hV-NRk" kind="relationship" relationship="viewControllers" id="Uy8-kS-bLf"/>
@@ -1359,7 +1358,7 @@ Anonymous Feedback</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5EE-Sq-6dO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3153" y="428"/>
+            <point key="canvasLocation" x="2350" y="-367"/>
         </scene>
         <!--Global2-->
         <scene sceneID="5ww-4u-DFw">
@@ -1368,7 +1367,7 @@ Anonymous Feedback</string>
                     <tabBarItem key="tabBarItem" title="Global2" image="global" id="da3-cv-jca"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hoZ-ue-sY0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hoZ-ue-sY0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1379,7 +1378,7 @@ Anonymous Feedback</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYr-Eb-DBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4172" y="-288"/>
+            <point key="canvasLocation" x="4172" y="-367"/>
         </scene>
     </scenes>
     <resources>
