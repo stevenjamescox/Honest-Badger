@@ -28,6 +28,8 @@
 		958D0A371D3D6BB900BA5664 /* ResponsesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A361D3D6BB900BA5664 /* ResponsesTableViewController.swift */; };
 		958D9E1F1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png in Resources */ = {isa = PBXBuildFile; fileRef = 958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */; };
 		95BA6F9B1D441CE100B2E5D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95BA6F9A1D441CE100B2E5D4 /* GoogleService-Info.plist */; };
+		95BF9E791D9E18F600F5B7EB /* HonestBadgerTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BF9E781D9E18F600F5B7EB /* HonestBadgerTitle.png */; };
+		95BF9E7B1D9E1C4500F5B7EB /* HonestBadgerSubtitle.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BF9E7A1D9E1C4500F5B7EB /* HonestBadgerSubtitle.png */; };
 		95D543A71D3E860800069611 /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D543A61D3E860800069611 /* ResponseController.swift */; };
 		95D716281D2ED53100EAE5B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D716271D2ED53100EAE5B3 /* AppDelegate.swift */; };
 		95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D7162B1D2ED53100EAE5B3 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		958D0A361D3D6BB900BA5664 /* ResponsesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsesTableViewController.swift; sourceTree = "<group>"; };
 		958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1066634_LGPNG_2JR02878HK546464B.png; sourceTree = "<group>"; };
 		95BA6F9A1D441CE100B2E5D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95BF9E781D9E18F600F5B7EB /* HonestBadgerTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HonestBadgerTitle.png; sourceTree = "<group>"; };
+		95BF9E7A1D9E1C4500F5B7EB /* HonestBadgerSubtitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HonestBadgerSubtitle.png; sourceTree = "<group>"; };
 		95D543A61D3E860800069611 /* ResponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseController.swift; sourceTree = "<group>"; };
 		95D716241D2ED53100EAE5B3 /* Honest Badger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honest Badger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D716271D2ED53100EAE5B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				950303BB1D814C2B00EB879F /* Rockwell.ttf */,
+				95BF9E7A1D9E1C4500F5B7EB /* HonestBadgerSubtitle.png */,
+				95BF9E781D9E18F600F5B7EB /* HonestBadgerTitle.png */,
 				9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */,
 				3B56E1C61D9396FD0096469B /* 1066633_tweaked.png */,
 				958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */,
@@ -294,11 +300,13 @@
 				9564AE3E1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf in Resources */,
 				9523891C1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png in Resources */,
 				95898D9D1D46A6FD00642E97 /* 1066635_LGPNG_2JR02878HK546464B.png in Resources */,
+				95BF9E7B1D9E1C4500F5B7EB /* HonestBadgerSubtitle.png in Resources */,
 				958D9E1F1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png in Resources */,
 				3B56E1C71D9396FD0096469B /* 1066633_tweaked.png in Resources */,
 				95D7162F1D2ED53100EAE5B3 /* Assets.xcassets in Resources */,
 				95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */,
 				95BA6F9B1D441CE100B2E5D4 /* GoogleService-Info.plist in Resources */,
+				95BF9E791D9E18F600F5B7EB /* HonestBadgerTitle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
