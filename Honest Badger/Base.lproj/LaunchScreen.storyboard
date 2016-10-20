@@ -19,31 +19,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1066634_LGPNG_2JR02878HK546464B.png" translatesAutoresizingMaskIntoConstraints="NO" id="o13-ZK-koX"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HonestBadgerTitle.png" translatesAutoresizingMaskIntoConstraints="NO" id="U6d-ba-Gy2">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="D4J-lV-srJ"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HonestBadgerSubtitle.png" translatesAutoresizingMaskIntoConstraints="NO" id="UMx-h9-0AA">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Uob-wo-3dL"/>
-                                </constraints>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="honestBadgerTitleScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="een-f2-Kwh"/>
                         </subviews>
                         <color key="backgroundColor" red="0.62745098039215685" green="0.82352941176470584" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="UMx-h9-0AA" secondAttribute="leading" constant="-20" id="92j-Kl-cDZ"/>
-                            <constraint firstItem="o13-ZK-koX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="EPC-vQ-zUr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="U6d-ba-Gy2" secondAttribute="trailing" id="J02-NU-Prf"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="UMx-h9-0AA" secondAttribute="bottom" constant="30" id="Ja6-6c-Arb"/>
-                            <constraint firstItem="U6d-ba-Gy2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Uti-FM-QWG"/>
-                            <constraint firstItem="o13-ZK-koX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="byw-Bf-7AK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="o13-ZK-koX" secondAttribute="trailing" constant="-8" id="dTR-o4-9HX"/>
-                            <constraint firstItem="U6d-ba-Gy2" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="44" id="dZH-Yt-QQg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UMx-h9-0AA" secondAttribute="trailing" constant="10" id="hI3-kb-OnN"/>
-                            <constraint firstItem="U6d-ba-Gy2" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="pak-xv-ppE"/>
-                            <constraint firstItem="o13-ZK-koX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-8" id="rka-NE-tr9"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="een-f2-Kwh" secondAttribute="bottom" id="3Lh-07-Aiq"/>
+                            <constraint firstItem="een-f2-Kwh" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="G4D-7R-xnv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="een-f2-Kwh" secondAttribute="trailing" id="PvH-Qe-glt"/>
+                            <constraint firstItem="een-f2-Kwh" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="WcR-t7-qbu"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -53,8 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1066634_LGPNG_2JR02878HK546464B.png" width="4000" height="3926"/>
-        <image name="HonestBadgerSubtitle.png" width="1306" height="317"/>
-        <image name="HonestBadgerTitle.png" width="1183" height="189"/>
+        <image name="honestBadgerTitleScreen.png" width="1112" height="1601"/>
     </resources>
 </document>

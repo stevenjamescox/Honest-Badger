@@ -46,7 +46,7 @@ class AskedQuestionsTableViewController: UITableViewController, QuestionResponse
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        QuestionController.fetchQuestionsUserHasAsked(userAskedQuestionsKeys) { (questions) in
+        QuestionController.fetchQuestionsUserHasAsked((UserController.shared.currentUser?.questionsAsked)!) { (questions) in
             
             let firstSort = questions.divide({ $0.timeLimit.timeIntervalSince1970 >= Date().timeIntervalSince1970 })
             

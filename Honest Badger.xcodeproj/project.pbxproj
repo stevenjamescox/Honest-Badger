@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3B0049B71D754C49004AA522 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0049B61D754C49004AA522 /* UserController.swift */; };
+		3B567DC11DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B567DC01DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png */; };
+		3B567DC31DB8A90300FDB6C4 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B567DC21DB8A90300FDB6C4 /* LoadingScreenViewController.swift */; };
 		3B91120A1D9393590038E4D8 /* ChannelsSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9112091D9393590038E4D8 /* ChannelsSoonViewController.swift */; };
 		3B91120C1D9394840038E4D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B91120B1D9394840038E4D8 /* SettingsViewController.swift */; };
 		3BB66CA21DB72D8000E7F20B /* tweakedChannelNotice.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB66CA11DB72D8000E7F20B /* tweakedChannelNotice.png */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		3B0049B61D754C49004AA522 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		3B2636D01D9220A3008DC22E /* Honest Badger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Honest Badger.entitlements"; sourceTree = "<group>"; };
+		3B567DC01DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honestBadgerTitleScreen.png; sourceTree = "<group>"; };
+		3B567DC21DB8A90300FDB6C4 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		3B9112091D9393590038E4D8 /* ChannelsSoonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsSoonViewController.swift; sourceTree = "<group>"; };
 		3B91120B1D9394840038E4D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3BB66CA11DB72D8000E7F20B /* tweakedChannelNotice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweakedChannelNotice.png; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				950303BB1D814C2B00EB879F /* Rockwell.ttf */,
 				95BF9E7A1D9E1C4500F5B7EB /* HonestBadgerSubtitle.png */,
 				95BF9E781D9E18F600F5B7EB /* HonestBadgerTitle.png */,
+				3B567DC01DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png */,
 				9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */,
 				958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */,
 				9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */,
@@ -158,6 +163,7 @@
 				3B9112091D9393590038E4D8 /* ChannelsSoonViewController.swift */,
 				3BCDDAE01D8CD62C000BF06A /* EditResponseTableViewController.swift */,
 				952389191D4668E200AC69C7 /* FrontPageViewController.swift */,
+				3B567DC21DB8A90300FDB6C4 /* LoadingScreenViewController.swift */,
 				955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */,
 				955145A91D3D72C00064D897 /* SubmitResponseTableViewController.swift */,
 				958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */,
@@ -303,6 +309,7 @@
 			files = (
 				95D716321D2ED53100EAE5B3 /* LaunchScreen.storyboard in Resources */,
 				950303BC1D814C2B00EB879F /* Rockwell.ttf in Resources */,
+				3B567DC11DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png in Resources */,
 				9564AE3E1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf in Resources */,
 				9523891C1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png in Resources */,
 				95898D9D1D46A6FD00642E97 /* 1066635_LGPNG_2JR02878HK546464B.png in Resources */,
@@ -422,6 +429,7 @@
 				958D0A341D3D6B3800BA5664 /* Question.swift in Sources */,
 				3BB66CA41DB72DF000E7F20B /* AskedQuestionsTableViewController.swift in Sources */,
 				958D0A371D3D6BB900BA5664 /* ResponsesTableViewController.swift in Sources */,
+				3B567DC31DB8A90300FDB6C4 /* LoadingScreenViewController.swift in Sources */,
 				3B91120A1D9393590038E4D8 /* ChannelsSoonViewController.swift in Sources */,
 				95D543A71D3E860800069611 /* ResponseController.swift in Sources */,
 				3B91120C1D9394840038E4D8 /* SettingsViewController.swift in Sources */,

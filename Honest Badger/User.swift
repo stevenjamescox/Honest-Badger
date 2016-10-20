@@ -3,7 +3,7 @@
 //  Honest Badger
 //
 //  Created by Steve Cox on 10/19/16.
-//  Some code borrowed from app Steve Cox worked on called "Turnn"
+//  Much code borrowed from "Turnn" app
 //
 
 import Foundation
@@ -23,12 +23,12 @@ class User: FirebaseType {
     var identifier: String?
     
     var endpoint: String {
-        return "Users"
+        return "users"
     }
     
     var dictionaryCopy: [String:AnyObject] {
         
-        var dictionary: [String: AnyObject] = [usernameKey: username as AnyObject]
+        var dictionary: [String:AnyObject] = [usernameKey: username as AnyObject]
         
         if let questionsAsked = questionsAsked {
             dictionary.updateValue(questionsAsked as AnyObject, forKey: questionsAskedKey)
