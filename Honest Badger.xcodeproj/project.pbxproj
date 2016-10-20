@@ -13,6 +13,7 @@
 		3BB66CA21DB72D8000E7F20B /* tweakedChannelNotice.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB66CA11DB72D8000E7F20B /* tweakedChannelNotice.png */; };
 		3BB66CA41DB72DF000E7F20B /* AskedQuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB66CA31DB72DF000E7F20B /* AskedQuestionsTableViewController.swift */; };
 		3BCDDAE11D8CD62C000BF06A /* EditResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCDDAE01D8CD62C000BF06A /* EditResponseTableViewController.swift */; };
+		3BF93F361DB877640038B7AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF93F351DB877640038B7AE /* User.swift */; };
 		3CFC06AA8331118E9379F392 /* Pods_Honest_Badger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */; };
 		950303BC1D814C2B00EB879F /* Rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 950303BB1D814C2B00EB879F /* Rockwell.ttf */; };
 		9523891A1D4668E200AC69C7 /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952389191D4668E200AC69C7 /* FrontPageViewController.swift */; };
@@ -47,6 +48,7 @@
 		3BB66CA11DB72D8000E7F20B /* tweakedChannelNotice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweakedChannelNotice.png; sourceTree = "<group>"; };
 		3BB66CA31DB72DF000E7F20B /* AskedQuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskedQuestionsTableViewController.swift; sourceTree = "<group>"; };
 		3BCDDAE01D8CD62C000BF06A /* EditResponseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditResponseTableViewController.swift; sourceTree = "<group>"; };
+		3BF93F351DB877640038B7AE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		83349A628BB6A93D96289F1D /* Pods-Honest Badger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honest Badger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger.debug.xcconfig"; sourceTree = "<group>"; };
 		943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honest_Badger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950303BB1D814C2B00EB879F /* Rockwell.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockwell.ttf; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		958D0A351D3D6B3C00BA5664 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3BF93F351DB877640038B7AE /* User.swift */,
 				958D0A331D3D6B3800BA5664 /* Question.swift */,
 			);
 			name = Models;
@@ -427,6 +430,7 @@
 				95D716281D2ED53100EAE5B3 /* AppDelegate.swift in Sources */,
 				955145A41D3D71A40064D897 /* QuestionTableViewCell.swift in Sources */,
 				955145A81D3D72A00064D897 /* SubmitQuestionTableViewController.swift in Sources */,
+				3BF93F361DB877640038B7AE /* User.swift in Sources */,
 				9523891A1D4668E200AC69C7 /* FrontPageViewController.swift in Sources */,
 				958D0A2C1D3D6A8D00BA5664 /* QuestionsTableViewController.swift in Sources */,
 				958D0A311D3D6B0B00BA5664 /* QuestionController.swift in Sources */,
