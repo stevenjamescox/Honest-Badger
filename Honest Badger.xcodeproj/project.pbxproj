@@ -20,6 +20,7 @@
 		950303BC1D814C2B00EB879F /* Rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 950303BB1D814C2B00EB879F /* Rockwell.ttf */; };
 		950735631DBB4FC700841775 /* honestbadgertitleonlywithtrans.png in Resources */ = {isa = PBXBuildFile; fileRef = 950735621DBB4FC700841775 /* honestbadgertitleonlywithtrans.png */; };
 		950735651DBB545400841775 /* honestbadgerbadgeronly.png in Resources */ = {isa = PBXBuildFile; fileRef = 950735641DBB545400841775 /* honestbadgerbadgeronly.png */; };
+		950735671DBB584A00841775 /* SignInSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950735661DBB584A00841775 /* SignInSignUpViewController.swift */; };
 		9523891A1D4668E200AC69C7 /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952389191D4668E200AC69C7 /* FrontPageViewController.swift */; };
 		9523891C1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png in Resources */ = {isa = PBXBuildFile; fileRef = 9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */; };
 		955145A41D3D71A40064D897 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */; };
@@ -60,6 +61,7 @@
 		950303BB1D814C2B00EB879F /* Rockwell.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockwell.ttf; sourceTree = "<group>"; };
 		950735621DBB4FC700841775 /* honestbadgertitleonlywithtrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honestbadgertitleonlywithtrans.png; sourceTree = "<group>"; };
 		950735641DBB545400841775 /* honestbadgerbadgeronly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honestbadgerbadgeronly.png; sourceTree = "<group>"; };
+		950735661DBB584A00841775 /* SignInSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInSignUpViewController.swift; sourceTree = "<group>"; };
 		952389191D4668E200AC69C7 /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
 		9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1066629_LGPNG_2JR02878HK546464B.png; sourceTree = "<group>"; };
 		955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		958D0A2D1D3D6AA100BA5664 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				950735661DBB584A00841775 /* SignInSignUpViewController.swift */,
 				3BB66CA31DB72DF000E7F20B /* AskedQuestionsTableViewController.swift */,
 				3B91120B1D9394840038E4D8 /* SettingsViewController.swift */,
 				3B9112091D9393590038E4D8 /* ChannelsSoonViewController.swift */,
@@ -447,6 +450,7 @@
 				955145A41D3D71A40064D897 /* QuestionTableViewCell.swift in Sources */,
 				955145A81D3D72A00064D897 /* SubmitQuestionTableViewController.swift in Sources */,
 				3BF93F361DB877640038B7AE /* User.swift in Sources */,
+				950735671DBB584A00841775 /* SignInSignUpViewController.swift in Sources */,
 				9523891A1D4668E200AC69C7 /* FrontPageViewController.swift in Sources */,
 				958D0A2C1D3D6A8D00BA5664 /* QuestionsTableViewController.swift in Sources */,
 				958D0A311D3D6B0B00BA5664 /* QuestionController.swift in Sources */,
