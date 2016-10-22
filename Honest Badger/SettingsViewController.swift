@@ -10,6 +10,10 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet private weak var logOutButtonOutlet: UIButton!
+    
+    @IBOutlet private weak var legalAndPrivacyButtonOutlet: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,15 +28,9 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func logOutButtonTapped(_ sender: AnyObject) {
+        UserController.logOutUser()
+    self.performSegue(withIdentifier: "logOutSegue", sender: self)
     }
-    */
 
 }

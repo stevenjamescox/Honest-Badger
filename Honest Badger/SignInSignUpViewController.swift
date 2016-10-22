@@ -33,6 +33,7 @@ class SignInSignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         forgetPasswordButtonOutlet.isHidden = false
         forgetPasswordButtonOutlet.isEnabled = true
         
@@ -48,10 +49,11 @@ class SignInSignUpViewController: UIViewController, UITextFieldDelegate {
         legalAndPrivacyButtonOutlet.titleLabel?.font = UIFont.init(name: "Rockwell", size: 11.0)
         legalAndPrivacyButtonOutlet.titleLabel?.textAlignment = NSTextAlignment.center
         
-        loginOrSignUpButtonOutlet.titleLabel?.font = UIFont.init(name: "Rockwell", size: 17.0)
+        loginOrSignUpButtonOutlet.titleLabel?.font = UIFont.init(name: "Rockwell", size: 27.0)
         
         signUpOrInButtonOutlet.titleLabel?.font = UIFont.init(name: "Rockwell", size: 15.0)
         haveAccountButton.titleLabel?.font = UIFont.init(name: "Rockwell", size: 15.0)
+        view.addGestureRecognizer(tap)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -64,24 +66,28 @@ class SignInSignUpViewController: UIViewController, UITextFieldDelegate {
         return true
     }
   
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     func updateLoginView() {
         if isSignInPage == true  {
             UIView.animate(withDuration: 0.25){
                 self.haveAccountButton.setTitle("Already have an account?", for: .normal)
+                self.loginOrSignUpButtonOutlet.setTitle("Create Account", for: .normal)
+                self.signUpOrInButtonOutlet.setTitle("Sign In", for: .normal)
             }
             forgetPasswordButtonOutlet.isHidden = true
             forgetPasswordButtonOutlet.isEnabled = false
-            loginOrSignUpButtonOutlet.setTitle("Create Account", for: .normal)
-            signUpOrInButtonOutlet.setTitle("Sign In", for: .normal)
             isSignInPage = false
         } else {
             UIView.animate(withDuration: 0.25){
                 self.haveAccountButton.setTitle("Don't have an account?", for: .normal)
+                self.loginOrSignUpButtonOutlet.setTitle("Login", for: .normal)
+                self.signUpOrInButtonOutlet.setTitle("Sign Up", for: .normal)
             }
             forgetPasswordButtonOutlet.isHidden = false
             forgetPasswordButtonOutlet.isEnabled = true
-            loginOrSignUpButtonOutlet.setTitle("Login", for: .normal)
-            signUpOrInButtonOutlet.setTitle("Sign Up", for: .normal)
             isSignInPage = true
         }
     }
@@ -166,6 +172,15 @@ class SignInSignUpViewController: UIViewController, UITextFieldDelegate {
             self.loginOrSignUpButtonOutlet.isEnabled = true
         }
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailField || textField == passwordField {
+            textField.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
     
     
     @IBAction func altToggleSignUpOrInButtonTapped(_ sender: AnyObject) {

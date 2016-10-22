@@ -178,7 +178,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tweakedChannelNotice.png" translatesAutoresizingMaskIntoConstraints="NO" id="kqo-8I-yuf"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tweakedChannelNotice.png" translatesAutoresizingMaskIntoConstraints="NO" id="kqo-8I-yuf">
+                                <color key="backgroundColor" red="0.070313461120000004" green="0.78432720899999997" blue="0.86106544730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -985,20 +987,22 @@
                             <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="honestbadgerbadgeronly.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wy8-CC-xR0"/>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AHj-fP-y5K">
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2Mi-Eh-ng4"/>
                                     <constraint firstAttribute="width" constant="250" id="CYd-4L-3gQ"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vf1-0I-NuF">
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="E5i-dE-wjw"/>
                                     <constraint firstAttribute="width" constant="250" id="fas-hT-Pyv"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="wUw-qP-nje"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3d-c8-W02">
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -1011,7 +1015,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sog-Xk-CGI">
-                                <state key="normal" title="Already have an account?">
+                                <state key="normal" title="Don't have an account?">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1019,11 +1023,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCO-b9-J2r">
-                                <state key="normal" title="Sign In">
+                                <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="toggleSignUpOrInButtonTappedWithSender:" destination="aIm-Sj-qsL" eventType="touchUpInside" id="ggX-RX-AiA"/>
+                                    <action selector="toggleSignUpOrInButtonTapped:" destination="aIm-Sj-qsL" eventType="touchUpInside" id="iFN-Gf-cNT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="AYi-oZ-ZiY">
@@ -1034,6 +1038,9 @@
 Privacy</string>
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="GbX-Kr-Pmi" kind="presentation" id="wFN-Te-yk3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BwR-77-syC">
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -1048,10 +1055,10 @@ Password?</string>
                                 <color key="backgroundColor" red="0.42352941179999998" green="0.0" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="aZg-IK-9jF"/>
-                                    <constraint firstAttribute="height" constant="40" id="qE7-7S-36p"/>
+                                    <constraint firstAttribute="height" constant="50" id="qE7-7S-36p"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Create Account">
+                                <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -1085,7 +1092,7 @@ Password?</string>
                             <constraint firstItem="Wy8-CC-xR0" firstAttribute="leading" secondItem="H8I-Ib-rIC" secondAttribute="leadingMargin" id="v0p-6M-4bR"/>
                             <constraint firstItem="vf1-0I-NuF" firstAttribute="top" secondItem="hk9-KC-ggd" secondAttribute="bottom" constant="7" id="vTI-X4-PdM"/>
                             <constraint firstItem="sog-Xk-CGI" firstAttribute="centerX" secondItem="YCO-b9-J2r" secondAttribute="centerX" id="wsg-el-WoW"/>
-                            <constraint firstItem="YCO-b9-J2r" firstAttribute="top" secondItem="sog-Xk-CGI" secondAttribute="bottom" constant="5" id="yWN-Pk-Igh"/>
+                            <constraint firstItem="YCO-b9-J2r" firstAttribute="top" secondItem="sog-Xk-CGI" secondAttribute="bottom" constant="3" id="yWN-Pk-Igh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wy8-CC-xR0" secondAttribute="trailing" id="zKn-EG-Zyt"/>
                         </constraints>
                     </view>
@@ -1103,6 +1110,74 @@ Password?</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fab-sk-u5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1048.8" y="374.66266866566718"/>
+        </scene>
+        <!--Legal And Privacy View Controller-->
+        <scene sceneID="Weq-Kt-v4U">
+            <objects>
+                <viewController id="GbX-Kr-Pmi" customClass="LegalAndPrivacyViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bbF-qX-zbK"/>
+                        <viewControllerLayoutGuide type="bottom" id="L72-mc-n5v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bDF-Pd-iQq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="honestbadgerbadgeronly.png" translatesAutoresizingMaskIntoConstraints="NO" id="L9L-bS-ULe"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zyI-1p-8lN">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="GbX-Kr-Pmi" eventType="touchUpInside" id="Gmn-lm-fXx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legal &amp; Privacy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMA-yL-MzG">
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUA-P0-TEa">
+                                <mutableString key="text">LEGAL
+Honest Badger and its developer(s) are not responsible for damages, drama, or injuries (emotional or otherwise) that occur as a result of the existence of this application.
+
+PRIVACY
+We take your privacy extremely seriously. The identity or email address of a questioner or responder is never, ever presented in the application or online (unless, of course, you decide to sign your name in a question or response).
+The purpose of a user's providing an email address is for her/his convenience in being able to access her/his asked &amp; answered questions and channel memberships from any device she/he would like to sign in from.
+We never seek nor store your current location.
+We never see your password. It's encrypted and stored on a secure server.
+The database that stores the questions and responses is protected by multi-factor authentication. 
+We do not sell or package your information for anyone--nor will we ever.
+We will never, ever give database records to anyone unless required to by a warrant or subpoena.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.070313461120000004" green="0.78432720899999997" blue="0.86106544730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="hUA-P0-TEa" secondAttribute="trailing" constant="8" id="1IB-80-gpr"/>
+                            <constraint firstItem="tMA-yL-MzG" firstAttribute="top" secondItem="zyI-1p-8lN" secondAttribute="bottom" constant="10" id="6CE-jc-mUI"/>
+                            <constraint firstItem="L72-mc-n5v" firstAttribute="top" secondItem="hUA-P0-TEa" secondAttribute="bottom" constant="8" id="JA5-YZ-i2s"/>
+                            <constraint firstItem="L9L-bS-ULe" firstAttribute="top" secondItem="bbF-qX-zbK" secondAttribute="bottom" id="Pdd-3l-cph"/>
+                            <constraint firstItem="L9L-bS-ULe" firstAttribute="trailing" secondItem="bDF-Pd-iQq" secondAttribute="trailingMargin" id="SrF-Dz-uQn"/>
+                            <constraint firstItem="hUA-P0-TEa" firstAttribute="leading" secondItem="bDF-Pd-iQq" secondAttribute="leadingMargin" constant="8" id="Vn3-3D-3uT"/>
+                            <constraint firstItem="tMA-yL-MzG" firstAttribute="centerX" secondItem="bDF-Pd-iQq" secondAttribute="centerX" id="Y26-gA-2k2"/>
+                            <constraint firstItem="hUA-P0-TEa" firstAttribute="centerX" secondItem="L9L-bS-ULe" secondAttribute="centerX" id="a4j-Dq-W8k"/>
+                            <constraint firstItem="hUA-P0-TEa" firstAttribute="top" secondItem="tMA-yL-MzG" secondAttribute="bottom" constant="15" id="fIY-pN-gJ6"/>
+                            <constraint firstItem="zyI-1p-8lN" firstAttribute="leading" secondItem="bDF-Pd-iQq" secondAttribute="leadingMargin" constant="12" id="gPx-5e-WKX"/>
+                            <constraint firstItem="L72-mc-n5v" firstAttribute="top" secondItem="L9L-bS-ULe" secondAttribute="bottom" id="mJw-FR-mcY"/>
+                            <constraint firstItem="L9L-bS-ULe" firstAttribute="leading" secondItem="bDF-Pd-iQq" secondAttribute="leadingMargin" id="skz-vz-XfA"/>
+                            <constraint firstItem="zyI-1p-8lN" firstAttribute="top" secondItem="bbF-qX-zbK" secondAttribute="bottom" id="wPJ-6o-Pmm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="legalPrivacyTitleOutlet" destination="tMA-yL-MzG" id="rpL-i0-mi0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7u-eg-8cD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2408.8000000000002" y="948.57571214392806"/>
         </scene>
         <!--Global-->
         <scene sceneID="WPE-cG-fba">
@@ -1694,11 +1769,60 @@ Password?</string>
                     <view key="view" contentMode="scaleToFill" id="geR-oN-NxC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingspanelbadger.png" translatesAutoresizingMaskIntoConstraints="NO" id="Any-L5-Uf7"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7H7-aQ-6of">
+                                <color key="backgroundColor" red="0.42352941179999998" green="0.0" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QMz-xE-lJ7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="YkZ-q2-lgY"/>
+                                    <constraint firstAttribute="width" constant="250" id="g4p-i7-Cg6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButtonTapped:" destination="g9Y-CM-Ptc" eventType="touchUpInside" id="nDI-Ff-vmX"/>
+                                    <action selector="loginButtonTappedWithSender:" destination="aIm-Sj-qsL" eventType="touchUpInside" id="aBd-Yw-w0v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhI-mE-H1M">
+                                <color key="backgroundColor" red="0.42352941179999998" green="0.0" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Muu-Ts-Shg"/>
+                                    <constraint firstAttribute="width" constant="250" id="TDF-LT-drp"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="Y8h-b5-WRu"/>
+                                    <constraint firstAttribute="height" constant="40" id="nbo-bW-4AP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Legal &amp; Privacy Info">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTappedWithSender:" destination="aIm-Sj-qsL" eventType="touchUpInside" id="uvY-U3-cFM"/>
+                                    <segue destination="GbX-Kr-Pmi" kind="presentation" id="lRa-za-ruS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.070313461120000004" green="0.78432720899999997" blue="0.86106544730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7H7-aQ-6of" firstAttribute="centerX" secondItem="geR-oN-NxC" secondAttribute="centerX" id="8HO-re-kJz"/>
+                            <constraint firstItem="Any-L5-Uf7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VhI-mE-H1M" secondAttribute="bottom" constant="50" id="IXG-Ha-Nfj"/>
+                            <constraint firstItem="VhI-mE-H1M" firstAttribute="centerX" secondItem="geR-oN-NxC" secondAttribute="centerX" id="Iag-bK-Zkp"/>
+                            <constraint firstItem="VhI-mE-H1M" firstAttribute="top" secondItem="7H7-aQ-6of" secondAttribute="bottom" constant="20" id="Jyn-fz-dVZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Any-L5-Uf7" secondAttribute="trailing" id="Kcb-9A-gBa"/>
+                            <constraint firstItem="7H7-aQ-6of" firstAttribute="top" secondItem="v8P-Rz-29X" secondAttribute="bottom" constant="20" id="PF1-Ll-DP4"/>
+                            <constraint firstItem="gNx-B1-HJl" firstAttribute="top" secondItem="Any-L5-Uf7" secondAttribute="bottom" id="Ws7-1Z-nFb"/>
+                            <constraint firstItem="Any-L5-Uf7" firstAttribute="leading" secondItem="geR-oN-NxC" secondAttribute="leadingMargin" id="hxE-5j-hrp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="imV-rw-cFR"/>
                     <connections>
+                        <outlet property="legalAndPrivacyButtonOutlet" destination="VhI-mE-H1M" id="E1b-9N-z2b"/>
+                        <outlet property="logOutButtonOutlet" destination="7H7-aQ-6of" id="rxf-vX-fyX"/>
                         <segue destination="6jO-DH-1VM" kind="presentation" identifier="loggedOutBackToLoginSegue" id="cVJ-AT-BnC"/>
+                        <segue destination="aIm-Sj-qsL" kind="presentation" identifier="logOutSegue" id="Q55-fz-UdG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74G-rG-Rek" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1716,9 +1840,12 @@ Password?</string>
         <image name="honestbadgertitleonlywithtrans.png" width="1112" height="1601"/>
         <image name="questions" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
+        <image name="settingspanelbadger.png" width="300" height="355"/>
         <image name="tweakedChannelNotice.png" width="3999" height="3619"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="abK-OJ-k3a"/>
+        <segue reference="Q55-fz-UdG"/>
+        <segue reference="wFN-Te-yk3"/>
     </inferredMetricsTieBreakers>
 </document>

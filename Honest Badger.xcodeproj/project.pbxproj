@@ -21,6 +21,8 @@
 		950735631DBB4FC700841775 /* honestbadgertitleonlywithtrans.png in Resources */ = {isa = PBXBuildFile; fileRef = 950735621DBB4FC700841775 /* honestbadgertitleonlywithtrans.png */; };
 		950735651DBB545400841775 /* honestbadgerbadgeronly.png in Resources */ = {isa = PBXBuildFile; fileRef = 950735641DBB545400841775 /* honestbadgerbadgeronly.png */; };
 		950735671DBB584A00841775 /* SignInSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950735661DBB584A00841775 /* SignInSignUpViewController.swift */; };
+		950735691DBB687B00841775 /* LegalAndPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950735681DBB687B00841775 /* LegalAndPrivacyViewController.swift */; };
+		9507356B1DBB69FD00841775 /* settingspanelbadger.png in Resources */ = {isa = PBXBuildFile; fileRef = 9507356A1DBB69FD00841775 /* settingspanelbadger.png */; };
 		9523891A1D4668E200AC69C7 /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952389191D4668E200AC69C7 /* FrontPageViewController.swift */; };
 		9523891C1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png in Resources */ = {isa = PBXBuildFile; fileRef = 9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */; };
 		955145A41D3D71A40064D897 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */; };
@@ -62,6 +64,8 @@
 		950735621DBB4FC700841775 /* honestbadgertitleonlywithtrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honestbadgertitleonlywithtrans.png; sourceTree = "<group>"; };
 		950735641DBB545400841775 /* honestbadgerbadgeronly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honestbadgerbadgeronly.png; sourceTree = "<group>"; };
 		950735661DBB584A00841775 /* SignInSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInSignUpViewController.swift; sourceTree = "<group>"; };
+		950735681DBB687B00841775 /* LegalAndPrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalAndPrivacyViewController.swift; sourceTree = "<group>"; };
+		9507356A1DBB69FD00841775 /* settingspanelbadger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingspanelbadger.png; sourceTree = "<group>"; };
 		952389191D4668E200AC69C7 /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
 		9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1066629_LGPNG_2JR02878HK546464B.png; sourceTree = "<group>"; };
 		955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				95BF9E781D9E18F600F5B7EB /* HonestBadgerTitle.png */,
 				3B567DC01DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png */,
 				950735641DBB545400841775 /* honestbadgerbadgeronly.png */,
+				9507356A1DBB69FD00841775 /* settingspanelbadger.png */,
 				950735621DBB4FC700841775 /* honestbadgertitleonlywithtrans.png */,
 				9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */,
 				958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */,
@@ -166,6 +171,7 @@
 		958D0A2D1D3D6AA100BA5664 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				950735681DBB687B00841775 /* LegalAndPrivacyViewController.swift */,
 				950735661DBB584A00841775 /* SignInSignUpViewController.swift */,
 				3BB66CA31DB72DF000E7F20B /* AskedQuestionsTableViewController.swift */,
 				3B91120B1D9394840038E4D8 /* SettingsViewController.swift */,
@@ -316,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9507356B1DBB69FD00841775 /* settingspanelbadger.png in Resources */,
 				95D716321D2ED53100EAE5B3 /* LaunchScreen.storyboard in Resources */,
 				950735631DBB4FC700841775 /* honestbadgertitleonlywithtrans.png in Resources */,
 				950303BC1D814C2B00EB879F /* Rockwell.ttf in Resources */,
@@ -454,6 +461,7 @@
 				9523891A1D4668E200AC69C7 /* FrontPageViewController.swift in Sources */,
 				958D0A2C1D3D6A8D00BA5664 /* QuestionsTableViewController.swift in Sources */,
 				958D0A311D3D6B0B00BA5664 /* QuestionController.swift in Sources */,
+				950735691DBB687B00841775 /* LegalAndPrivacyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
