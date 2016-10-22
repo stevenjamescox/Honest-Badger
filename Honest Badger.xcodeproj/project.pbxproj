@@ -18,6 +18,8 @@
 		3BF93F361DB877640038B7AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF93F351DB877640038B7AE /* User.swift */; };
 		3CFC06AA8331118E9379F392 /* Pods_Honest_Badger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */; };
 		950303BC1D814C2B00EB879F /* Rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 950303BB1D814C2B00EB879F /* Rockwell.ttf */; };
+		950735631DBB4FC700841775 /* honestbadgertitleonlywithtrans.png in Resources */ = {isa = PBXBuildFile; fileRef = 950735621DBB4FC700841775 /* honestbadgertitleonlywithtrans.png */; };
+		950735651DBB545400841775 /* honestbadgerbadgeronly.png in Resources */ = {isa = PBXBuildFile; fileRef = 950735641DBB545400841775 /* honestbadgerbadgeronly.png */; };
 		9523891A1D4668E200AC69C7 /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952389191D4668E200AC69C7 /* FrontPageViewController.swift */; };
 		9523891C1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png in Resources */ = {isa = PBXBuildFile; fileRef = 9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */; };
 		955145A41D3D71A40064D897 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */; };
@@ -56,6 +58,8 @@
 		83349A628BB6A93D96289F1D /* Pods-Honest Badger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honest Badger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger.debug.xcconfig"; sourceTree = "<group>"; };
 		943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honest_Badger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950303BB1D814C2B00EB879F /* Rockwell.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockwell.ttf; sourceTree = "<group>"; };
+		950735621DBB4FC700841775 /* honestbadgertitleonlywithtrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honestbadgertitleonlywithtrans.png; sourceTree = "<group>"; };
+		950735641DBB545400841775 /* honestbadgerbadgeronly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honestbadgerbadgeronly.png; sourceTree = "<group>"; };
 		952389191D4668E200AC69C7 /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
 		9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1066629_LGPNG_2JR02878HK546464B.png; sourceTree = "<group>"; };
 		955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				95BF9E7A1D9E1C4500F5B7EB /* HonestBadgerSubtitle.png */,
 				95BF9E781D9E18F600F5B7EB /* HonestBadgerTitle.png */,
 				3B567DC01DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png */,
+				950735641DBB545400841775 /* honestbadgerbadgeronly.png */,
+				950735621DBB4FC700841775 /* honestbadgertitleonlywithtrans.png */,
 				9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */,
 				958D9E1E1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png */,
 				9523891B1D466C1D00AC69C7 /* 1066629_LGPNG_2JR02878HK546464B.png */,
@@ -308,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95D716321D2ED53100EAE5B3 /* LaunchScreen.storyboard in Resources */,
+				950735631DBB4FC700841775 /* honestbadgertitleonlywithtrans.png in Resources */,
 				950303BC1D814C2B00EB879F /* Rockwell.ttf in Resources */,
 				3B567DC11DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png in Resources */,
 				9564AE3E1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf in Resources */,
@@ -315,6 +322,7 @@
 				95898D9D1D46A6FD00642E97 /* 1066635_LGPNG_2JR02878HK546464B.png in Resources */,
 				95BF9E7B1D9E1C4500F5B7EB /* HonestBadgerSubtitle.png in Resources */,
 				958D9E1F1D36F2F3008EDB76 /* 1066634_LGPNG_2JR02878HK546464B.png in Resources */,
+				950735651DBB545400841775 /* honestbadgerbadgeronly.png in Resources */,
 				95D7162F1D2ED53100EAE5B3 /* Assets.xcassets in Resources */,
 				95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */,
 				95BA6F9B1D441CE100B2E5D4 /* GoogleService-Info.plist in Resources */,

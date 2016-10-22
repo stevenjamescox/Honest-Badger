@@ -37,7 +37,6 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
     
     @IBOutlet weak var submitQuestionButtonOutlet: UIButton!
     
-    
     @IBAction func timeLimitPickerAction(_ sender: AnyObject) {
 
     }

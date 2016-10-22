@@ -36,7 +36,6 @@ class LoadingScreenViewController: UIViewController {
                 }
             }
         }
-        RunLoop.current.run(until: Date(timeIntervalSinceNow: 3))
     }
     
     override func didReceiveMemoryWarning() {

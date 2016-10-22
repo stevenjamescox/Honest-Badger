@@ -980,12 +980,99 @@
                     <view key="view" contentMode="scaleToFill" id="H8I-Ib-rIC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="honestbadgertitleonlywithtrans.png" translatesAutoresizingMaskIntoConstraints="NO" id="RfK-Oa-Y2A"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="honestbadgerbadgeronly.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wy8-CC-xR0"/>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AHj-fP-y5K">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="qbO-xO-Hn4"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vf1-0I-NuF">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="V4w-WT-BYV"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3d-c8-W02">
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk9-KC-ggd">
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Su-ha-Kgw">
+                                <color key="backgroundColor" red="0.42352941179999998" green="0.0" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qE7-7S-36p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sog-Xk-CGI">
+                                <state key="normal" title="Already have an account?">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCO-b9-J2r">
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="AYi-oZ-ZiY">
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <string key="title">Legal &amp;
+Privacy</string>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.070313461120000004" green="0.78432720899999997" blue="0.86106544730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sog-Xk-CGI" firstAttribute="top" secondItem="5Su-ha-Kgw" secondAttribute="bottom" constant="18" id="5hb-LT-eWN"/>
+                            <constraint firstItem="1vC-vY-CHd" firstAttribute="top" secondItem="Wy8-CC-xR0" secondAttribute="bottom" id="6Nf-m4-V8W"/>
+                            <constraint firstItem="5Su-ha-Kgw" firstAttribute="width" secondItem="vf1-0I-NuF" secondAttribute="width" id="9LV-nL-rua"/>
+                            <constraint firstItem="RfK-Oa-Y2A" firstAttribute="top" secondItem="WkO-jP-Ez7" secondAttribute="bottom" id="D3f-ZE-8iD"/>
+                            <constraint firstItem="YCO-b9-J2r" firstAttribute="centerX" secondItem="Wy8-CC-xR0" secondAttribute="centerX" id="HfG-Dd-T6e"/>
+                            <constraint firstItem="YCO-b9-J2r" firstAttribute="top" secondItem="Wy8-CC-xR0" secondAttribute="bottom" constant="-38" id="LR9-Y4-EYJ"/>
+                            <constraint firstItem="5Su-ha-Kgw" firstAttribute="leading" secondItem="vf1-0I-NuF" secondAttribute="leading" id="MDL-YY-ILy"/>
+                            <constraint firstItem="AHj-fP-y5K" firstAttribute="centerY" secondItem="RfK-Oa-Y2A" secondAttribute="centerY" id="Nc1-yE-yMI"/>
+                            <constraint firstItem="vf1-0I-NuF" firstAttribute="top" secondItem="hk9-KC-ggd" secondAttribute="bottom" constant="7" id="Nia-rM-S08"/>
+                            <constraint firstItem="RfK-Oa-Y2A" firstAttribute="leading" secondItem="H8I-Ib-rIC" secondAttribute="leadingMargin" id="PbT-3O-sgn"/>
+                            <constraint firstItem="1vC-vY-CHd" firstAttribute="top" secondItem="RfK-Oa-Y2A" secondAttribute="bottom" id="Pm3-Rt-80Y"/>
+                            <constraint firstItem="Wy8-CC-xR0" firstAttribute="top" secondItem="WkO-jP-Ez7" secondAttribute="bottom" id="QUN-bX-mrd"/>
+                            <constraint firstItem="hk9-KC-ggd" firstAttribute="leading" secondItem="vf1-0I-NuF" secondAttribute="leading" id="TOG-IZ-1jd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RfK-Oa-Y2A" secondAttribute="trailing" id="TaC-YN-29G"/>
+                            <constraint firstItem="AYi-oZ-ZiY" firstAttribute="leading" secondItem="H8I-Ib-rIC" secondAttribute="leadingMargin" id="V60-eH-R5T"/>
+                            <constraint firstItem="5Su-ha-Kgw" firstAttribute="top" secondItem="vf1-0I-NuF" secondAttribute="bottom" constant="100" id="ZFN-n1-ppq"/>
+                            <constraint firstItem="vf1-0I-NuF" firstAttribute="centerX" secondItem="RfK-Oa-Y2A" secondAttribute="centerX" id="cUw-aB-S1E"/>
+                            <constraint firstItem="AHj-fP-y5K" firstAttribute="centerX" secondItem="RfK-Oa-Y2A" secondAttribute="centerX" id="iIu-Xm-5K8"/>
+                            <constraint firstItem="j3d-c8-W02" firstAttribute="leading" secondItem="AHj-fP-y5K" secondAttribute="leading" id="j12-Fa-0p2"/>
+                            <constraint firstItem="1vC-vY-CHd" firstAttribute="top" secondItem="AYi-oZ-ZiY" secondAttribute="bottom" id="lK0-CQ-hl8"/>
+                            <constraint firstItem="AHj-fP-y5K" firstAttribute="top" secondItem="j3d-c8-W02" secondAttribute="bottom" constant="7" id="nNX-YQ-UcR"/>
+                            <constraint firstItem="Wy8-CC-xR0" firstAttribute="leading" secondItem="H8I-Ib-rIC" secondAttribute="leadingMargin" id="v0p-6M-4bR"/>
+                            <constraint firstItem="sog-Xk-CGI" firstAttribute="centerX" secondItem="YCO-b9-J2r" secondAttribute="centerX" id="wsg-el-WoW"/>
+                            <constraint firstItem="YCO-b9-J2r" firstAttribute="top" secondItem="sog-Xk-CGI" secondAttribute="bottom" constant="7" id="yWN-Pk-Igh"/>
+                            <constraint firstItem="5Su-ha-Kgw" firstAttribute="centerX" secondItem="vf1-0I-NuF" secondAttribute="centerX" id="zCF-rt-oZy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wy8-CC-xR0" secondAttribute="trailing" id="zKn-EG-Zyt"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fab-sk-u5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="375"/>
+            <point key="canvasLocation" x="1048.8" y="374.66266866566718"/>
         </scene>
         <!--Global-->
         <scene sceneID="WPE-cG-fba">
@@ -993,7 +1080,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aBH-hV-NRk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Global" image="global" id="PK2-BX-xyk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OJI-ak-m0w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OJI-ak-m0w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1354,7 +1441,7 @@
                     <tabBarItem key="tabBarItem" title="Channels" image="channels" id="da3-cv-jca"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hoZ-ue-sY0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hoZ-ue-sY0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1373,7 +1460,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jxA-Oo-ySl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Questions" image="questions" id="B1i-VO-0dJ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2rV-xH-pbS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2rV-xH-pbS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1534,7 +1621,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N1h-Gc-urD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="?s I've Answered" image="answers" id="Hw4-3T-WyK"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tBe-Di-mhD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tBe-Di-mhD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1553,7 +1640,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vdZ-1a-sNt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="Wea-rd-Z78"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4wA-FE-mt8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4wA-FE-mt8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1595,6 +1682,8 @@
         <image name="channels" width="25" height="25"/>
         <image name="global" width="25" height="25"/>
         <image name="honestBadgerTitleScreen.png" width="1112" height="1601"/>
+        <image name="honestbadgerbadgeronly.png" width="1112" height="1601"/>
+        <image name="honestbadgertitleonlywithtrans.png" width="1112" height="1601"/>
         <image name="questions" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
         <image name="tweakedChannelNotice.png" width="3999" height="3619"/>
