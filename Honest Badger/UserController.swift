@@ -47,12 +47,12 @@ class UserController {
             if (UserController.shared.currentUser?.questionsAsked?.count)! > 0 {
                 UserController.shared.currentUser?.questionsAsked?.append(questionID)
                 //UserController.shared.currentUser?.save()
-                FirebaseController.ref.child("Users").child(UserController.shared.currentUserID).child("asked").child(questionID).setValue(true)
+                FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("asked").child(questionID).setValue(true)
                 completion(true)
             } else {
                 UserController.shared.currentUser?.questionsAsked = [questionID]
                 //UserController.shared.currentUser?.save()
-                FirebaseController.ref.child("Users").child(UserController.shared.currentUserID).child("asked").child(questionID).setValue(true)
+                FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("asked").child(questionID).setValue(true)
                 completion(true)
             }
         } else {
@@ -66,12 +66,12 @@ class UserController {
             if (UserController.shared.currentUser?.questionsAnswered?.count)! > 0 {
                 UserController.shared.currentUser?.questionsAnswered?.append(questionID)
                 //UserController.shared.currentUser?.save()
-                FirebaseController.ref.child("Users").child(UserController.shared.currentUserID).child("answered").child(questionID).setValue(true)
+                FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("answered").child(questionID).setValue(true)
                 completion(true)
             } else {
                 UserController.shared.currentUser?.questionsAsked = [questionID]
                 //UserController.shared.currentUser?.save()
-                FirebaseController.ref.child("Users").child(UserController.shared.currentUserID).child("answered").child(questionID).setValue(true)
+                FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("answered").child(questionID).setValue(true)
                 completion(true)
             }
         } else {
@@ -85,12 +85,12 @@ class UserController {
             if (UserController.shared.currentUser?.channelsMemberOf?.count)! > 0 {
                 UserController.shared.currentUser?.channelsMemberOf?.append(channelID)
                 //UserController.shared.currentUser?.save()
-                FirebaseController.ref.child("Users").child(UserController.shared.currentUserID).child("channels").child(channelID).setValue(true)
+                FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("channels").child(channelID).setValue(true)
                 completion(true)
             } else {
                 UserController.shared.currentUser?.channelsMemberOf = [channelID]
                 //UserController.shared.currentUser?.save()
-                FirebaseController.ref.child("Users").child(UserController.shared.currentUserID).child("channels").child(channelID).setValue(true)
+                FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("channels").child(channelID).setValue(true)
                 completion(true)
             }
         } else {
@@ -138,7 +138,7 @@ class UserController {
     }
     
     static func fetchUserForIdentifier(identifier: String, completion: @escaping (_ user: User?) -> Void) {
-        FirebaseController.ref.child("Users").child(identifier).observeSingleEvent(of: .value, with: { data in
+        FirebaseController.ref.child("users").child(identifier).observeSingleEvent(of: .value, with: { data in
             guard let dataDict = data.value as? [String: AnyObject],
                 let user = User(dictionary: dataDict, identifier: identifier) else {
                     completion(nil)

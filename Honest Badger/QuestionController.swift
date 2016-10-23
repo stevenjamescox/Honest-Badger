@@ -54,7 +54,7 @@ class QuestionController {
     static func fetchQuestionsUserHasAskedKeys(_ completion: @escaping (_ askedQuestionsKeys: [String]) -> Void){
         var askedQuestionsKeys: [String] = []
         
-        FirebaseController.ref.child("Users").child(UserController.shared.currentUserID).child("Asked").observe(.value, with: { (dataSnapshot) in
+        FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("Asked").observe(.value, with: { (dataSnapshot) in
     
             guard let dataDictionary = dataSnapshot.value as? [String : AnyObject] else {
                 completion([])
