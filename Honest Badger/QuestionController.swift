@@ -77,7 +77,7 @@ class QuestionController {
     
     static func fetchAskedQuestionsForUserID(uid: String, completion: @escaping (_ questions: [Question]?) -> Void) {
         let users = FirebaseController.ref.child("users")
-        users.child(UserController.shared.currentUserID).child("asked").observe(.value, with: { (snapshot) in
+        users.child(UserController.shared.currentUserID).child("asked").observeSingleEvent(of: .value, with: { (snapshot) in
             if let questionDictionary = snapshot.value as? [String : AnyObject] {
                 let questionIDs = questionDictionary.flatMap({ ($0.0) })
                 fetchQuestionsThatMatchQuery(questionIDs: questionIDs, completion: { (questions) in
@@ -91,7 +91,7 @@ class QuestionController {
     
     static func fetchAnsweredQuestionsForUserID(uid: String, completion: @escaping (_ questions: [Question]?) -> Void) {
         let users = FirebaseController.ref.child("users")
-        users.child(UserController.shared.currentUserID).child("answered").observe(.value, with: { (snapshot) in
+        users.child(UserController.shared.currentUserID).child("answered").observeSingleEvent(of: .value, with: { (snapshot) in
             if let questionDictionary = snapshot.value as? [String : AnyObject] {
                 let questionIDs = questionDictionary.flatMap({ ($0.0) })
                 fetchQuestionsThatMatchQuery(questionIDs: questionIDs, completion: { (questions) in
@@ -110,7 +110,7 @@ class QuestionController {
         
         for questionID in questionIDs {
             questionFetchGroup.enter()
-            FirebaseController.ref.child("questions").child(questionID).observe(.value, with: { (snapshot) in
+            FirebaseController.ref.child("questions").child(questionID).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let questionDictionary = snapshot.value as? [String : AnyObject], let question = Question(dictionary: questionDictionary, identifier: questionID) {
                     questions.append(question)
                 }

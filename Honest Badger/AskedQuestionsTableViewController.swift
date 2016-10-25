@@ -16,26 +16,7 @@ class AskedQuestionsTableViewController: UITableViewController, QuestionResponse
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        QuestionController.fetchAskedQuestionsForUserID(uid: UserController.shared.currentUserID) { (questions) in
-            if let questions = questions {
-
-                let firstSort = questions.divide({ $0.timeLimit.timeIntervalSince1970 >= Date().timeIntervalSince1970 })
-                
-                let openQuestions = firstSort.slice
-                let closedQuestions = firstSort.remainder
-                
-                let sortedOpenQuestions = openQuestions.sorted {($0.timeLimit.timeIntervalSince1970) < ($1.timeLimit.timeIntervalSince1970)}
-                let sortedClosedQuestions = closedQuestions.sorted {($0.timeLimit.timeIntervalSince1970) > ($1.timeLimit.timeIntervalSince1970)}
-                
-                let fullySortedArray = sortedOpenQuestions + sortedClosedQuestions
-                
-                self.questions = fullySortedArray
-                self.tableView.reloadData()
-            } else {
-            print("questions are NIL")
-            }
-        }
-    
+       
         navigationController!.navigationBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
         navigationController!.navigationBar.tintColor = UIColor.black
 
@@ -52,9 +33,30 @@ class AskedQuestionsTableViewController: UITableViewController, QuestionResponse
         cell.layoutMargins = UIEdgeInsets.zero
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.tableView.reloadData()
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        QuestionController.fetchAskedQuestionsForUserID(uid: UserController.shared.currentUserID) { (questions) in
+            if let questions = questions {
+                
+                let firstSort = questions.divide({ $0.timeLimit.timeIntervalSince1970 >= Date().timeIntervalSince1970 })
+                
+                let openQuestions = firstSort.slice
+                let closedQuestions = firstSort.remainder
+                
+                let sortedOpenQuestions = openQuestions.sorted {($0.timeLimit.timeIntervalSince1970) < ($1.timeLimit.timeIntervalSince1970)}
+                let sortedClosedQuestions = closedQuestions.sorted {($0.timeLimit.timeIntervalSince1970) > ($1.timeLimit.timeIntervalSince1970)}
+                
+                let fullySortedArray = sortedOpenQuestions + sortedClosedQuestions
+                
+                self.questions = fullySortedArray
+                self.tableView.reloadData()
+            } else {
+                print("questions are NIL")
+                self.questions = []
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source

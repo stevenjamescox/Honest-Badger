@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6jO-DH-1VM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6jO-DH-1VM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -334,17 +334,20 @@
                     <navigationItem key="navigationItem" title="My Questions" id="LXf-pC-sCx">
                         <barButtonItem key="rightBarButtonItem" title="Ask " id="ZsC-V3-rsL">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="b2M-of-bxX" kind="presentation" identifier="toSubmitQuestionSegue" id="EYM-Rb-KEL"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="Jz6-nG-RWI" kind="presentation" identifier="toEditResponseSegue" id="qPw-Cb-1EG"/>
-                        <segue destination="EPu-Oe-i9Q" kind="presentation" identifier="toSubmitResponseSegue" id="RCo-3y-MHq"/>
-                        <segue destination="b2M-of-bxX" kind="presentation" identifier="toSubmitQuestionSegue" id="tuK-U0-pIj"/>
+                        <segue destination="EPu-Oe-i9Q" kind="presentation" identifier="toSubmitResponseSegue" id="QWa-aD-YaI"/>
+                        <segue destination="cRj-RB-COW" kind="show" identifier="toViewResponsesSegue" id="4iK-7N-2Sd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAk-HD-pYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5241" y="-1138"/>
+            <point key="canvasLocation" x="5225" y="-1119"/>
         </scene>
         <!--Responses-->
         <scene sceneID="WZO-kZ-P3z">
@@ -405,7 +408,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZY-SX-mZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7710" y="-636"/>
+            <point key="canvasLocation" x="7710" y="-979"/>
         </scene>
         <!--Submit Response-->
         <scene sceneID="9Pd-xE-rhw">
@@ -683,7 +686,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMF-bp-GvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7710" y="832"/>
+            <point key="canvasLocation" x="7710" y="489"/>
         </scene>
         <!--Submit Question-->
         <scene sceneID="tlX-wh-IRW">
@@ -1190,7 +1193,7 @@ We will never, ever give database records to anyone unless required to by a warr
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aBH-hV-NRk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Global" image="global" id="PK2-BX-xyk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OJI-ak-m0w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OJI-ak-m0w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1520,7 +1523,7 @@ We will never, ever give database records to anyone unless required to by a warr
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcX-PR-cuz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7710" y="125"/>
+            <point key="canvasLocation" x="7710" y="-221"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="suP-Wt-ziu">
@@ -1571,7 +1574,7 @@ We will never, ever give database records to anyone unless required to by a warr
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jxA-Oo-ySl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Questions" image="questions" id="B1i-VO-0dJ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2rV-xH-pbS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2rV-xH-pbS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1724,6 +1727,7 @@ We will never, ever give database records to anyone unless required to by a warr
                     <connections>
                         <segue destination="Jz6-nG-RWI" kind="presentation" identifier="toEditResponseSegue" id="gPT-Qn-RZv"/>
                         <segue destination="EPu-Oe-i9Q" kind="presentation" identifier="toSubmitResponseSegue" id="0bw-rK-3Dz"/>
+                        <segue destination="cRj-RB-COW" kind="show" identifier="toViewResponsesSegue" id="loK-sX-qNU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeG-2F-n9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1736,7 +1740,7 @@ We will never, ever give database records to anyone unless required to by a warr
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N1h-Gc-urD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="?s I've Answered" image="answers" id="Hw4-3T-WyK"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tBe-Di-mhD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tBe-Di-mhD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1780,7 +1784,7 @@ We will never, ever give database records to anyone unless required to by a warr
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingspanelbadger.png" translatesAutoresizingMaskIntoConstraints="NO" id="Any-L5-Uf7"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingspanelbadger2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Any-L5-Uf7"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7H7-aQ-6of">
                                 <color key="backgroundColor" red="0.42352941179999998" green="0.0" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1818,7 +1822,7 @@ We will never, ever give database records to anyone unless required to by a warr
                         <color key="backgroundColor" red="0.070313461120000004" green="0.78432720899999997" blue="0.86106544730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7H7-aQ-6of" firstAttribute="centerX" secondItem="geR-oN-NxC" secondAttribute="centerX" id="8HO-re-kJz"/>
-                            <constraint firstItem="Any-L5-Uf7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VhI-mE-H1M" secondAttribute="bottom" constant="50" id="IXG-Ha-Nfj"/>
+                            <constraint firstItem="Any-L5-Uf7" firstAttribute="top" secondItem="VhI-mE-H1M" secondAttribute="bottom" constant="50" id="IXG-Ha-Nfj"/>
                             <constraint firstItem="VhI-mE-H1M" firstAttribute="centerX" secondItem="geR-oN-NxC" secondAttribute="centerX" id="Iag-bK-Zkp"/>
                             <constraint firstItem="VhI-mE-H1M" firstAttribute="top" secondItem="7H7-aQ-6of" secondAttribute="bottom" constant="20" id="Jyn-fz-dVZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Any-L5-Uf7" secondAttribute="trailing" id="Kcb-9A-gBa"/>
@@ -1850,15 +1854,16 @@ We will never, ever give database records to anyone unless required to by a warr
         <image name="honestbadgertitleonlywithtrans.png" width="1112" height="1601"/>
         <image name="questions" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
-        <image name="settingspanelbadger.png" width="300" height="355"/>
+        <image name="settingspanelbadger2.png" width="511" height="604"/>
         <image name="tweakedChannelNotice.png" width="3999" height="3619"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="QWa-aD-YaI"/>
         <segue reference="abK-OJ-k3a"/>
         <segue reference="Q55-fz-UdG"/>
         <segue reference="lRa-za-ruS"/>
-        <segue reference="tuK-U0-pIj"/>
-        <segue reference="gPT-Qn-RZv"/>
-        <segue reference="0bw-rK-3Dz"/>
+        <segue reference="loK-sX-qNU"/>
+        <segue reference="EYM-Rb-KEL"/>
+        <segue reference="qPw-Cb-1EG"/>
     </inferredMetricsTieBreakers>
 </document>
