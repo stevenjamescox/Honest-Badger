@@ -34,5 +34,4 @@ class SettingsViewController: UIViewController {
         UserController.logOutUser()
     self.performSegue(withIdentifier: "logOutSegue", sender: self)
     }
-
 }

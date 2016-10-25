@@ -25,7 +25,7 @@ class AskedQuestionsTableViewController: UITableViewController, QuestionResponse
         
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
-    
+        tableView.tableFooterView = UIView(frame: .zero)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

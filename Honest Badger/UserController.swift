@@ -19,8 +19,9 @@ class UserController {
     var currentUser: User? = UserController.loadFromDefaults()
     
     var currentUserID: String {
-        guard let currentUser = currentUser, let currentUserID = currentUser.identifier else {
-            fatalError("Could not retrieve current user id")
+        guard let currentUserID = currentUser?.identifier else {
+            print("current user is nil")
+            return "nada"
         }
         return currentUserID
     }

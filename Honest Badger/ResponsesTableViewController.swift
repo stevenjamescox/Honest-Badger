@@ -43,6 +43,7 @@ class ResponsesTableViewController: UITableViewController, MFMailComposeViewCont
         navigationController!.navigationBar.tintColor = UIColor.black
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView(frame: .zero)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

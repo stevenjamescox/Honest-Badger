@@ -25,6 +25,7 @@ class AnsweredQuestionsTableViewController: UITableViewController, QuestionRespo
         
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView(frame: .zero)
     
     }
     

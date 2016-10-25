@@ -23,6 +23,7 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
         
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView(frame: .zero)
         
         QuestionController.fetch200Questions { (questions) in
             
