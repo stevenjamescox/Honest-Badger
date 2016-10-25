@@ -37,6 +37,8 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
     
     @IBOutlet weak var submitQuestionButtonOutlet: UIButton!
     
+    @IBOutlet weak var submitQuestionBarButtonOutlet: UIBarButtonItem!
+    
     @IBAction func timeLimitPickerAction(_ sender: AnyObject) {
 
     }
@@ -66,15 +68,23 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
 
     @IBAction func didPressSubmitQuestion(_ sender: AnyObject) {
         if (questionEntryField.text != "") {
+            submitQuestionButtonOutlet.isEnabled = false
+            submitQuestionBarButtonOutlet.isEnabled = false
+            
             let questionText = questionEntryField.text
-        
             let timeLimitDouble = timeLimitPicker.countDownDuration
             let timeLimit = Date(timeIntervalSince1970: (timeLimitDouble + Date().timeIntervalSince1970))
-            
-            QuestionController.submitQuestion(questionText!, timeLimit: timeLimit, completion: { (true, questionID) in
-                questionEntryField.text = ""
-                self.createAlert("Thanks!", message: "Thanks for your question! Come back when the clock runs out to view responses.")
-                
+            QuestionController.submitQuestion(questionText!, timeLimit: timeLimit, completion: { (success, questionID) in
+                if success {
+                    if let questionID = questionID {
+                    UserController.updateQuestionsAskedIDsForCurrentUser(questionID, completion: { (success) in
+                        self.questionEntryField.text = ""
+                        self.createAlert("Thanks!", message: "Thanks for your question! Come back when the clock runs out to view responses.")
+                        self.submitQuestionButtonOutlet.isEnabled = true
+                        self.submitQuestionBarButtonOutlet.isEnabled = true
+                        })
+                    }
+                }
             })
         } else {
             return
@@ -83,14 +93,23 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
     
     @IBAction func didPressSubmitQuestionAlt(_ sender: AnyObject) {
         if (questionEntryField.text != "") {
-            let questionText = questionEntryField.text
+            submitQuestionButtonOutlet.isEnabled = false
+            submitQuestionBarButtonOutlet.isEnabled = false
             
+            let questionText = questionEntryField.text
             let timeLimitDouble = timeLimitPicker.countDownDuration
             let timeLimit = Date(timeIntervalSince1970: (timeLimitDouble + Date().timeIntervalSince1970))
-            QuestionController.submitQuestion(questionText!, timeLimit: timeLimit, completion: { (true, questionID) in
-            //QuestionController.submitQuestion(questionText!, timeLimit: timeLimit)
-            questionEntryField.text = ""
-            self.createAlert("Thanks!", message: "Thanks for your question! Come back when the clock runs out to view responses.")
+            QuestionController.submitQuestion(questionText!, timeLimit: timeLimit, completion: { (success, questionID) in
+                if success {
+                    if let questionID = questionID {
+                        UserController.updateQuestionsAskedIDsForCurrentUser(questionID, completion: { (success) in
+                            self.questionEntryField.text = ""
+                            self.createAlert("Thanks!", message: "Thanks for your question! Come back when the clock runs out to view responses.")
+                            self.submitQuestionButtonOutlet.isEnabled = true
+                            self.submitQuestionBarButtonOutlet.isEnabled = true
+                        })
+                    }
+                }
             })
         } else {
             return

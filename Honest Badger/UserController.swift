@@ -42,9 +42,9 @@ class UserController {
         })
     }
     
-    static func updateQuestionsAskedIDsForCurrentUser(questionID: String?, completion: (_ success: Bool) -> Void) {
+    static func updateQuestionsAskedIDsForCurrentUser(_ questionID: String?, completion: (_ success: Bool) -> Void) {
         if let questionID = questionID {
-            if (UserController.shared.currentUser?.questionsAsked?.count)! > 0 {
+            if UserController.shared.currentUser?.questionsAsked?.count != 0 {
                 UserController.shared.currentUser?.questionsAsked?.append(questionID)
                 //UserController.shared.currentUser?.save()
                 FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("asked").child(questionID).setValue(true)
@@ -63,19 +63,38 @@ class UserController {
     
     static func updateQuestionsAnsweredIDsForCurrentUser(questionID: String?, completion: (_ success: Bool) -> Void) {
         if let questionID = questionID {
-            if (UserController.shared.currentUser?.questionsAnswered?.count)! > 0 {
+            if UserController.shared.currentUser?.questionsAnswered?.count != 0 {
                 UserController.shared.currentUser?.questionsAnswered?.append(questionID)
                 //UserController.shared.currentUser?.save()
                 FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("answered").child(questionID).setValue(true)
                 completion(true)
             } else {
-                UserController.shared.currentUser?.questionsAsked = [questionID]
+                UserController.shared.currentUser?.questionsAnswered = [questionID]
                 //UserController.shared.currentUser?.save()
                 FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("answered").child(questionID).setValue(true)
                 completion(true)
             }
         } else {
             print("Could not update User's questionsAnswered array: QuestionID was nil")
+            completion(false)
+        }
+    }
+    
+    static func deleteQuestionsAnsweredIDsForCurrentUser(questionID: String?, completion: (_ success: Bool) -> Void) {
+        if let questionID = questionID {
+            if UserController.shared.currentUser?.questionsAnswered?.count != 1 {
+                UserController.shared.currentUser?.questionsAnswered? = (UserController.shared.currentUser?.questionsAnswered?.filter{$0 != questionID})!
+                //UserController.shared.currentUser?.save()
+                FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("answered").child(questionID).removeValue()
+                completion(true)
+            } else {
+                UserController.shared.currentUser?.questionsAnswered = []
+                //UserController.shared.currentUser?.save()
+                FirebaseController.ref.child("users").child(UserController.shared.currentUserID).child("answered").child(questionID).removeValue()
+                completion(true)
+            }
+        } else {
+            print("Could not delete from User's questionsAnswered array: QuestionID was nil")
             completion(false)
         }
     }

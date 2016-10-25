@@ -45,6 +45,8 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
     
     @IBOutlet weak var submitResponseButtonOutlet: UIButton!
     
+    @IBOutlet weak var submitResponseBarButtonOutlet: UIBarButtonItem!
+    
     @IBOutlet weak var timeLeftOutlet: UILabel!
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -144,23 +146,46 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
         self.dismiss(animated: true, completion: nil)
     }
     
+
     @IBAction func didPressSubmitResponse(_ sender: AnyObject) {
         if (responseEntryField.text != "") {
+            submitResponseButtonOutlet.isEnabled = false
+            submitResponseBarButtonOutlet.isEnabled = false
         let responseText = responseEntryField.text
-        ResponseController.submitResponse(question!, responseText: responseText!)
-        responseEntryField.text = ""
-        self.createAlert("Thanks!", message: "Thanks for your response! Come back when the clock runs out to view the rest of the responses.")
+            ResponseController.submitResponse(question!, responseText: responseText!, completion: { (success, questionID) in
+                if success {
+                if let questionID = questionID {
+                UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID: questionID, completion: { (success) in
+                    self.responseEntryField.text = ""
+                    self.createAlert("Thanks!", message: "Thanks for your response! Come back when the clock runs out to view the rest of the responses.")
+                    self.submitResponseButtonOutlet.isEnabled = true
+                    self.submitResponseBarButtonOutlet.isEnabled = true
+                        })
+                    }
+                }
+            })
         } else {
-        return
+            return
         }
     }
     
     @IBAction func didPressSubmitResponseAlternate(_ sender: AnyObject) {
         if (responseEntryField.text != "") {
+            submitResponseButtonOutlet.isEnabled = false
+            submitResponseBarButtonOutlet.isEnabled = false
             let responseText = responseEntryField.text
-            ResponseController.submitResponse(question!, responseText: responseText!)
-            responseEntryField.text = ""
-            self.createAlert("Thanks!", message: "Thanks for your response! Come back when the clock runs out to view the rest of the responses.")
+            ResponseController.submitResponse(question!, responseText: responseText!, completion: { (success, questionID) in
+                if success {
+                    if let questionID = questionID {
+                        UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID: questionID, completion: { (success) in
+                            self.responseEntryField.text = ""
+                            self.createAlert("Thanks!", message: "Thanks for your response! Come back when the clock runs out to view the rest of the responses.")
+                            self.submitResponseButtonOutlet.isEnabled = true
+                            self.submitResponseBarButtonOutlet.isEnabled = true
+                        })
+                    }
+                }
+            })
         } else {
             return
         }

@@ -55,6 +55,8 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
     
         @IBOutlet weak var reviseResponseButtonOutlet: UIButton!
     
+        @IBOutlet weak var reviseResponseBarButtonOutlet: UIBarButtonItem!
+    
         @IBOutlet weak var deleteResponseButtonOutlet: UIButton!
     
         @IBOutlet weak var timeLeftOutlet: UILabel!
@@ -162,32 +164,73 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
         
         @IBAction func didPressSubmitResponse(_ sender: AnyObject) {
             if (responseEntryField.text != "") {
+                reviseResponseButtonOutlet.isEnabled = false
+                reviseResponseBarButtonOutlet.isEnabled = false
+                deleteResponseButtonOutlet.isEnabled = false
                 let responseText = responseEntryField.text
-                ResponseController.submitResponse(question!, responseText: responseText!)
-                responseEntryField.text = ""
-                self.createAlert("Thanks!", message: "Your revised response has been received! Come back when the clock runs out to view the rest of the responses.")
+                ResponseController.submitResponse(question!, responseText: responseText!, completion: { (success, questionID) in
+                    if success {
+                        if let questionID = questionID {
+                            UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID: questionID, completion: { (success) in
+                                self.responseEntryField.text = ""
+                                self.createAlert("Thanks!", message: "Your revised response has been received! Come back when the clock runs out to view the rest of the responses.")
+                self.reviseResponseButtonOutlet.isEnabled = true
+                self.reviseResponseBarButtonOutlet.isEnabled = true
+                self.deleteResponseButtonOutlet.isEnabled = true
+                            })
+                        }
+                    }
+                })
             } else {
                 return
             }
-        }
-        
+    }
         @IBAction func didPressSubmitResponseAlternate(_ sender: AnyObject) {
             if (responseEntryField.text != "") {
+                reviseResponseButtonOutlet.isEnabled = false
+                reviseResponseBarButtonOutlet.isEnabled = false
+                deleteResponseButtonOutlet.isEnabled = false
                 let responseText = responseEntryField.text
-                ResponseController.submitResponse(question!, responseText: responseText!)
-                responseEntryField.text = ""
-                self.createAlert("Thanks!", message: "Your revised response has been received! Come back when the clock runs out to view the rest of the responses.")
+                ResponseController.submitResponse(question!, responseText: responseText!, completion: { (success, questionID) in
+                    if success {
+                        if let questionID = questionID {
+                            UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID: questionID, completion: { (success) in
+                                self.responseEntryField.text = ""
+                                self.createAlert("Thanks!", message: "Your revised response has been received! Come back when the clock runs out to view the rest of the responses.")
+                                self.reviseResponseButtonOutlet.isEnabled = true
+                                self.reviseResponseBarButtonOutlet.isEnabled = true
+                                self.deleteResponseButtonOutlet.isEnabled = true
+                            })
+                        }
+                    }
+                })
             } else {
                 return
-            }
         }
-    
-    @IBAction func didPressDeleteResponse(_ sender: AnyObject) {
-        ResponseController.deleteResponse(question!)
-        self.createAlert("Success!", message: "Your response has been deleted. You may submit another response if desired.")
     }
     
-        
+    @IBAction func didPressDeleteResponse(_ sender: AnyObject) {
+        if deleteResponseButtonOutlet.isEnabled == true {
+            reviseResponseButtonOutlet.isEnabled = false
+            reviseResponseBarButtonOutlet.isEnabled = false
+            deleteResponseButtonOutlet.isEnabled = false
+            ResponseController.deleteResponse(question!, completion: { (success, questionID) in
+                if success {
+                    if let questionID = questionID {
+                        UserController.deleteQuestionsAnsweredIDsForCurrentUser(questionID: questionID, completion: { (success) in
+                            self.responseEntryField.text = ""
+                            self.createAlert("Success!", message: "Your response has been deleted. You may submit another response if desired.")
+                            self.reviseResponseButtonOutlet.isEnabled = true
+                            self.reviseResponseBarButtonOutlet.isEnabled = true
+                            self.deleteResponseButtonOutlet.isEnabled = true
+                        })
+                    }
+                }
+            })
+        } else {
+            return
+        }
+    }
         func createAlert(_ title: String, message: String = "") {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okayAction = UIAlertAction(title: "Okay", style: .default) {

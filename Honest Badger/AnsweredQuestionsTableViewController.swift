@@ -8,15 +8,15 @@
 
 import UIKit
 
-class AskedQuestionsTableViewController: UITableViewController, QuestionResponseDelegate {
+class AnsweredQuestionsTableViewController: UITableViewController, QuestionResponseDelegate {
     
-    var userAskedQuestionsKeys: [String] = []
+    var userAnsweredQuestionsKeys: [String] = []
     var questions = [Question]()
     var currentIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        QuestionController.fetchAskedQuestionsForUserID(uid: UserController.shared.currentUserID) { (questions) in
+        QuestionController.fetchAnsweredQuestionsForUserID(uid: UserController.shared.currentUserID) { (questions) in
             if let questions = questions {
 
                 let firstSort = questions.divide({ $0.timeLimit.timeIntervalSince1970 >= Date().timeIntervalSince1970 })
@@ -51,7 +51,7 @@ class AskedQuestionsTableViewController: UITableViewController, QuestionResponse
         cell.separatorInset = UIEdgeInsets.zero
         cell.layoutMargins = UIEdgeInsets.zero
     }
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.tableView.reloadData()

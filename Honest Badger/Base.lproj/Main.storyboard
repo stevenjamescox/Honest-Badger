@@ -336,6 +336,11 @@
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Jz6-nG-RWI" kind="presentation" identifier="toEditResponseSegue" id="qPw-Cb-1EG"/>
+                        <segue destination="EPu-Oe-i9Q" kind="presentation" identifier="toSubmitResponseSegue" id="RCo-3y-MHq"/>
+                        <segue destination="b2M-of-bxX" kind="presentation" identifier="toSubmitQuestionSegue" id="tuK-U0-pIj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAk-HD-pYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -671,6 +676,7 @@
                         <outlet property="navBar" destination="aca-g6-PkS" id="Cnt-cG-IvC"/>
                         <outlet property="questionPresent" destination="KvZ-c4-QbA" id="cJw-gg-VDQ"/>
                         <outlet property="responseEntryField" destination="Bdg-7u-eLy" id="UiY-6t-IwS"/>
+                        <outlet property="submitResponseBarButtonOutlet" destination="EQy-ps-Icr" id="foD-G4-GE3"/>
                         <outlet property="submitResponseButtonOutlet" destination="3AC-us-4Kg" id="01u-z8-w2l"/>
                         <outlet property="timeLeftOutlet" destination="XSp-GF-hpc" id="L7u-0P-nPL"/>
                     </connections>
@@ -925,13 +931,14 @@
                     <connections>
                         <outlet property="navBar" destination="EBy-7s-K38" id="dTl-12-WjS"/>
                         <outlet property="questionEntryField" destination="LdY-zB-qbC" id="Su7-I8-oSO"/>
+                        <outlet property="submitQuestionBarButtonOutlet" destination="Co9-gs-ySU" id="VaI-9U-TnZ"/>
                         <outlet property="submitQuestionButtonOutlet" destination="aEk-tf-S6I" id="B4Z-n8-sk5"/>
                         <outlet property="timeLimitPicker" destination="xP8-te-NvQ" id="hWC-qV-nDX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijg-Xy-Iw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7710" y="1548"/>
+            <point key="canvasLocation" x="6535" y="1199"/>
         </scene>
         <!--Loading Screen View Controller-->
         <scene sceneID="FJw-bW-cam">
@@ -1183,7 +1190,7 @@ We will never, ever give database records to anyone unless required to by a warr
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aBH-hV-NRk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Global" image="global" id="PK2-BX-xyk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OJI-ak-m0w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OJI-ak-m0w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1506,6 +1513,7 @@ We will never, ever give database records to anyone unless required to by a warr
                         <outlet property="navBar" destination="LQa-7L-UOO" id="8eC-XF-9Dz"/>
                         <outlet property="questionPresent" destination="Syr-Pk-xTb" id="JX5-iQ-1zj"/>
                         <outlet property="responseEntryField" destination="tk6-Me-9wx" id="xcC-Oc-7s2"/>
+                        <outlet property="reviseResponseBarButtonOutlet" destination="vyO-rB-pPJ" id="D20-DR-H8m"/>
                         <outlet property="reviseResponseButtonOutlet" destination="jtp-mr-4Ij" id="C1S-75-MKx"/>
                         <outlet property="timeLeftOutlet" destination="LBI-Op-M2g" id="Hfp-ca-dKo"/>
                     </connections>
@@ -1544,7 +1552,7 @@ We will never, ever give database records to anyone unless required to by a warr
                     <tabBarItem key="tabBarItem" title="Channels" image="channels" id="da3-cv-jca"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hoZ-ue-sY0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hoZ-ue-sY0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1563,7 +1571,7 @@ We will never, ever give database records to anyone unless required to by a warr
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jxA-Oo-ySl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Questions" image="questions" id="B1i-VO-0dJ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2rV-xH-pbS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2rV-xH-pbS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1579,7 +1587,7 @@ We will never, ever give database records to anyone unless required to by a warr
         <!--?s I've Answered-->
         <scene sceneID="uqo-rV-vEE">
             <objects>
-                <tableViewController id="TBn-EQ-3XU" customClass="QuestionsTableViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="TBn-EQ-3XU" customClass="AnsweredQuestionsTableViewController" customModule="Honest_Badger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kn5-Y9-kSV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1713,6 +1721,10 @@ We will never, ever give database records to anyone unless required to by a warr
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="?s I've Answered" id="iF7-vG-aQS"/>
+                    <connections>
+                        <segue destination="Jz6-nG-RWI" kind="presentation" identifier="toEditResponseSegue" id="gPT-Qn-RZv"/>
+                        <segue destination="EPu-Oe-i9Q" kind="presentation" identifier="toSubmitResponseSegue" id="0bw-rK-3Dz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeG-2F-n9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1724,7 +1736,7 @@ We will never, ever give database records to anyone unless required to by a warr
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N1h-Gc-urD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="?s I've Answered" image="answers" id="Hw4-3T-WyK"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tBe-Di-mhD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tBe-Di-mhD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1743,7 +1755,7 @@ We will never, ever give database records to anyone unless required to by a warr
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vdZ-1a-sNt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="Wea-rd-Z78"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4wA-FE-mt8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4wA-FE-mt8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1842,8 +1854,11 @@ We will never, ever give database records to anyone unless required to by a warr
         <image name="tweakedChannelNotice.png" width="3999" height="3619"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Q55-fz-UdG"/>
         <segue reference="abK-OJ-k3a"/>
+        <segue reference="Q55-fz-UdG"/>
         <segue reference="lRa-za-ruS"/>
+        <segue reference="tuK-U0-pIj"/>
+        <segue reference="gPT-Qn-RZv"/>
+        <segue reference="0bw-rK-3Dz"/>
     </inferredMetricsTieBreakers>
 </document>

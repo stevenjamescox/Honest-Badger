@@ -9,13 +9,23 @@
 import Foundation
 
 class ResponseController{
-
-    static func submitResponse(_ question: Question, responseText: String){
+    
+    static func submitResponse(_ question: Question, responseText: String, completion: @escaping (_ success: Bool, _ questionID: String?) -> Void){
         FirebaseController.ref.child("questions").child(question.identifier ?? "").child("responses").child(UserController.shared.currentUserID).setValue(responseText)
+        if let questionID = question.identifier {
+            completion(true, questionID)
+        } else {
+            completion(false, nil)
+        }
     }
     
-    static func deleteResponse(_ question: Question){
+    static func deleteResponse(_ question: Question, completion: @escaping (_ success: Bool, _ questionID: String?) -> Void){
         FirebaseController.ref.child("questions").child(question.identifier ?? "").child("responses").child(UserController.shared.currentUserID).removeValue()
+        if let questionID = question.identifier {
+            completion(true, questionID)
+        } else {
+            completion(false, nil)
+        }
     }
     
     static func getSingleResponse(_ question: Question, completion: @escaping (_ singleResponse: String?) -> Void) {
