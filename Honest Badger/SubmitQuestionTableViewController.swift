@@ -116,7 +116,7 @@ class SubmitQuestionTableViewController: UITableViewController, UITextViewDelega
         }
     }
     
-    func createAlert(_ title: String, message: String = "") {
+    func createAlert(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "Okay", style: .default) {
             UIAlertAction in

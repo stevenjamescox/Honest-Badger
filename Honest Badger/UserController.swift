@@ -61,7 +61,7 @@ class UserController {
         }
     }
     
-    static func updateQuestionsAnsweredIDsForCurrentUser(questionID: String?, completion: (_ success: Bool) -> Void) {
+    static func updateQuestionsAnsweredIDsForCurrentUser(_ questionID: String?, completion: (_ success: Bool) -> Void) {
         if let questionID = questionID {
             if UserController.shared.currentUser?.questionsAnswered?.count != 0 {
                 UserController.shared.currentUser?.questionsAnswered?.append(questionID)
@@ -80,7 +80,7 @@ class UserController {
         }
     }
     
-    static func deleteQuestionsAnsweredIDsForCurrentUser(questionID: String?, completion: (_ success: Bool) -> Void) {
+    static func deleteQuestionsAnsweredIDsForCurrentUser(_ questionID: String?, completion: (_ success: Bool) -> Void) {
         if let questionID = questionID {
             if UserController.shared.currentUser?.questionsAnswered?.count != 1 {
                 UserController.shared.currentUser?.questionsAnswered? = (UserController.shared.currentUser?.questionsAnswered?.filter{$0 != questionID})!
@@ -99,7 +99,7 @@ class UserController {
         }
     }
     
-    static func updateChannelsMemberOfIDsForCurrentUser(channelID: String?, completion: (_ success: Bool) -> Void) {
+    static func updateChannelsMemberOfIDsForCurrentUser(_ channelID: String?, completion: (_ success: Bool) -> Void) {
         if let channelID = channelID {
             if (UserController.shared.currentUser?.channelsMemberOf?.count)! > 0 {
                 UserController.shared.currentUser?.channelsMemberOf?.append(channelID)

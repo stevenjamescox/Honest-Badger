@@ -171,7 +171,7 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
                 ResponseController.submitResponse(question!, responseText: responseText!, completion: { (success, questionID) in
                     if success {
                         if let questionID = questionID {
-                            UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID: questionID, completion: { (success) in
+                            UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID, completion: { (success) in
                                 self.responseEntryField.text = ""
                                 self.createAlert("Thanks!", message: "Your revised response has been received! Come back when the clock runs out to view the rest of the responses.")
                 self.reviseResponseButtonOutlet.isEnabled = true
@@ -194,7 +194,7 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
                 ResponseController.submitResponse(question!, responseText: responseText!, completion: { (success, questionID) in
                     if success {
                         if let questionID = questionID {
-                            UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID: questionID, completion: { (success) in
+                            UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID, completion: { (success) in
                                 self.responseEntryField.text = ""
                                 self.createAlert("Thanks!", message: "Your revised response has been received! Come back when the clock runs out to view the rest of the responses.")
                                 self.reviseResponseButtonOutlet.isEnabled = true
@@ -217,7 +217,7 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
             ResponseController.deleteResponse(question!, completion: { (success, questionID) in
                 if success {
                     if let questionID = questionID {
-                        UserController.deleteQuestionsAnsweredIDsForCurrentUser(questionID: questionID, completion: { (success) in
+                        UserController.deleteQuestionsAnsweredIDsForCurrentUser(questionID, completion: { (success) in
                             self.responseEntryField.text = ""
                             self.createAlert("Success!", message: "Your response has been deleted. You may submit another response if desired.")
                             self.reviseResponseButtonOutlet.isEnabled = true
@@ -231,16 +231,17 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
             return
         }
     }
-        func createAlert(_ title: String, message: String = "") {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okayAction = UIAlertAction(title: "Okay", style: .default) {
-                UIAlertAction in
-                self.dismiss(animated: true, completion: nil)
-            }
-            alert.addAction(okayAction)
-            self.present(alert, animated: true, completion: nil)
+    
+    func createAlert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default) {
+            UIAlertAction in
+            self.dismiss(animated: true, completion: nil)
         }
-        
+        alert.addAction(okayAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
         func timerFired(_ timer: Timer?){
             guard let question = self.question else
                 

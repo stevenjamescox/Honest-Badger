@@ -155,7 +155,7 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
             ResponseController.submitResponse(question!, responseText: responseText!, completion: { (success, questionID) in
                 if success {
                 if let questionID = questionID {
-                UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID: questionID, completion: { (success) in
+                UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID, completion: { (success) in
                     self.responseEntryField.text = ""
                     self.createAlert("Thanks!", message: "Thanks for your response! Come back when the clock runs out to view the rest of the responses.")
                     self.submitResponseButtonOutlet.isEnabled = true
@@ -177,7 +177,7 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
             ResponseController.submitResponse(question!, responseText: responseText!, completion: { (success, questionID) in
                 if success {
                     if let questionID = questionID {
-                        UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID: questionID, completion: { (success) in
+                        UserController.updateQuestionsAnsweredIDsForCurrentUser(questionID, completion: { (success) in
                             self.responseEntryField.text = ""
                             self.createAlert("Thanks!", message: "Thanks for your response! Come back when the clock runs out to view the rest of the responses.")
                             self.submitResponseButtonOutlet.isEnabled = true
@@ -191,7 +191,7 @@ class SubmitResponseTableViewController: UITableViewController, UITextViewDelega
         }
     }
     
-    func createAlert(_ title: String, message: String = "") {
+    func createAlert(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "Okay", style: .default) {
             UIAlertAction in

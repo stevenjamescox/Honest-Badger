@@ -10,6 +10,8 @@ import Foundation
 
 class ResponseController{
     
+    var questions: [Question] = []
+    
     static func submitResponse(_ question: Question, responseText: String, completion: @escaping (_ success: Bool, _ questionID: String?) -> Void){
         FirebaseController.ref.child("questions").child(question.identifier ?? "").child("responses").child(UserController.shared.currentUserID).setValue(responseText)
         if let questionID = question.identifier {
