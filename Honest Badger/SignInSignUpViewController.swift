@@ -201,7 +201,7 @@ class SignInSignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func forgetPasswordButtonTapped(sender: AnyObject) {
-        let prompt = UIAlertController.init(title: "Reset Password", message: "Please enter the email address associated with your Turnn account:", preferredStyle: UIAlertControllerStyle.alert)
+        let prompt = UIAlertController.init(title: "Reset Password", message: "Please enter the email address associated with your Honest Badger account:", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction.init(title: "Submit", style: UIAlertActionStyle.default) { (action) in
             let userInput = prompt.textFields![0].text
             if (userInput!.isEmpty) {
@@ -213,7 +213,7 @@ class SignInSignUpViewController: UIViewController, UITextFieldDelegate {
                     return
                 }
             }
-            self.createAlert(title: "Request Sent", message: "If address is associated with a Turnn account, you should receive a password reset email within a few minutes.")
+            self.createAlert(title: "Request Sent", message: "If address is associated with an Honest Badger account, you should receive a password reset email within a few minutes.")
         }
         prompt.addTextField(configurationHandler: nil)
         prompt.addAction(okAction)
