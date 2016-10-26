@@ -21,7 +21,8 @@ class EditResponseTableViewController: UITableViewController, UITextViewDelegate
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            navBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
+            
+            navBar.barTintColor = UIColor.badgerBlue()
             navBar.tintColor = UIColor.black
             
             responseEntryField.becomeFirstResponder()

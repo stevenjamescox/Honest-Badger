@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public func == (lhs: Date, rhs: Date) -> Bool {
     return lhs.timeIntervalSinceReferenceDate == rhs.timeIntervalSinceReferenceDate
@@ -26,6 +27,13 @@ public func - (lhs: Date, rhs: TimeInterval) -> Date {
 
 public func - (lhs: Date, rhs: Date) -> TimeInterval {
     return lhs.timeIntervalSince(rhs)
+}
+
+extension UIColor {
+    
+    class func badgerBlue() -> UIColor {
+        return UIColor(red: 18/255, green: 200/255, blue: 219/255, alpha: 1)
+    }
 }
 
 extension Sequence {

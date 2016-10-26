@@ -17,8 +17,9 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController!.navigationBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
+        navigationController!.navigationBar.barTintColor = UIColor.badgerBlue()
         navigationController!.navigationBar.tintColor = UIColor.black
+        
         self.navigationController?.isNavigationBarHidden = false
         logOutButtonOutlet.titleLabel?.font = UIFont.init(name: "Rockwell", size: 21.0)
         legalAndPrivacyButtonOutlet.titleLabel?.font = UIFont.init(name: "Rockwell", size: 21.0)

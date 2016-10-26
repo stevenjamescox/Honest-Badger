@@ -19,7 +19,12 @@ class SignInSignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak private var signUpOrInButtonOutlet: UIButton!
     
+    @IBOutlet weak var emailLabel: UILabel!
+    
     @IBOutlet weak private var emailField: UITextField!
+    
+    @IBOutlet weak var passwordLabel: UILabel!
+    
     @IBOutlet weak private var passwordField: UITextField!
     
     @IBOutlet weak private var loginOrSignUpButtonOutlet: UIButton!
@@ -38,6 +43,10 @@ class SignInSignUpViewController: UIViewController, UITextFieldDelegate {
         forgetPasswordButtonOutlet.isEnabled = true
         
         setDelegatesForTextFields()
+        
+        emailLabel.font = UIFont(name: "Rockwell", size: emailLabel.font.pointSize)
+        
+        passwordLabel.font = UIFont(name: "Rockwell", size: passwordLabel.font.pointSize)
         
         haveAccountButton.setTitle("Don't have an account?", for: .normal)
         loginOrSignUpButtonOutlet.setTitle("Login", for: .normal)

@@ -15,7 +15,7 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
     
     override func viewDidLoad() {
         
-        navigationController!.navigationBar.barTintColor = UIColor(red: 160/255, green: 210/255, blue: 225/255, alpha: 1)
+        navigationController!.navigationBar.barTintColor = UIColor.badgerBlue()
         navigationController!.navigationBar.tintColor = UIColor.black
 
         super.viewDidLoad()
@@ -135,5 +135,29 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
                 self.performSegue(withIdentifier: "toViewResponsesSegue", sender: self)
             } else { return }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let question = questions[(indexPath as NSIndexPath).row]
+            if question.authorID == UserController.shared.currentUserID {
+            QuestionController.sharedController.deleteQuestionFromDatabase(question)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            questions.remove(at: (indexPath as NSIndexPath).row)
+            tableView.endUpdates()
+            } else {
+            self.createAlertNoDismissView("Sorry!", message: "Only a question's original author has authority to delete a question from the database.")
+            }
+        }
+    }
+    
+    func createAlertNoDismissView(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default) {
+            UIAlertAction in
+        }
+        alert.addAction(okayAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
