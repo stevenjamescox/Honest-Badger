@@ -12,6 +12,7 @@ class ChannelsSoonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.badgerBlue()
         
         navigationController!.navigationBar.barTintColor = UIColor.badgerBlue()
         navigationController!.navigationBar.tintColor = UIColor.black
