@@ -1,5 +1,5 @@
 //
-//  QuestionsTableViewController.swift
+//  AnsweredQuestionsTableViewController.swift
 //  Honest Badger
 //
 //  Created by Steve Cox on 7/18/16.
@@ -14,9 +14,11 @@ class AnsweredQuestionsTableViewController: UITableViewController, QuestionRespo
     var questions = [Question]()
     var currentIndexPath: IndexPath?
     
+    var noResultsView: NoResultsView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        createNoResultsView()
         navigationController!.navigationBar.barTintColor = UIColor.badgerBlue()
         navigationController!.navigationBar.tintColor = UIColor.black
 
@@ -51,10 +53,12 @@ class AnsweredQuestionsTableViewController: UITableViewController, QuestionRespo
                 
                 self.questions = fullySortedArray
                 self.tableView.reloadData()
+                self.hideOrShowNoResultsView()
             } else {
                 print("questions are NIL")
                 self.questions = []
                 self.tableView.reloadData()
+                self.hideOrShowNoResultsView()
             }
         }
     }
@@ -158,6 +162,7 @@ class AnsweredQuestionsTableViewController: UITableViewController, QuestionRespo
                         tableView.deleteRows(at: [indexPath], with: .fade)
                         self.questions.remove(at: (indexPath as NSIndexPath).row)
                         tableView.endUpdates()
+                        self.hideOrShowNoResultsView()
                     })
                 }
                 alert.addAction(deleteFromDatabaseAction)
@@ -169,6 +174,7 @@ class AnsweredQuestionsTableViewController: UITableViewController, QuestionRespo
                     tableView.deleteRows(at: [indexPath], with: .fade)
                     self.questions.remove(at: (indexPath as NSIndexPath).row)
                     tableView.endUpdates()
+                    self.hideOrShowNoResultsView()
                 }
                 alert.addAction(deleteFromListAction)
             
@@ -189,6 +195,7 @@ class AnsweredQuestionsTableViewController: UITableViewController, QuestionRespo
                     tableView.deleteRows(at: [indexPath], with: .fade)
                     self.questions.remove(at: (indexPath as NSIndexPath).row)
                     tableView.endUpdates()
+                    self.hideOrShowNoResultsView()
                 }
                 alert.addAction(deleteFromListAction)
                 
@@ -198,6 +205,27 @@ class AnsweredQuestionsTableViewController: UITableViewController, QuestionRespo
                 alert.addAction(okayAction)
                 self.present(alert, animated: true, completion: nil)
             }
+        }
+    }
+    
+    func createNoResultsView() {
+        noResultsView = NoResultsView(frame: CGRect(x: self.tableView.frame.origin.x, y: self.tableView.frame.origin.y, width: self.tableView.frame.width, height: self.tableView.frame.height))
+        let noResultsLabel = UILabel(frame: CGRect(x: self.tableView.frame.origin.x, y: self.tableView.frame.minY + 25, width: self.tableView.frame.width, height: 150))
+        noResultsLabel.font = UIFont(name: "Rockwell", size: 23.0)
+        noResultsLabel.numberOfLines = 3
+        noResultsLabel.text = "This list is empty,\nperhaps find a question\nto respond to."
+        noResultsLabel.textAlignment = .center
+        noResultsView.addSubview(noResultsLabel)
+        noResultsView.isHidden = true
+        self.view.addSubview(noResultsView)
+    }
+    
+    func hideOrShowNoResultsView() {
+        if self.questions.count == 0 {
+            noResultsView.isHidden = false
+        }
+        if self.questions.count != 0 {
+            noResultsView.isHidden = true
         }
     }
 }

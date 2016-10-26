@@ -1563,7 +1563,6 @@ We will never, ever give database records to anyone unless required to by a warr
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hoZ-ue-sY0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1583,7 +1582,6 @@ We will never, ever give database records to anyone unless required to by a warr
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2rV-xH-pbS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.070313461120000004" green="0.78432720899999997" blue="0.86106544730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1769,7 +1767,6 @@ We will never, ever give database records to anyone unless required to by a warr
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4wA-FE-mt8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
