@@ -146,7 +146,7 @@ class AskedQuestionsTableViewController: UITableViewController, QuestionResponse
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let question = questions[(indexPath as NSIndexPath).row]
-            let alert = UIAlertController(title: "Delete Option", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Delete Option", message: "Would you like to fully remove your question from Honest Badger, or just delete it from your personal \"My Questions\" list?", preferredStyle: .alert)
             
             let deleteFromDatabaseAction = UIAlertAction(title: "Delete Question Fully", style: .default) {
                 UIAlertAction in
@@ -174,14 +174,5 @@ class AskedQuestionsTableViewController: UITableViewController, QuestionResponse
             alert.addAction(okayAction)
             self.present(alert, animated: true, completion: nil)
         }
-    }
-    
-    func createAlertOptionalDelete(_ title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let nevermindAction = UIAlertAction(title: "Okay", style: .default) {
-            UIAlertAction in
-        }
-        alert.addAction(nevermindAction)
-        self.present(alert, animated: true, completion: nil)
     }
 }

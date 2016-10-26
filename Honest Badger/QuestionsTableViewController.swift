@@ -140,12 +140,28 @@ class QuestionsTableViewController: UITableViewController, QuestionResponseDeleg
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let question = questions[(indexPath as NSIndexPath).row]
+            
             if question.authorID == UserController.shared.currentUserID {
-            QuestionController.sharedController.deleteQuestionFromDatabase(question)
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            questions.remove(at: (indexPath as NSIndexPath).row)
-            tableView.endUpdates()
+                
+            let alert = UIAlertController(title: "Confirm Delete", message: "Would you like to fully remove your question from Honest Badger? This will also delete users' responses to it.", preferredStyle: .alert)
+                
+            let deleteFromDatabaseAction = UIAlertAction(title: "Delete Question Fully", style: .default) {
+                    UIAlertAction in
+                    QuestionController.sharedController.deleteQuestionFromDatabase(question)
+                    tableView.beginUpdates()
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.questions.remove(at: (indexPath as NSIndexPath).row)
+                    tableView.endUpdates()
+                }
+            alert.addAction(deleteFromDatabaseAction)
+                
+            let okayAction = UIAlertAction(title: "Nevermind", style: .default) {
+                    UIAlertAction in
+                }
+            alert.addAction(okayAction)
+                
+            self.present(alert, animated: true, completion: nil)
+                
             } else {
             self.createAlertNoDismissView("Sorry!", message: "Only a question's original author has authority to delete a question from the database.")
             }

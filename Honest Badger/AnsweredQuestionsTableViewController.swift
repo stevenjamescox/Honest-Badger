@@ -146,20 +146,58 @@ class AnsweredQuestionsTableViewController: UITableViewController, QuestionRespo
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let question = questions[(indexPath as NSIndexPath).row]
-            QuestionController.sharedController.deleteAnsweredQuestionFromList(question)
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            questions.remove(at: (indexPath as NSIndexPath).row)
-            tableView.endUpdates()
+            
+            if question.timeLimit.timeIntervalSince1970 >= Date().timeIntervalSince1970 {
+                
+                let alert = UIAlertController(title: "Delete Option", message: "Would you like to fully remove your response to the question, or just delete it from your personal \"?s I've Answered\" list?", preferredStyle: .alert)
+            
+                let deleteFromDatabaseAction = UIAlertAction(title: "Delete Response Fully", style: .default) {
+                    UIAlertAction in
+                    ResponseController.deleteResponse(question, completion: { (success, questionID) in
+                        tableView.beginUpdates()
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                        self.questions.remove(at: (indexPath as NSIndexPath).row)
+                        tableView.endUpdates()
+                    })
+                }
+                alert.addAction(deleteFromDatabaseAction)
+            
+                let deleteFromListAction = UIAlertAction(title: "Delete Only From My List", style: .default) {
+                    UIAlertAction in
+                    QuestionController.sharedController.deleteAnsweredQuestionFromList(question)
+                    tableView.beginUpdates()
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.questions.remove(at: (indexPath as NSIndexPath).row)
+                    tableView.endUpdates()
+                }
+                alert.addAction(deleteFromListAction)
+            
+                let okayAction = UIAlertAction(title: "Nevermind", style: .default) {
+                UIAlertAction in
+                }
+                alert.addAction(okayAction)
+                self.present(alert, animated: true, completion: nil)
+                
+            } else {
+                
+                let alert = UIAlertController(title: "Confirm Delete", message: "The response acceptance/editing time has concluded, so you cannot remove your response to the question,\nbut you can remove the question from your personal \"?s I've Answered\" list.", preferredStyle: .alert)
+                
+                let deleteFromListAction = UIAlertAction(title: "Delete From My List", style: .default) {
+                    UIAlertAction in
+                    QuestionController.sharedController.deleteAnsweredQuestionFromList(question)
+                    tableView.beginUpdates()
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.questions.remove(at: (indexPath as NSIndexPath).row)
+                    tableView.endUpdates()
+                }
+                alert.addAction(deleteFromListAction)
+                
+                let okayAction = UIAlertAction(title: "Nevermind", style: .default) {
+                    UIAlertAction in
+                }
+                alert.addAction(okayAction)
+                self.present(alert, animated: true, completion: nil)
+            }
         }
-    }
-    
-    func createAlertOptionalDelete(_ title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .default) {
-            UIAlertAction in
-        }
-        alert.addAction(okayAction)
-        self.present(alert, animated: true, completion: nil)
     }
 }
