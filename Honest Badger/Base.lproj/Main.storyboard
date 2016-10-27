@@ -648,21 +648,15 @@
                                             <frame key="frameInset" width="375" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1066635_LGPNG_2JR02878HK546464B.png" translatesAutoresizingMaskIntoConstraints="NO" id="IQ3-xO-gX2">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="359" id="29j-lU-buH"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badgerslice.png" translatesAutoresizingMaskIntoConstraints="NO" id="IQ3-xO-gX2"/>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="IQ3-xO-gX2" secondAttribute="bottom" constant="-3" id="0UE-oS-t8B"/>
+                                                <constraint firstAttribute="trailing" secondItem="IQ3-xO-gX2" secondAttribute="trailing" constant="-5" id="019-lw-d3M"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="IQ3-xO-gX2" secondAttribute="bottom" constant="-2" id="0UE-oS-t8B"/>
                                                 <constraint firstItem="IQ3-xO-gX2" firstAttribute="top" secondItem="aUJ-mQ-es2" secondAttribute="topMargin" id="NLB-lD-hOw"/>
-                                                <constraint firstItem="IQ3-xO-gX2" firstAttribute="leading" secondItem="aUJ-mQ-es2" secondAttribute="leadingMargin" id="iAL-yL-25W"/>
+                                                <constraint firstItem="IQ3-xO-gX2" firstAttribute="leading" secondItem="aUJ-mQ-es2" secondAttribute="leading" constant="-5" id="xig-8I-cDb"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="IQ3-xO-gX2" firstAttribute="centerX" secondItem="uj5-Xv-LFX" secondAttribute="centerX" id="t4d-iX-nbA"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -908,18 +902,15 @@
                                             <frame key="frameInset" width="375" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1066635_LGPNG_2JR02878HK546464B.png" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-S4-u7w"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badgerslice.png" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-S4-u7w"/>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Uum-S4-u7w" firstAttribute="leading" secondItem="hJ8-BW-xzH" secondAttribute="leadingMargin" id="FkA-cr-gu5"/>
+                                                <constraint firstItem="Uum-S4-u7w" firstAttribute="leading" secondItem="hJ8-BW-xzH" secondAttribute="leading" constant="-5" id="BHa-lO-Awr"/>
                                                 <constraint firstItem="Uum-S4-u7w" firstAttribute="top" secondItem="hJ8-BW-xzH" secondAttribute="topMargin" id="NBg-dD-9Zj"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Uum-S4-u7w" secondAttribute="bottom" constant="-2" id="h4N-oU-Olk"/>
-                                                <constraint firstItem="Uum-S4-u7w" firstAttribute="trailing" secondItem="hJ8-BW-xzH" secondAttribute="trailingMargin" id="oHo-c4-AcR"/>
+                                                <constraint firstAttribute="trailing" secondItem="Uum-S4-u7w" secondAttribute="trailing" constant="-5" id="hFt-9i-gpz"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="Uum-S4-u7w" firstAttribute="centerX" secondItem="OQn-F9-UGi" secondAttribute="centerX" id="ExR-ac-jtt"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1492,21 +1483,15 @@ We will never, ever give database records to anyone unless required to by legiti
                                             <frame key="frameInset" width="375" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1066635_LGPNG_2JR02878HK546464B.png" translatesAutoresizingMaskIntoConstraints="NO" id="4RE-Mi-3CL">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="359" id="oIa-Fd-ie5"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badgerslice.png" translatesAutoresizingMaskIntoConstraints="NO" id="4RE-Mi-3CL"/>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4RE-Mi-3CL" firstAttribute="leading" secondItem="qRj-BL-avQ" secondAttribute="leadingMargin" id="3CD-8b-W7C"/>
+                                                <constraint firstItem="4RE-Mi-3CL" firstAttribute="leading" secondItem="qRj-BL-avQ" secondAttribute="leading" constant="-5" id="JQ2-Vm-pEb"/>
                                                 <constraint firstItem="4RE-Mi-3CL" firstAttribute="top" secondItem="qRj-BL-avQ" secondAttribute="topMargin" id="OAd-KD-Ygy"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="4RE-Mi-3CL" secondAttribute="bottom" constant="-3" id="RMx-a5-p83"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4RE-Mi-3CL" secondAttribute="bottom" constant="-2" id="RMx-a5-p83"/>
+                                                <constraint firstAttribute="trailing" secondItem="4RE-Mi-3CL" secondAttribute="trailing" constant="-5" id="mUd-ZF-ZrK"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="4RE-Mi-3CL" firstAttribute="centerX" secondItem="Re9-rs-BGp" secondAttribute="centerX" id="7hW-ga-i4N"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1791,7 +1776,7 @@ We will never, ever give database records to anyone unless required to by legiti
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingspanelbadger2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Any-L5-Uf7"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingspanelbadger.png" translatesAutoresizingMaskIntoConstraints="NO" id="Any-L5-Uf7"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7H7-aQ-6of">
                                 <color key="backgroundColor" red="0.42352941179999998" green="0.0" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1850,8 +1835,8 @@ We will never, ever give database records to anyone unless required to by legiti
         </scene>
     </scenes>
     <resources>
-        <image name="1066635_LGPNG_2JR02878HK546464B.png" width="4000" height="4242"/>
         <image name="answers" width="25" height="25"/>
+        <image name="badgerslice.png" width="794" height="487"/>
         <image name="channels" width="25" height="25"/>
         <image name="global" width="25" height="25"/>
         <image name="honestBadgerTitleScreen.png" width="1112" height="1601"/>
@@ -1859,7 +1844,7 @@ We will never, ever give database records to anyone unless required to by legiti
         <image name="honestbadgertitleonlywithtrans.png" width="1112" height="1601"/>
         <image name="questions" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
-        <image name="settingspanelbadger2.png" width="511" height="604"/>
+        <image name="settingspanelbadger.png" width="1211" height="1433"/>
         <image name="tweakedChannelNotice.png" width="3999" height="3619"/>
     </resources>
     <inferredMetricsTieBreakers>
