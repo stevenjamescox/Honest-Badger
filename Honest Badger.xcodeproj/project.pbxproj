@@ -7,21 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0049B71D754C49004AA522 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0049B61D754C49004AA522 /* UserController.swift */; };
+		3B567DC11DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B567DC01DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png */; };
+		3B567DC31DB8A90300FDB6C4 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B567DC21DB8A90300FDB6C4 /* LoadingScreenViewController.swift */; };
+		3B91120A1D9393590038E4D8 /* ChannelsSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9112091D9393590038E4D8 /* ChannelsSoonViewController.swift */; };
+		3B91120C1D9394840038E4D8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B91120B1D9394840038E4D8 /* SettingsViewController.swift */; };
+		3BB66CA21DB72D8000E7F20B /* tweakedChannelNotice.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BB66CA11DB72D8000E7F20B /* tweakedChannelNotice.png */; };
+		3BB66CA41DB72DF000E7F20B /* AskedQuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB66CA31DB72DF000E7F20B /* AskedQuestionsTableViewController.swift */; };
+		3BCDDAE11D8CD62C000BF06A /* EditResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCDDAE01D8CD62C000BF06A /* EditResponseTableViewController.swift */; };
+		3BF93F361DB877640038B7AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF93F351DB877640038B7AE /* User.swift */; };
+		3CFC06AA8331118E9379F392 /* Pods_Honest_Badger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */; };
+		950303BC1D814C2B00EB879F /* Rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 950303BB1D814C2B00EB879F /* Rockwell.ttf */; };
+		950735631DBB4FC700841775 /* honestbadgertitleonlywithtrans.png in Resources */ = {isa = PBXBuildFile; fileRef = 950735621DBB4FC700841775 /* honestbadgertitleonlywithtrans.png */; };
+		950735651DBB545400841775 /* honestbadgerbadgeronly.png in Resources */ = {isa = PBXBuildFile; fileRef = 950735641DBB545400841775 /* honestbadgerbadgeronly.png */; };
+		950735671DBB584A00841775 /* SignInSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950735661DBB584A00841775 /* SignInSignUpViewController.swift */; };
+		950735691DBB687B00841775 /* LegalAndPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950735681DBB687B00841775 /* LegalAndPrivacyViewController.swift */; };
+		9523891A1D4668E200AC69C7 /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952389191D4668E200AC69C7 /* FrontPageViewController.swift */; };
+		955145A41D3D71A40064D897 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */; };
+		955145A81D3D72A00064D897 /* SubmitQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */; };
+		955145AA1D3D72C00064D897 /* SubmitResponseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145A91D3D72C00064D897 /* SubmitResponseTableViewController.swift */; };
+		955145B01D3D7FF00064D897 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955145AF1D3D7FF00064D897 /* FirebaseController.swift */; };
+		9564AE3E1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */; };
+		95695C5F1DBF01F500D4CC3A /* AnsweredQuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95695C5E1DBF01F500D4CC3A /* AnsweredQuestionsTableViewController.swift */; };
+		9569B9F11DC19DE300ABFDBF /* badgerslice.png in Resources */ = {isa = PBXBuildFile; fileRef = 9569B9F01DC19DE300ABFDBF /* badgerslice.png */; };
+		9569B9F31DC19DEB00ABFDBF /* settingspanelbadger.png in Resources */ = {isa = PBXBuildFile; fileRef = 9569B9F21DC19DEB00ABFDBF /* settingspanelbadger.png */; };
+		95835F291DC07C7200814222 /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95835F281DC07C7200814222 /* NoResultsView.swift */; };
+		958D0A2C1D3D6A8D00BA5664 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */; };
+		958D0A311D3D6B0B00BA5664 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A301D3D6B0B00BA5664 /* QuestionController.swift */; };
+		958D0A341D3D6B3800BA5664 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A331D3D6B3800BA5664 /* Question.swift */; };
+		958D0A371D3D6BB900BA5664 /* ResponsesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D0A361D3D6BB900BA5664 /* ResponsesTableViewController.swift */; };
+		95BA6F9B1D441CE100B2E5D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95BA6F9A1D441CE100B2E5D4 /* GoogleService-Info.plist */; };
+		95D543A71D3E860800069611 /* ResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D543A61D3E860800069611 /* ResponseController.swift */; };
 		95D716281D2ED53100EAE5B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D716271D2ED53100EAE5B3 /* AppDelegate.swift */; };
-		95D7162A1D2ED53100EAE5B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D716291D2ED53100EAE5B3 /* ViewController.swift */; };
 		95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D7162B1D2ED53100EAE5B3 /* Main.storyboard */; };
 		95D7162F1D2ED53100EAE5B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D7162E1D2ED53100EAE5B3 /* Assets.xcassets */; };
 		95D716321D2ED53100EAE5B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D716301D2ED53100EAE5B3 /* LaunchScreen.storyboard */; };
+		95FE6F121D495B2400019404 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE6F111D495B2400019404 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B0049B61D754C49004AA522 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		3B2636D01D9220A3008DC22E /* Honest Badger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Honest Badger.entitlements"; sourceTree = "<group>"; };
+		3B567DC01DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honestBadgerTitleScreen.png; sourceTree = "<group>"; };
+		3B567DC21DB8A90300FDB6C4 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
+		3B9112091D9393590038E4D8 /* ChannelsSoonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsSoonViewController.swift; sourceTree = "<group>"; };
+		3B91120B1D9394840038E4D8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3BB66CA11DB72D8000E7F20B /* tweakedChannelNotice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweakedChannelNotice.png; sourceTree = "<group>"; };
+		3BB66CA31DB72DF000E7F20B /* AskedQuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskedQuestionsTableViewController.swift; sourceTree = "<group>"; };
+		3BCDDAE01D8CD62C000BF06A /* EditResponseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditResponseTableViewController.swift; sourceTree = "<group>"; };
+		3BF93F351DB877640038B7AE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		83349A628BB6A93D96289F1D /* Pods-Honest Badger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honest Badger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger.debug.xcconfig"; sourceTree = "<group>"; };
+		943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honest_Badger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		950303BB1D814C2B00EB879F /* Rockwell.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockwell.ttf; sourceTree = "<group>"; };
+		950735621DBB4FC700841775 /* honestbadgertitleonlywithtrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honestbadgertitleonlywithtrans.png; sourceTree = "<group>"; };
+		950735641DBB545400841775 /* honestbadgerbadgeronly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = honestbadgerbadgeronly.png; sourceTree = "<group>"; };
+		950735661DBB584A00841775 /* SignInSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInSignUpViewController.swift; sourceTree = "<group>"; };
+		950735681DBB687B00841775 /* LegalAndPrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalAndPrivacyViewController.swift; sourceTree = "<group>"; };
+		952389191D4668E200AC69C7 /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
+		955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitQuestionTableViewController.swift; sourceTree = "<group>"; };
+		955145A91D3D72C00064D897 /* SubmitResponseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitResponseTableViewController.swift; sourceTree = "<group>"; };
+		955145AF1D3D7FF00064D897 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AbadiMTCondensedExtraBold.ttf; sourceTree = "<group>"; };
+		95695C5E1DBF01F500D4CC3A /* AnsweredQuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnsweredQuestionsTableViewController.swift; sourceTree = "<group>"; };
+		9569B9F01DC19DE300ABFDBF /* badgerslice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badgerslice.png; sourceTree = "<group>"; };
+		9569B9F21DC19DEB00ABFDBF /* settingspanelbadger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingspanelbadger.png; sourceTree = "<group>"; };
+		95835F281DC07C7200814222 /* NoResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultsView.swift; sourceTree = "<group>"; };
+		958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
+		958D0A301D3D6B0B00BA5664 /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
+		958D0A331D3D6B3800BA5664 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		958D0A361D3D6BB900BA5664 /* ResponsesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsesTableViewController.swift; sourceTree = "<group>"; };
+		95BA6F9A1D441CE100B2E5D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95D543A61D3E860800069611 /* ResponseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseController.swift; sourceTree = "<group>"; };
 		95D716241D2ED53100EAE5B3 /* Honest Badger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honest Badger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D716271D2ED53100EAE5B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95D716291D2ED53100EAE5B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		95D7162C1D2ED53100EAE5B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95D7162E1D2ED53100EAE5B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95D716311D2ED53100EAE5B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95D716331D2ED53100EAE5B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95FE6F111D495B2400019404 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F3A2842BC9F4819C102CECF3 /* Pods-Honest Badger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honest Badger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +94,120 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CFC06AA8331118E9379F392 /* Pods_Honest_Badger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		602264D07FD00EBF7F58A5E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83349A628BB6A93D96289F1D /* Pods-Honest Badger.debug.xcconfig */,
+				F3A2842BC9F4819C102CECF3 /* Pods-Honest Badger.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8073875B55063FBEC92997C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				943943E0424C1EB3E9AAB9FA /* Pods_Honest_Badger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		955145B11D3D7FFE0064D897 /* Non-Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				955145AF1D3D7FF00064D897 /* FirebaseController.swift */,
+				95FE6F111D495B2400019404 /* Extensions.swift */,
+			);
+			name = "Non-Model Controllers";
+			sourceTree = "<group>";
+		};
+		958D0A281D3D6A4300BA5664 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				950303BB1D814C2B00EB879F /* Rockwell.ttf */,
+				3B567DC01DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png */,
+				950735641DBB545400841775 /* honestbadgerbadgeronly.png */,
+				9569B9F01DC19DE300ABFDBF /* badgerslice.png */,
+				9569B9F21DC19DEB00ABFDBF /* settingspanelbadger.png */,
+				950735621DBB4FC700841775 /* honestbadgertitleonlywithtrans.png */,
+				9564AE3D1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf */,
+				3BB66CA11DB72D8000E7F20B /* tweakedChannelNotice.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		958D0A291D3D6A4F00BA5664 /* plists */ = {
+			isa = PBXGroup;
+			children = (
+				95BA6F9A1D441CE100B2E5D4 /* GoogleService-Info.plist */,
+				95D716331D2ED53100EAE5B3 /* Info.plist */,
+			);
+			name = plists;
+			sourceTree = "<group>";
+		};
+		958D0A2A1D3D6A5A00BA5664 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95D716301D2ED53100EAE5B3 /* LaunchScreen.storyboard */,
+				95D7162B1D2ED53100EAE5B3 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		958D0A2D1D3D6AA100BA5664 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				950735681DBB687B00841775 /* LegalAndPrivacyViewController.swift */,
+				950735661DBB584A00841775 /* SignInSignUpViewController.swift */,
+				3BB66CA31DB72DF000E7F20B /* AskedQuestionsTableViewController.swift */,
+				95835F281DC07C7200814222 /* NoResultsView.swift */,
+				95695C5E1DBF01F500D4CC3A /* AnsweredQuestionsTableViewController.swift */,
+				3B91120B1D9394840038E4D8 /* SettingsViewController.swift */,
+				3B9112091D9393590038E4D8 /* ChannelsSoonViewController.swift */,
+				3BCDDAE01D8CD62C000BF06A /* EditResponseTableViewController.swift */,
+				952389191D4668E200AC69C7 /* FrontPageViewController.swift */,
+				3B567DC21DB8A90300FDB6C4 /* LoadingScreenViewController.swift */,
+				955145A71D3D72A00064D897 /* SubmitQuestionTableViewController.swift */,
+				955145A91D3D72C00064D897 /* SubmitResponseTableViewController.swift */,
+				958D0A2B1D3D6A8D00BA5664 /* QuestionsTableViewController.swift */,
+				955145A31D3D71A40064D897 /* QuestionTableViewCell.swift */,
+				958D0A361D3D6BB900BA5664 /* ResponsesTableViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		958D0A321D3D6B1500BA5664 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B0049B61D754C49004AA522 /* UserController.swift */,
+				958D0A301D3D6B0B00BA5664 /* QuestionController.swift */,
+				95D543A61D3E860800069611 /* ResponseController.swift */,
+			);
+			name = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		958D0A351D3D6B3C00BA5664 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BF93F351DB877640038B7AE /* User.swift */,
+				958D0A331D3D6B3800BA5664 /* Question.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		95D7161B1D2ED53100EAE5B3 = {
 			isa = PBXGroup;
 			children = (
 				95D716261D2ED53100EAE5B3 /* Honest Badger */,
 				95D716251D2ED53100EAE5B3 /* Products */,
+				602264D07FD00EBF7F58A5E0 /* Pods */,
+				8073875B55063FBEC92997C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +222,16 @@
 		95D716261D2ED53100EAE5B3 /* Honest Badger */ = {
 			isa = PBXGroup;
 			children = (
+				3B2636D01D9220A3008DC22E /* Honest Badger.entitlements */,
 				95D716271D2ED53100EAE5B3 /* AppDelegate.swift */,
-				95D716291D2ED53100EAE5B3 /* ViewController.swift */,
-				95D7162B1D2ED53100EAE5B3 /* Main.storyboard */,
+				958D0A2A1D3D6A5A00BA5664 /* Views */,
+				958D0A2D1D3D6AA100BA5664 /* View Controllers */,
+				955145B11D3D7FFE0064D897 /* Non-Model Controllers */,
+				958D0A321D3D6B1500BA5664 /* Model Controllers */,
+				958D0A351D3D6B3C00BA5664 /* Models */,
+				958D0A291D3D6A4F00BA5664 /* plists */,
+				958D0A281D3D6A4300BA5664 /* Supporting Files */,
 				95D7162E1D2ED53100EAE5B3 /* Assets.xcassets */,
-				95D716301D2ED53100EAE5B3 /* LaunchScreen.storyboard */,
-				95D716331D2ED53100EAE5B3 /* Info.plist */,
 			);
 			path = "Honest Badger";
 			sourceTree = "<group>";
@@ -71,9 +243,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95D716361D2ED53100EAE5B3 /* Build configuration list for PBXNativeTarget "Honest Badger" */;
 			buildPhases = (
+				E4B2CC01E322CBE92D51480D /* [CP] Check Pods Manifest.lock */,
+				B8FD6A05B15ED50D3A2C5589 /* [CP] Check Pods Manifest.lock */,
 				95D716201D2ED53100EAE5B3 /* Sources */,
 				95D716211D2ED53100EAE5B3 /* Frameworks */,
 				95D716221D2ED53100EAE5B3 /* Resources */,
+				6781D858EC9635F7B777CD54 /* [CP] Embed Pods Frameworks */,
+				4DD4A17E63BD691F0DBA3530 /* [CP] Copy Pods Resources */,
+				2C8556E73D7B2BAF04EDE5F3 /* 📦 Embed Pods Frameworks */,
+				7B414A350A7BA8FAB28DBFCB /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -91,12 +269,27 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = stevecoxio;
 				TargetAttributes = {
 					95D716231D2ED53100EAE5B3 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = B829RQHZNJ;
+						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -124,20 +317,143 @@
 			buildActionMask = 2147483647;
 			files = (
 				95D716321D2ED53100EAE5B3 /* LaunchScreen.storyboard in Resources */,
+				950735631DBB4FC700841775 /* honestbadgertitleonlywithtrans.png in Resources */,
+				950303BC1D814C2B00EB879F /* Rockwell.ttf in Resources */,
+				3B567DC11DB8A7FD00FDB6C4 /* honestBadgerTitleScreen.png in Resources */,
+				9564AE3E1D36DCE700460B3A /* AbadiMTCondensedExtraBold.ttf in Resources */,
+				950735651DBB545400841775 /* honestbadgerbadgeronly.png in Resources */,
 				95D7162F1D2ED53100EAE5B3 /* Assets.xcassets in Resources */,
 				95D7162D1D2ED53100EAE5B3 /* Main.storyboard in Resources */,
+				9569B9F31DC19DEB00ABFDBF /* settingspanelbadger.png in Resources */,
+				9569B9F11DC19DE300ABFDBF /* badgerslice.png in Resources */,
+				95BA6F9B1D441CE100B2E5D4 /* GoogleService-Info.plist in Resources */,
+				3BB66CA21DB72D8000E7F20B /* tweakedChannelNotice.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C8556E73D7B2BAF04EDE5F3 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DD4A17E63BD691F0DBA3530 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6781D858EC9635F7B777CD54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B414A350A7BA8FAB28DBFCB /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Honest Badger/Pods-Honest Badger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8FD6A05B15ED50D3A2C5589 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E4B2CC01E322CBE92D51480D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		95D716201D2ED53100EAE5B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95D7162A1D2ED53100EAE5B3 /* ViewController.swift in Sources */,
+				3BCDDAE11D8CD62C000BF06A /* EditResponseTableViewController.swift in Sources */,
+				95FE6F121D495B2400019404 /* Extensions.swift in Sources */,
+				955145B01D3D7FF00064D897 /* FirebaseController.swift in Sources */,
+				958D0A341D3D6B3800BA5664 /* Question.swift in Sources */,
+				3BB66CA41DB72DF000E7F20B /* AskedQuestionsTableViewController.swift in Sources */,
+				958D0A371D3D6BB900BA5664 /* ResponsesTableViewController.swift in Sources */,
+				3B567DC31DB8A90300FDB6C4 /* LoadingScreenViewController.swift in Sources */,
+				3B91120A1D9393590038E4D8 /* ChannelsSoonViewController.swift in Sources */,
+				95D543A71D3E860800069611 /* ResponseController.swift in Sources */,
+				3B91120C1D9394840038E4D8 /* SettingsViewController.swift in Sources */,
+				3B0049B71D754C49004AA522 /* UserController.swift in Sources */,
+				955145AA1D3D72C00064D897 /* SubmitResponseTableViewController.swift in Sources */,
 				95D716281D2ED53100EAE5B3 /* AppDelegate.swift in Sources */,
+				955145A41D3D71A40064D897 /* QuestionTableViewCell.swift in Sources */,
+				955145A81D3D72A00064D897 /* SubmitQuestionTableViewController.swift in Sources */,
+				3BF93F361DB877640038B7AE /* User.swift in Sources */,
+				95695C5F1DBF01F500D4CC3A /* AnsweredQuestionsTableViewController.swift in Sources */,
+				950735671DBB584A00841775 /* SignInSignUpViewController.swift in Sources */,
+				9523891A1D4668E200AC69C7 /* FrontPageViewController.swift in Sources */,
+				95835F291DC07C7200814222 /* NoResultsView.swift in Sources */,
+				958D0A2C1D3D6A8D00BA5664 /* QuestionsTableViewController.swift in Sources */,
+				958D0A311D3D6B0B00BA5664 /* QuestionController.swift in Sources */,
+				950735691DBB687B00841775 /* LegalAndPrivacyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +493,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -222,8 +540,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -242,31 +562,46 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		95D716371D2ED53100EAE5B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83349A628BB6A93D96289F1D /* Pods-Honest Badger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Honest Badger/Honest Badger.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = B829RQHZNJ;
 				INFOPLIST_FILE = "Honest Badger/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stevecoxio.Honest-Badger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		95D716381D2ED53100EAE5B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3A2842BC9F4819C102CECF3 /* Pods-Honest Badger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Honest Badger/Honest Badger.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = B829RQHZNJ;
 				INFOPLIST_FILE = "Honest Badger/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.stevecoxio.Honest-Badger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -289,6 +624,7 @@
 				95D716381D2ED53100EAE5B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
