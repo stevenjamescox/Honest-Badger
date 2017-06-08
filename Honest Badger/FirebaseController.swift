@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 class FirebaseController {
-    static let ref = FIRDatabase.database().reference()
+    static let ref = Database.database().reference()
 }
 
 protocol FirebaseType {

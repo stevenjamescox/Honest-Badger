@@ -27,7 +27,7 @@ class UserController {
     }
 
     static func createUser(username: String, password: String, completion: @escaping (_ user: User?, _ error: NSError?) -> Void) {
-            FIRAuth.auth()?.createUser(withEmail: username, password: password, completion: { (user, error) in
+            Auth.auth().createUser(withEmail: username, password: password, completion: { (user, error) in
             if let error = error {
                 print("There was error while creating user: \(error.localizedDescription)")
                 completion(nil, error as NSError?)
@@ -120,7 +120,7 @@ class UserController {
     }
     
     static func authUser(username: String, password: String, completion: @escaping (_ user: User?, _ error: NSError?) -> Void) {
-        FIRAuth.auth()?.signIn(withEmail: username, password: password, completion: { (firebaseUser, error) in
+        Auth.auth().signIn(withEmail: username, password: password, completion: { (firebaseUser, error) in
             if let error = error {
                 print("Wasn't able log user in: \(error.localizedDescription)")
                 completion(nil, error as NSError?)
@@ -141,7 +141,7 @@ class UserController {
     }
     
     static func restoreUserIdToDevice(){
-        let firuserid = FIRAuth.auth()?.currentUser?.uid
+        let firuserid = Auth.auth().currentUser?.uid
         if firuserid != nil {
             UserController.fetchUserForIdentifier(identifier: firuserid!) { (user) in
                 guard let user = user else {return}
@@ -152,7 +152,7 @@ class UserController {
     }
     
     static func logOutUser(){
-        try! FIRAuth.auth()!.signOut()
+        try! Auth.auth().signOut()
         clearLocallySavedUserOnLogout()
         UserController.shared.currentUser = nil
     }
@@ -169,8 +169,8 @@ class UserController {
     }
     
     static func isLoggedInServerTest(completion: @escaping (_ success: Bool, _ error: NSError?) -> Void) {
-        if let currentUser = FIRAuth.auth()?.currentUser {
-            currentUser.getTokenForcingRefresh(true) { (idToken, error) in
+        if let currentUser = Auth.auth().currentUser {
+            currentUser.getIDTokenForcingRefresh(true) { (idToken, error) in
                 if let error = error {
                     completion(false, error as NSError?)
                     print(error.localizedDescription)

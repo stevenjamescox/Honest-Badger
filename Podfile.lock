@@ -1,23 +1,23 @@
 PODS:
-  - Firebase (3.16.0):
-    - Firebase/Core (= 3.16.0)
-  - Firebase/Core (3.16.0):
-    - FirebaseAnalytics (= 3.8.0)
-    - FirebaseCore (= 3.6.0)
-  - FirebaseAnalytics (3.8.0):
-    - FirebaseCore (~> 3.6)
-    - FirebaseInstanceID (~> 1.0)
+  - Firebase (4.0.1):
+    - Firebase/Core (= 4.0.1)
+  - Firebase/Core (4.0.1):
+    - FirebaseAnalytics (= 4.0.0)
+    - FirebaseCore (= 4.0.1)
+  - FirebaseAnalytics (4.0.0):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseAuth (3.1.1):
-    - FirebaseAnalytics (~> 3.7)
+  - FirebaseAuth (4.0.0):
+    - FirebaseAnalytics (~> 4.0)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (3.6.0):
+  - FirebaseCore (4.0.1):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseDatabase (3.1.2):
-    - FirebaseAnalytics (~> 3.7)
-  - FirebaseInstanceID (1.0.10):
-    - FirebaseCore (~> 3.6)
+  - FirebaseDatabase (4.0.0):
+    - FirebaseAnalytics (~> 4.0)
+  - FirebaseInstanceID (2.0.0):
+    - FirebaseCore (~> 4.0)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -28,7 +28,7 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
-  - GTMSessionFetcher/Core (1.1.9)
+  - GTMSessionFetcher/Core (1.1.10)
 
 DEPENDENCIES:
   - Firebase
@@ -36,14 +36,14 @@ DEPENDENCIES:
   - FirebaseDatabase
 
 SPEC CHECKSUMS:
-  Firebase: 21bf4a89d3f01bfbe11adc3a5d934a4a3d3a5fd6
-  FirebaseAnalytics: 920e46455f27b0a52a80907a6d9b73ee4bd1c635
-  FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
-  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
-  FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
-  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
+  Firebase: f984cd44a160be77ad0590f432e574562bfd4083
+  FirebaseAnalytics: 6f08e746f7d66f5452931bc2e822b5df9c66b64a
+  FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
+  FirebaseCore: 06172c5a0744ab3dd14f778fd666c22855e20098
+  FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
+  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
 
 PODFILE CHECKSUM: 9cee1e614a5c65ad5b15e2dab9dc0badb8878101
 

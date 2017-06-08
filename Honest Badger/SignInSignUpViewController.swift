@@ -114,19 +114,19 @@ class SignInSignUpViewController: UIViewController, UITextFieldDelegate {
                     self.loginOrSignUpButtonOutlet.isEnabled = true
                 } else {
                     if error != nil {
-                        if let errCode = FIRAuthErrorCode(rawValue: error!.code) {
+                        if let errCode = AuthErrorCode(rawValue: error!.code) {
                             switch errCode {
-                            case .errorCodeTooManyRequests:
+                            case .tooManyRequests:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Too many recent account creation attempts from your device. Please wait a little while and try again.")
-                            case .errorCodeInvalidEmail:
+                            case .invalidEmail:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Invalid email address, please correct the address you entered and again.")
-                            case .errorCodeWeakPassword:
+                            case .weakPassword:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Password is too short and/or weak. Please make your password at least eight characters,\nand include at least one upper-case letter, one lower-case letter, and one number")
-                            case .errorCodeEmailAlreadyInUse:
+                            case .emailAlreadyInUse:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "An account already exists for this email address. Please choose 'sign in' at the bottom of the page to login to your account.")
-                            case .errorCodeInternalError:
+                            case .internalError:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Internal error. Please try again.")
-                            case .errorCodeNetworkError:
+                            case .networkError:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Not able to connect to the network. Please test your connection and try again.")
                             default:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Account creation failed due to an unexpected error. 💩")
@@ -153,21 +153,21 @@ class SignInSignUpViewController: UIViewController, UITextFieldDelegate {
                     self.loginOrSignUpButtonOutlet.isEnabled = true
                 } else {
                     if error != nil {
-                        if let errCode = FIRAuthErrorCode(rawValue: error!.code) {
+                        if let errCode = AuthErrorCode(rawValue: error!.code) {
                             switch errCode {
-                            case .errorCodeTooManyRequests:
+                            case .tooManyRequests:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Too many recent login attempts from your device. Please wait a little while and try again.")
-                            case .errorCodeInvalidEmail:
+                            case .invalidEmail:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Invalid email address, please try again.")
-                            case .errorCodeWrongPassword:
+                            case .wrongPassword:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Invalid password, please try again. If you forgot your password, please use the 'forgot password' button below.")
-                            case .errorCodeUserDisabled:
+                            case .userDisabled:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Your account has been disabled, likely for the creation of inappropriate questions and/or responses. Email an explanation to 'appeals@honestbadger.com' to request that your account be re-enabled.")
-                            case .errorCodeInternalError:
+                            case .internalError:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Internal error. Please try again.")
-                            case .errorCodeNetworkError:
+                            case .networkError:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Not able to connect to the network. Please test your connection and try again.")
-                            case .errorCodeUserNotFound:
+                            case .userNotFound:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "User not found! The account may not exist yet. Choose 'sign up' at the bottom of the page to create an account.")
                             default:
                                 self.createAlert(title: "Error: \(errCode.rawValue)", message: "Login failed due to an unexpected error. 💩")
@@ -216,7 +216,7 @@ class SignInSignUpViewController: UIViewController, UITextFieldDelegate {
             if (userInput!.isEmpty) {
                 return
             }
-            FIRAuth.auth()?.sendPasswordReset(withEmail: userInput!) { (error) in
+            Auth.auth().sendPasswordReset(withEmail: userInput!) { (error) in
                 if let error = error {
                     print(error.localizedDescription)
                     return
